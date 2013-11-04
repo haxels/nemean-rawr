@@ -1,0 +1,91 @@
+
+    * {padding: 0; margin: 0;}
+
+    body
+    {
+        font-family: "Verdana, Arial, ans-serif";
+        font-size: 12px;
+    }
+    
+    
+    /** Login site closed */
+    
+    #centerDiv
+    {
+        height: 150px;
+        margin: 20% auto;
+        width: 300px;
+    }
+    
+    #centerDiv p
+    {
+        font-size: 11px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    
+    #clContent
+    {
+        border: 1px solid black;
+        padding: 20px;
+        position: relative;
+    }
+    
+    #clContent a:hover
+    {
+        cursor: default;
+    }
+    
+    #clContent p
+    {
+        text-align: left;
+        font-size: 11px;
+        padding-bottom: 5px;
+        padding-top: 0px;
+    }
+    
+    #clContent img
+    {
+        position: absolute;
+        right: 30px;
+        bottom: 50px;
+        border: none;
+    }
+    
+    .legendTitle
+    {
+        padding-left: 10px;
+    }
+    
+    
+    /* Ex css */
+    
+    #exContainer
+    {
+        background-color: #FFBABA;
+        margin: 0 auto;
+        width: 400px;
+        padding: 10px;
+        border: 1px solid black;
+        min-height: 100px;
+        overflow: auto;
+    }
+    
+    .exLI
+    {
+        list-style-type: none;
+    }
+    
+    .exLI label
+    {
+        display: block;
+        width: 100px;
+        float: left;
+        font-weight: bold;
+    }
+    
+    .exLI span
+    {
+        float: left;
+        width: 290px;
+    }

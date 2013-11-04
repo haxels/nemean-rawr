@@ -1,0 +1,48 @@
+.nSlide {
+
+    width: 100%;
+}
+
+.nSlide .title {
+    font-size: 50px;
+    margin: 50px;
+}
+
+.nSlide .content {
+    font-size: 35px;
+}
+
+ .header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nSlide .header img{
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal {
+    display: block;
+}
+
+footer
+{
+
+}
+
+#sponsorer {width: 100%;
+    position: fixed;
+    bottom: 0px;
+    text-align:center;
+}
+
+#sponsorer a{
+    padding-left: 15px;
+}
+
+hr{
+    color: lightgray;
+}

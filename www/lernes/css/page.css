@@ -1,0 +1,21 @@
+.header {
+	height: 300px;
+	width: 1000px;
+	background: url("../img/h&m2.png");
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu {
+  text-align:center;
+  
+}
+
+.menu a {
+	padding-left: 25px;
+}
+
+.menu a:hover {
+	text-decoration: none;
+}

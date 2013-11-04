@@ -1,0 +1,46 @@
+
+    * {margin:  0; padding: 0;}
+
+	html, body
+	{
+		height: 100%;
+		text-align: center; /* horizontal centering for IE Win quirks */
+        background-color: #FFF;
+	}
+ 
+	#boks 
+	{
+		position: relative;
+		width: 662px;
+		height: 421px;
+		margin: 0 auto;
+		clear: left;
+	}
+	
+	#distance
+	{
+		width: 1px;
+		height: 40%;
+		margin-bottom: -211px;
+		float: left;
+	}
+	
+	#wrap 
+	{ 
+		position: relative; 
+		width: 100%; 
+		height: 100%; 
+		margin: 0 auto; 
+	}
+    
+    a
+    {
+        cursor: default;
+    }
+    
+    a img
+    {
+        border:  none;
+    }
+    
+    

