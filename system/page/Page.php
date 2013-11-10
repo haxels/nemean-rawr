@@ -22,7 +22,10 @@ class Page
 
     private $menu;
 
-    public function __construct(Session $s, NController $mc = null, ILeftContent $lc = null, IRightContent $rc = null, array $css = array(), array $settings = array(), MenuController $menu)
+    public function __construct(Session $s, NController $mc = null,
+                                ILeftContent $lc = null,
+                                IRightContent $rc = null, array $css = array(),
+                                array $settings = array(), MenuController $menu)
     {
         $this->session      = $s;
         $this->mainContent  = $mc;
@@ -50,7 +53,8 @@ class Page
 
     public function buildPage()
     {
-        if ( $this->settings['site_closed']->getValue() && !$this->session->isAuthenticated() )
+        if ( $this->settings['site_closed']->getValue()
+            && !$this->session->isAuthenticated() )
         {
             $error = $this->session->getError();
             require_once 'resources/site/html/new/closed.php';

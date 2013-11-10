@@ -82,7 +82,8 @@ class ArticleController extends NController implements IMainContent
         {
             // Validate user input
             $user = $this->userMapper->findById(1);
-            $article = new Article(0, null, 0, 0, null, 0, $_POST['title'], $_POST['ingress'], $_POST['text'], $user);
+            $article = new Article(0, null, 0, 0, null, 0, $_POST['title'],
+                $_POST['ingress'], $_POST['text'], $user);
             if ($this->articleMapper->insert($article) != 0)
             {
                 echo 'Article was inserted!';
