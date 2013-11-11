@@ -11,4 +11,6 @@ namespace awesome;
 
 class Ragnar {
 
-} 
+}
+
+echo 'Hei på deg, Truls!';
