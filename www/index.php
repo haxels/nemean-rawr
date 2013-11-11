@@ -1,5 +1,5 @@
 <?php
-
+echo "This is a test";
     session_start();
 
 try
