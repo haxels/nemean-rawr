@@ -1,4 +1,4 @@
 <?php
 
-echo "Edit....";
+echo "Hei Ragnar!";
 ?>
