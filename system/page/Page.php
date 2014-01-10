@@ -68,7 +68,7 @@ class Page
             $data['session'] = $this->session;
             $data['error'] = $this->session->getError();
             $data['settings'] = $this->settings;
-            require_once 'resources/site/html/' . $this->headerFile . '.php';
+            require_once 'site/html/' . $this->headerFile . '.php';
 
             /** Left content */
             // Må på sikt flyttes inn i de repektive html taggene
