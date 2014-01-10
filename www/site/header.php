@@ -19,8 +19,8 @@ $submenu = $data['menu']->getSubMenu();
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"  />
 
-    <link href="resources/site/html/new/css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="resources/site/html/new/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/all.css" rel="stylesheet" type="text/css" />
 
     <!-- Internet Explorer HTML5 enabling script: -->
     <!--[if IE]>
@@ -28,18 +28,18 @@ $submenu = $data['menu']->getSubMenu();
     <![endif]-->
 
     <!--[if !IE]> -->
-    <link href="resources/site/html/new/css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/stylesheet.css" rel="stylesheet" type="text/css" />
     <!-- <![endif]-->
 
     <!--[if lt IE 7]>
-        <link href="resources/site/html/new/css/IE6.css" rel="stylesheet" type="text/css" />
+        <link href="site/css/IE6.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <!--[if lt IE 9]>
-    <link href="resources/site/html/new/css/IE_lt9.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/IE_lt9.css" rel="stylesheet" type="text/css" />
     <![endif]-->
 
     <!--[if gte IE 9]>
-    <link href="resources/site/html/new/css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/stylesheet.css" rel="stylesheet" type="text/css" />
     <!-- <![endif]-->
 
 
@@ -59,7 +59,7 @@ $submenu = $data['menu']->getSubMenu();
     </style>
     <!-- <![endif]-->
 
-    <link href="resources/site/html/new/css/map.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/map.css" rel="stylesheet" type="text/css" />
     <link href="resources/img/kiosk/kiosk.css" rel="stylesheet" type="text/css" />
 
     <link rel="shortcut icon" href="favicon.ico" />
@@ -68,9 +68,9 @@ $submenu = $data['menu']->getSubMenu();
     <!-- jQuery Javascript -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="resources/site/js/jquery.reset.js"></script>
-    <script type="text/javascript" src="resources/site/html/new/js/visual.js"></script>
-    <script type="text/javascript" src="resources/img/kiosk/js/simpletip/jquery.simpletip-1.3.1.pack.js"></script>
+    <script type="text/javascript" src="site/js/jquery.reset.js"></script>
+    <script type="text/javascript" src="site/html/new/js/visual.js"></script>
+    <script type="text/javascript" src="img/kiosk/js/simpletip/jquery.simpletip-1.3.1.pack.js"></script>
     <script type="text/javascript" src="resources/img/kiosk/js/script.js"></script>
 
     <!-- Popup jQuery -->
