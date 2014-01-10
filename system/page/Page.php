@@ -57,7 +57,7 @@ class Page
             && !$this->session->isAuthenticated() )
         {
             $error = $this->session->getError();
-            require_once 'resources/site/html/new/closed.php';
+            require_once '/site/closed.php';
         }
         else
         {
@@ -92,10 +92,10 @@ class Page
                 $data['content'] = $this->mainContent;
             }
 
-            require_once 'resources/site/html/' . $this->contentFile . '.php';
+            require_once 'site/' . $this->contentFile . '.php';
 
             /** Footer */
-            require_once 'resources/site/html/' . $this->footerFile . '.php';
+            require_once 'site/' . $this->footerFile . '.php';
         }
     }
 }
