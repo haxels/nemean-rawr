@@ -73,9 +73,9 @@ try
             $lc =  ($module instanceof ILeftContent) ? $lc = $module : null;
 
             $page = new Page($session, $module, $lc, null, [], $settings, $menu);
-            $page->addHeader('new/header');
-            $page->addFooter('new/footer');
-            $page->addContent('new/content');
+            $page->addHeader('header');
+            $page->addFooter('footer');
+            $page->addContent('content');
             $page->buildPage();
         }
 
@@ -97,9 +97,9 @@ try
          $lc =  ($module instanceof ILeftContent) ? $lc = $module : null;
         /** Build page */
         $page = new Page($session, $module, $lc, null, [], $settings, $menu);
-        $page->addHeader('new/header');
-        $page->addFooter('new/footer');
-        $page->addContent('new/content');
+        $page->addHeader('header');
+        $page->addFooter('footer');
+        $page->addContent('content');
         $page->buildPage();
     }
 
