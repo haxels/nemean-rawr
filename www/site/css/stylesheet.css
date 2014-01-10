@@ -22,7 +22,7 @@ a:active    {text-decoration: none; color: #3F3}
 
 header
 {
-    background-image: url("../../../img/design/header.png");
+    background-image: url("../img/header_new.png");
     height: 242px;
     position: relative;
 }
@@ -75,7 +75,7 @@ nav li a:hover, nav li a:active
 #content
 {
     display: table;
-    background: transparent url(../../../img/design/bg_new.png) no-repeat;
+    background: transparent url(../img/bg_new.png) no-repeat;
     min-height: 200px;
     height: 100%;
 }
