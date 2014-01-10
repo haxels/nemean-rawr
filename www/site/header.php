@@ -69,7 +69,7 @@ $submenu = $data['menu']->getSubMenu();
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
     <script type="text/javascript" src="site/js/jquery.reset.js"></script>
-    <script type="text/javascript" src="site/html/new/js/visual.js"></script>
+    <script type="text/javascript" src="site/js/visual.js"></script>
     <script type="text/javascript" src="img/kiosk/js/simpletip/jquery.simpletip-1.3.1.pack.js"></script>
     <script type="text/javascript" src="resources/img/kiosk/js/script.js"></script>
 
