@@ -1,0 +1,225 @@
+/*-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+	
+	* Project. :	Nemean
+	* Version. :	1.1 (04-01-2014)
+	* Website. : 	Nemean.no
+	* Author . :	Nemean Web Development Crew
+	* File . . :	style.css (stylesheet)
+
+-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-*/
+* {
+	font-family: 'Maven Pro', sans-serif;
+}
+body {
+	display: block;
+	background: #fafafa;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+nav {
+	margin-top: 20px;
+
+}
+.menuitem {
+	font-weight: 700;
+	font-size: 1.2em;
+	color: #364d1a;
+	line-height: calc(1.2em + 4px);
+}
+.menuitem:hover {
+	color: #73cd07;
+}
+header {
+	height: 218px;
+	width: 100%;
+}
+header div::before,header div::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+header h3, header h5 {
+	margin-bottom: 0;
+}
+header h3 {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 24px;
+}
+header h5 {
+	font-size: 18px;
+	font-weight: 400;
+	margin-top: 0;
+}
+header .pricetag {
+
+}
+.headerpart-1, .headerpart-2, .headerpart-3 {
+	height: inherit;
+	display: inline;
+	float: left;
+	color: #fafafa;
+}
+.headerpart-1 {
+	width: 40%;
+	background-color: #364d1a;
+}
+.headerpart-2 h3, .headerpart-3 h3 {
+	text-align: center;
+	line-height: 218px;
+	margin: 0;
+}
+#left-column, #right-column { /* Headerpart-1 columns */
+	width: calc(50% - 15px);
+	height: 100%;
+	padding-left: 15px;
+}
+#left-column {
+	float: left;
+}
+#right-column {
+	float: right;
+}
+.triangle-1::after {
+	z-index: 10;
+	background-color: #364d1a;
+}
+.triangle-1::before, .triangle-1::after {
+	position: absolute;
+	top: 105px;
+	left: auto;
+	width: 60px;
+	height: 60px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+.headerpart-2 {
+	width: 30%;
+	background-color: #73cd07;
+}
+.triangle-2::after {
+	z-index: 11;
+	background-color: #73cd07;
+}
+.triangle-2::before, .triangle-2::after {
+	position: absolute;
+	top: 105px;
+	left: auto;
+	width: 60px;
+	height: 60px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+.headerpart-3 {
+	width: 30%;
+	background-color: #364d1a;
+}
+.global-wrapper {
+	margin: 5px auto;
+	width: 1302px; /* Total width */
+}
+.login {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1302px; /* Total width */
+	height: 19px;
+	margin-bottom: 2px;
+}
+#login-link {
+	float:right;
+	color: #000000;
+}
+#login-link:hover {
+	color: #73ce07;
+}
+.sidebar-left {
+	float: left;
+	width: 182px;
+	height: 1980px; /* Total height */
+}
+.content-right {
+	float: right;
+	width: 1100px; /* Propotional with total width */
+	height: 1980px; /* Total height */
+}
+.image-slider {
+	width: 100%;
+	height: 350px;
+	margin-top: 20px;
+	background-color: #73cd07;
+}
+.socialfeed, .burgerfeed, .gallery, .sponsors, .questions, .applytocrew { /* All sections */
+	margin-top: 20px;
+}
+.socialfeed, .gallery, .questions { /* Left subsection */
+	float: left;
+	margin-right: 20px;
+	width: 60%;
+}
+.burgerfeed, .sponsors { /* Right subsection */
+	float: right;
+	width: calc(40% - 20px);
+}
+.questions, .applytocrew {
+	float: left;
+	width: calc(30% - 10px) !important;
+	height: 300px;
+}
+.socialfeed {
+	background-color: #73cd07;
+	height: 700px;
+}
+.burgerfeed {
+	background-color: #73cd07;
+	height: 300px;
+}
+.gallery {
+	height: 300px;
+	background-color: #73cd07;
+}
+.sponsors {
+	height: 700px;
+	background-color: #73cd07;
+}
+.questions {
+	background-color: #73cd07;
+}
+.applytocrew {
+	background-color: #73cd07;
+}
+.box-title {
+	width: 100%;
+	height: 40px; /* Be sure to change param 1 (Propotional)*/
+	background-color: #364d1a;
+}
+.box-title h3 {
+	color: #fafafa;
+	margin: 0;
+	font-weight: 500;
+	font-size: 1.5em;
+	line-height: 40px; /* Param 1 */
+	margin-left: 10px;
+}
+.box-content {
+	color: #fafafa;
+	margin: 0;
+	font-weight: 500;
+	text-align: center;
+	font-size: 4em;
+}
+.box-content-text {
+	color: #fafafa;
+	margin-top: 10px;
+	font-weight: 500;
+	text-align: center;
+	font-size: 1.5em;
+}
+footer {
+	text-align: center;
+}
+footer h4 {
+	font-weight: 400;
+	color: gray;
+}
