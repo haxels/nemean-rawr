@@ -41,9 +41,9 @@ try
     }
     else
     {
-        if (file_exists(MODULEPATH . 'articles' . '/config.php'))
+        if (file_exists(MODULEPATH . 'start' . '/config.php'))
         {
-            require_once MODULEPATH . 'articles' . '/config.php';
+            require_once MODULEPATH . 'start' . '/config.php';
         }
         else
         {

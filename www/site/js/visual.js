@@ -16,12 +16,19 @@ $(document).ready(function(){
     });
     
     function formBoxReplace(divID) {
+        if (divID != $(".formBox").attr("id")) {
         $(".formBox").slideUp(function() {
             $(".formBox").html("");
+            $(".formBox").attr("id", divID);
             $(".formBox").html($(divID).html());
             $(".formBox").slideDown();
             $(".X").fadeIn();
         });
+        }
+        else {
+            $(".formBox").slideUp();
+            $(".X").fadeOut();
+        }
     }
 
     $("#loginBoxForm").submit(function(){

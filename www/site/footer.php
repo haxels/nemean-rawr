@@ -51,7 +51,7 @@
             </li>
             <li>
                 <label for="birthdate">Fødselsdato:</label>
-                <input type="text" name="birthdate" required="required" placeholder="dd/mm/yyyy" />
+                <input type="text" name="birthdate" required="required" placeholder="DD/MM/YYYY" />
                 <span class="hidden"></span>
             </li>
             <li>

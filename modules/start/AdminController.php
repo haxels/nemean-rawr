@@ -6,7 +6,7 @@
  * Time: 9:57 AM
  * To change this template use File | Settings | File Templates.
  */
-class StartController extends NController
+class AdminController extends NController
 {
     protected $moduleName = 'start';
     protected $session;
@@ -20,7 +20,10 @@ class StartController extends NController
 
     public function display()
     {
-        $this->loadView('start');
+        $data['site_closed'] = $this->settings['site_closed']->getValue();
+        $data['locked'] = $this->settings['locked']->getValue();
+        $data['regOpen'] = $this->settings['comporeg_open']->getValue();
+        $this->loadView('admin/list', $data);
     }
 
     public function quickActions()

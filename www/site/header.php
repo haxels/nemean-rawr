@@ -24,7 +24,7 @@ $submenu = $data['menu'] -> getSubMenu();
     <script type="text/javascript" src="site/js/visual.js"></script>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"  />
-
+    <link href="site/css/map.css" rel="stylesheet" type="text/css" />
     <link href="site/css/style.css" rel="stylesheet" type="text/css" />
 
 </head>

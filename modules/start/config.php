@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-    require_once MODULEPATH . 'start/AdminController.php';
+    require_once MODULEPATH . 'start/StartController.php';
 
 
-    $module = new AdminController($session, $settings);
+    $module = new StartController($session, $settings);
