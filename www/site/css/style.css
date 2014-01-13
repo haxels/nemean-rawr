@@ -1,0 +1,467 @@
+/*-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+	
+	* Project. :	Nemean
+	* Version. :	1.1 (04-01-2014)
+	* Website. : 	Nemean.no
+	* Author . :	Nemean Web Development Crew
+	* File . . :	style.css (stylesheet)
+
+-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-*/
+* {
+	font-family: 'Maven Pro', sans-serif;
+}
+body {
+	display: block;
+	background: #fafafa;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+nav {
+	margin-top: 20px;
+
+}
+.menuitem {
+	font-weight: 700;
+	font-size: 1.2em;
+	color: #364d1a;
+	line-height: calc(1.2em + 4px);
+}
+.menuitem:hover {
+	color: #73cd07;
+}
+header {
+	height: 218px;
+	width: 100%;
+}
+header div::before,header div::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+header h3, header h5 {
+	margin-bottom: 0;
+}
+header h3 {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 24px;
+}
+header h5 {
+	font-size: 18px;
+	font-weight: 400;
+	margin-top: 0;
+}
+header .pricetag {
+
+}
+.headerpart-1, .headerpart-2, .headerpart-3 {
+	height: inherit;
+	display: inline;
+	float: left;
+	color: #fafafa;
+}
+.headerpart-1 {
+	width: 40%;
+	background-color: #364d1a;
+}
+.headerpart-2 h3, .headerpart-3 h3 {
+	text-align: center;
+	line-height: 218px;
+	margin: 0;
+}
+#left-column, #right-column { /* Headerpart-1 columns */
+	width: calc(50% - 15px);
+	height: 100%;
+	padding-left: 15px;
+}
+#left-column {
+	float: left;
+}
+#right-column {
+	float: right;
+}
+.triangle-1::after {
+	z-index: 10;
+	background-color: #364d1a;
+}
+.triangle-1::before, .triangle-1::after {
+	position: absolute;
+	top: 105px;
+	left: auto;
+	width: 60px;
+	height: 60px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+.headerpart-2 {
+	width: 30%;
+	background-color: #73cd07;
+}
+.triangle-2::after {
+	z-index: 11;
+	background-color: #73cd07;
+}
+.triangle-2::before, .triangle-2::after {
+	position: absolute;
+	top: 105px;
+	left: auto;
+	width: 60px;
+	height: 60px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+.headerpart-3 {
+	width: 30%;
+	background-color: #364d1a;
+}
+.global-wrapper {
+	margin: 5px auto;
+	width: 1302px; /* Total width */
+}
+.login {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1302px; /* Total width */
+	height: 19px;
+	margin-bottom: 2px;
+}
+#login-link {
+	float:right;
+	color: #000000;
+}
+#login-link:hover {
+	color: #73ce07;
+}
+.sidebar-left {
+	float: left;
+	width: 182px;
+	height: 1980px; /* Total height */
+}
+.content-right {
+	float: right;
+	width: 1100px; /* Propotional with total width */
+	height: 1980px; /* Total height */
+}
+.image-slider {
+	width: 100%;
+	height: 350px;
+	margin-top: 20px;
+	background-color: #73cd07;
+}
+.socialfeed, .burgerfeed, .gallery, .sponsors, .questions, .applytocrew { /* All sections */
+	margin-top: 20px;
+}
+.socialfeed, .gallery, .questions { /* Left subsection */
+	float: left;
+	margin-right: 20px;
+	width: 60%;
+}
+.burgerfeed, .sponsors { /* Right subsection */
+	float: right;
+	width: calc(40% - 20px);
+}
+.questions, .applytocrew {
+	float: left;
+	width: calc(30% - 10px) !important;
+	height: 300px;
+	-webkit-transition: background 0.2s linear;
+	-moz-transition: background 0.2s linear;
+	-ms-transition: background 0.2s linear;
+	-o-transition: background 0.2s linear;
+	transition: background 0.2s linear;
+}
+.questions:hover, .applytocrew:hover {
+	background-color: gray; /* Color transition */
+}
+
+.socialfeed {
+	background-color: #73cd07;
+	height: 700px;
+}
+.burgerfeed {
+	background-color: #73cd07;
+	height: 300px;
+}
+.gallery {
+	height: 300px;
+	background-color: #73cd07;
+}
+.sponsors {
+	height: 700px;
+	background-color: #73cd07;
+}
+.questions {
+	background-color: #73cd07;
+}
+.applytocrew {
+	background-color: #73cd07;
+}
+.box-title {
+	width: 100%;
+	height: 40px; /* Be sure to change param 1 (Propotional)*/
+	background-color: #364d1a;
+}
+.box-title h3 {
+	color: #fafafa;
+	margin: 0;
+	font-weight: 500;
+	font-size: 1.5em;
+	line-height: 40px; /* Param 1 */
+	margin-left: 10px;
+}
+.box-content {
+	color: #fafafa;
+	margin: 0;
+	font-weight: 500;
+	text-align: center;
+	font-size: 4em;
+}
+.box-content-text {
+	color: #fafafa;
+	margin-top: 10px;
+	font-weight: 500;
+	text-align: center;
+	font-size: 1.5em;
+}
+footer {
+	text-align: center;
+}
+footer h4 {
+	font-weight: 400;
+	color: gray;
+}
+
+
+
+
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv
+{
+    display: none;
+    position: absolute;
+    width: 380px;
+    top: 40%;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 2000;
+    font-size: 10px;
+    background: -webkit-gradient(linear, left top, left bottom,from(rgba(234,241,215, 0.9)), to(rgba(187,198,166,0.9)));
+    background: -moz-linear-gradient(rgba(234,241,215, 0.9), rgba(187,198,166,0.9));
+    background: -ms-linear-gradient(top, rgba(234,241,215, 0.9) 0%, rgba(187,198,166,0.9) 100%);
+    background: -o-linear-gradient( rgba(234,241,215, 0.9),rgba(187,198,166,0.9));
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+    -webkit-box-shadow: 25px 3px 5px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    border: 2px solid #94BF35;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+
+#applicationForm
+{
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: 520px;
+    top: 20%;
+    left: 50%;
+    margin-left: -300px;
+    z-index: 1000;
+    font-size: 10px;
+    background: -webkit-gradient(linear, left top, left bottom,from(rgba(234,241,215, 0.9)), to(rgba(187,198,166,0.9)));
+    background: -moz-linear-gradient(rgba(234,241,215, 0.9), rgba(187,198,166,0.9));
+    background: -ms-linear-gradient(top, rgba(234,241,215, 0.9) 0%, rgba(187,198,166,0.9) 100%);
+    background: -o-linear-gradient( rgba(234,241,215, 0.9),rgba(187,198,166,0.9));
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+    -webkit-box-shadow: 25px 3px 5px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    border: 2px solid #94BF35;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: auto;
+
+}
+
+#applicationForm form
+{
+    width: 560px;
+    height: 500px;
+    padding: 10px 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+#applicationForm form li
+{
+    list-style-type: none;
+    padding: 5px 0;
+    padding-left: 20px;
+
+}
+#applicationForm form label
+{
+    width: 200px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #4b4b4b;
+}
+
+#applicationForm  input
+ {
+     margin-right: 20px;
+     float: right;
+    width: 50%;
+
+ }
+
+#applicationForm textarea
+{
+    margin-right: 0px;
+    padding: 10px;
+    width: 92%;
+
+}
+
+
+#terms
+{
+    padding: 10px;
+    margin-top: 10px;
+    overflow: auto;
+    height: 100px;
+    background: white;
+
+    list-style: disc;
+}
+
+#terms ul
+{
+    padding: 5px;
+}
+
+
+#notify p
+{
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#qRegister form, #forgotPsw form, #loginBox form, #completereg form, #reserveSeat form, #removeRsv form
+{
+    width: 310px;
+    padding: 10px 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+#qRegister form h4, #forgotPsw form h4, #loginBox form h4, #completereg form h4, #reserveSeat form h4, #removeRsv form h4, #applicationForm form h4
+{
+    color: #769F21;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#qRegister form li, #forgotPsw form li, #loginBox form li, #completereg form li, #reserveSeat form li, #removeRsv form li
+{
+    list-style-type: none;
+    padding: 5px 0;
+    height: 15px;
+}
+
+#qRegister form label, #forgotPsw form label, #loginBox form label, #completereg form label, #reserveSeat form label, #removeRsv label
+{
+    width: 200px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #4b4b4b;
+}
+
+#qRegister form input, #loginBox form input, #completereg form input
+{
+    margin-left: 15px;
+    float: right;
+    width: 40%;
+}
+
+#forgotPsw form input, #reserveSeat form input, #removeRsv form input
+{
+    margin-left: 15px;
+    float: right;
+    width: 70%;
+}
+
+#qRegister form input[type=submit], #forgotPsw form input[type=submit], #loginBox form input[type=submit], #completereg form input[type=submit], #reserveSeat form input[type=submit], #removeRsv form input[type=submit]
+{
+    width: 80px;
+    float: right;
+}
+
+form input[type=submit]
+{
+    border: 1px solid rgb(144, 144, 144);
+    background: #FFFFFF;
+    background: -webkit-gradient(linear, left top, left bottom,from(rgb(237, 237, 237)), to(rgb(201, 201, 201)));
+    padding: 2px;
+    font-size: 12px;
+    color: #6b6b6b;
+    font-weight: bold;
+}
+
+form input[type=submit]:hover
+{
+    border: 1px solid rgb(144, 144, 144);
+    background: -webkit-gradient(linear, left top, left bottom,from(rgb(230, 230, 230)), to(rgb(212, 212, 212)));
+    padding: 2px;
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#notifyClose
+{
+    float: right;
+    margin: 5px;
+}
+
+.X
+{
+    position: relative;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #868686;
+    font-weight: bold;
+    float: right;
+    display: none;
+}
+
+.X:hover
+{
+    text-decoration: none;
+    color: #d1d1d1;
+}
+
+form li .hidden
+{
+    display: none;
+    position: absolute;
+    right: 10px;
+    background-image: url("../../../img/orbred.png");
+    width: 30px;
+    height: 30px;
+}
+
+.loader
+{
+    display: none;
+    position: absolute;
+    left: 5px;
+    bottom: 15px;
+}
+

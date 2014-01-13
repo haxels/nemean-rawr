@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 $session = $data['session'];
-$menu    = $data['menu']->getMenu();
-$submenu = $data['menu']->getSubMenu();
+$menu = $data['menu'] -> getMenu();
+$submenu = $data['menu'] -> getSubMenu();
 ?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"
@@ -16,84 +16,16 @@ $submenu = $data['menu']->getSubMenu();
 <head>
 
     <title>Nemean</title>
+    
+    <!-- jQuery Javascript -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="site/js/jquery.reset.js"></script>
+    <script type="text/javascript" src="site/js/visual.js"></script>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"  />
 
-    <link href="site/css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="site/css/all.css" rel="stylesheet" type="text/css" />
-
-    <!-- Internet Explorer HTML5 enabling script: -->
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!--[if !IE]> -->
-    <link href="site/css/stylesheet.css" rel="stylesheet" type="text/css" />
-    <!-- <![endif]-->
-
-    <!--[if lt IE 7]>
-        <link href="site/css/IE6.css" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <link href="site/css/IE_lt9.css" rel="stylesheet" type="text/css" />
-    <![endif]-->
-
-    <!--[if gte IE 9]>
-    <link href="site/css/stylesheet.css" rel="stylesheet" type="text/css" />
-    <!-- <![endif]-->
-
-
-    <!--[if !IE]> -->
-    <style>
-
-        .evenDivider a:hover
-        {
-             z-index: 99;
-            transform: scale(1.5,1.5);
-            -ms-transform: scale(1.5,1.5);
-            -webkit-transform:scale(1.5,1.5);
-            -moz-transform:scale(1.5,1.5);
-            -o-transform: scale(1.5);
-        }
-
-    </style>
-    <!-- <![endif]-->
-
-    <link href="site/css/map.css" rel="stylesheet" type="text/css" />
-    <link href="resources/img/kiosk/kiosk.css" rel="stylesheet" type="text/css" />
-
-    <link rel="shortcut icon" href="favicon.ico" />
-
-
-    <!-- jQuery Javascript -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="site/js/jquery.reset.js"></script>
-    <script type="text/javascript" src="site/js/visual.js"></script>
-    <script type="text/javascript" src="img/kiosk/js/simpletip/jquery.simpletip-1.3.1.pack.js"></script>
-    <script type="text/javascript" src="resources/img/kiosk/js/script.js"></script>
-
-    <!-- Popup jQuery -->
-    <script type="text/javascript" src="resources/img/kiosk/js/popup.js"></script>
-
-    <script type="text/javascript">
-        function sjekkBurger()
-        {
-            elmID = document.getElementById("rForts");
-            elmBeID = document.getElementById("dialogBeskjed");
-            if (document.getElementById("table_1") || document.getElementById("table_18"))
-            {
-                elmID.style.visibility = "visible";
-                elmBeID.innerHTML = "Er du sikker på at du vil fortsette?";
-            }
-            else
-            {
-                elmID.style.visibility = "hidden";
-                elmBeID.innerHTML = "Du må bestille en rett før du kan gå videre!";
-
-            }
-        }
-    </script>
+    <link href="site/css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -108,20 +40,59 @@ $submenu = $data['menu']->getSubMenu();
 </div>
 <![endif]-->
 
-    <div class="wrapper">
+    <div class="global-wrapper">
 
-        <header><a href="http://www.mamoz.no" style="position: absolute; right: 70px; top: 120px; width: 200px; height: 40px;"></a></header>
-
-        <nav id="topmenu">
-            <?php foreach ($menu as $item) : ?>
-            <li><a href="<?php echo ($item->isParent()) ? '?pID='.$item->getMenuId().'&'.$item->getLink() : $item->getLink(); ?>"><?php echo $item->getLabel(); ?></a></li>
-            <?php endforeach; ?>
+        <div class="login"> 
             <?php if ($session->isAuthenticated()) : ?>
-            <a href="?mAct=logout" class="lBtn" id="logoutBtn"><div><?php echo $session->getUser()->getFirstName(); ?></div></a>
+            <a href="?mAct=logout" class="lBtn" id="login-link"><div><?php echo $session -> getUser() -> getFirstName(); ?></div></a>
             <?php else : ?>
-            <a class="lBtn" id="loginBtn"><div>Logg inn</div></a>
+            <a class="lBtn" id="login-link"><div>Logg inn</div></a>
             <?php endif; ?>
-        </nav>
+        </div>
+
+        <section class="sidebar-left">
+            <a href="index.html"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
+
+            <nav>
+                <?php foreach ($menu as $item) : ?>
+                <a class="menuitem" href="<?php echo ($item->isParent()) ? '?pID='.$item->getMenuId().'&'.$item->getLink() : $item->getLink(); ?>"><?php echo $item -> getLabel(); ?></a><br>
+                <?php endforeach; ?>
+                
+            </nav>
+            </section>
+
+            <div class="content-right">
+                <header>
+                    <a class="headerpart-1" href=""> <!-- Part 1, Darkgreen. Link to information-page. Hover event not created yet. --> <!-- Divided into two columns -->
+                        <div id="left-column">
+                            <h3>Hvor?</h3>
+                            <h5>Kyrksæterøra,
+                            <br/>
+                            Sør-Trøndelag</h5>
+                            <h3>Når?</h3>
+                            <h5>19. - 23. Februar 2014</h5>
+                        </div>
+    
+                        <div id="right-column">
+                            <!-- Using spans to make it easier in php, I think... -->
+                            <h3>Pris?</h3>
+                            <h5>Deltaker: <span class="pricetag">420,-</span></h5>
+                            <h5>PGA: <span class="pricetag">520,-</span></h5>
+                            <h5>Kombi: <span class="pricetag">620,-</span></h5>
+                            <h5>Besøke: <span class="pricetag">150,-</span></h5>
+                        </div>
+                        <br style="clear:both;"/>
+                        <!-- Force headerpart-1 to surround the two columns (floating divs, may not be nessesary, but since I'm cool...) --> </a>
+                        <div class="triangle-1"></div>
+                        <a class="headerpart-2" href="" id="registerBtn"> <!-- Part 2, Lightgreen. Link to registration-page. Hover event not created yet. --> <h3>Registrering</h3> </a>
+                        <div class="triangle-2"></div>
+                        <a class="headerpart-3" href=""> <!-- Part 3, Darkgreen. Link to spacemap. Hover event not created yet. --> <h3 id="spacemap">Plasskart</h3> </a>
+                    </header>
+
+                    <?php foreach ($submenu as $item) : ?>
+                    <!-- <li><a href="<?php echo $item->getLink(); ?>&pID=<?php echo $_GET['pID']; ?>"><?php echo $item->getLabel(); ?></a></li> -->
+                    <?php endforeach; ?>
+
 
 
 

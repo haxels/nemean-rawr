@@ -21,8 +21,6 @@
     </footer>
 
     <div id="qRegister">
-
-        <a class="X" href="#">X</a>
         <form id="quickRegForm" action="?m=users&act=qReg" method="POST">
             <h4>Registrering</h4>
             <hr />
@@ -114,7 +112,6 @@
     </div>
 
     <div id="forgotPsw">
-        <a class="X" href="#">X</a>
         <form id="forgotPswForm" action="" method="POST">
         <h4>Glemt passord</h4>
         <hr />
@@ -133,7 +130,6 @@
     </div>
 
     <div id="loginBox">
-        <a class="X" href="#">X</a>
 
         <form id="loginBoxForm" action="" method="POST">
             <h4>Login</h4>
@@ -170,7 +166,6 @@
     </div>
 
     <div id="completereg">
-        <a class="X" href="#">X</a>
 
         <form id="cRegForm" action="" method="POST">
             <h4>Fullfør registrering</h4>
@@ -209,7 +204,6 @@
     </div>
 
     <div id="reserveSeat">
-        <a class="X" href="#">X</a>
 
         <form id="reserveSeatForm" action="" method="POST">
             <h4></h4>
@@ -228,7 +222,6 @@
     </div>
 
     <div id="removeRsv">
-        <a class="X" href="#">X</a>
 
         <form id="removeRsvForm" action="" method="POST">
             <h4></h4>
@@ -249,8 +242,6 @@
 
 
 <div id="applicationForm">
-
-    <a class="X" href="#">X</a>
     <form id="application" action="" method="POST">
         <h4>Søknadskjema for crewopptak</h4>
         <hr />

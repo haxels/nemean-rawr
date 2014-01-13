@@ -10,20 +10,19 @@ var seatID;
 
 $(document).ready(function(){
 
-   // showFirstInfo();
-
     $("#registerBtn").click(function(){
-
-        setCookie('firstTime', 't', 60*60*60*24*365);
-        $("#firstTime").fadeOut(300);
-
-        $("#loginBox").fadeOut(function(){
-            $("#qRegister").fadeIn();
-            addMask();
-        });
-
+        formBoxReplace("#qRegister");
         return false;
     });
+    
+    function formBoxReplace(divID) {
+        $(".formBox").slideUp(function() {
+            $(".formBox").html("");
+            $(".formBox").html($(divID).html());
+            $(".formBox").slideDown();
+            $(".X").fadeIn();
+        });
+    }
 
     $("#loginBoxForm").submit(function(){
         var urlen = "";
@@ -41,7 +40,6 @@ $(document).ready(function(){
                 $("#loginBtn").attr('href', '?mAct=logout');
                 $("#loginBtn").attr('id', 'logoutBtn');
                 location.href='index.php';
-                removeMask();
             }
         });
         $(".loader").show();
@@ -149,38 +147,33 @@ $(document).ready(function(){
 
     $("#notifyClose").click(function(){
         $("#notify").fadeOut();
-        removeMask();
         return false;
     });
 
     $(".X").click(function(){
-        $(".X").closest('div').fadeOut(300, function(){
-            $("#overlay").remove();
-            resetAllForms();
+        $(".formBox, .X").slideUp(300, function(){
+            //resetAllForms();
         });
         return false;
     });
 
     $("#forgotPswBtn").click(function(){
-
-        $("#loginBox").fadeOut(function(){
-            $("#forgotPsw").fadeIn();
-            addMask();
-        });
+        formBoxReplace("#forgotPsw");
+       // $("#loginBox").fadeOut(function(){
+        //    $("#forgotPsw").fadeIn();
+        //});
 
         return false;
     });
 
-    $("#loginBtn").click(function(){
-        $("#loginBox").fadeIn();
-        addMask();
+    $(".lBtn").click(function(){
+        formBoxReplace("#loginBox");
+        //$(".formBox").html($("#loginBox").html());
     });
 
     $(".crewApply").click(function()
     {
-
       $("#applicationForm").fadeIn();
-        addMask();
         return false;
     });
 
@@ -377,60 +370,11 @@ $(document).ready(function(){
         return false;
     });
 
-
-    /*
-    $(window).resize(function() {
-        //showFirstInfo();
-    });
-    */
-
-
-    function showFirstInfo()
-    {
-        if (!checkCookie())
-        {
-            var position = $("#loginBtn").offset();
-            var width = $("#loginBtn").outerWidth();
-            var css = {
-                position: "absolute",
-                top: position.top +"px",
-                left: (position.left + width) + "px"
-            };
-            if ($("#firstTime").length == 0)
-            {
-                $("body").append("<div id='firstTime'><----- Registrer deg her</div>");
-            }
-            $("#firstTime").css(css);
-        }
-    }
-
     function notify(msg)
     {
         $("#notifyMsg").html(msg);
         $("#notify").fadeIn(500);
-        addMask();
     }
-
-    function addMask()
-    {
-        $("body").append('<div id="overlay"></div>');
-        $("#overlay").fadeIn(300);
-    }
-
-    function removeMask(fade)
-    {
-        var time = 0;
-        if (arguments.length == 1)
-        {
-            time = fade;
-        }
-        else
-        {
-            time = 300;
-        }
-        $("#overlay").fadeOut(time).remove();
-    }
-
 
     $(".mapAvailable").click(function(){
         return false;
@@ -441,7 +385,6 @@ $(document).ready(function(){
         seatID = btnid;
         $("#removeRsvForm").find("h4").html('Plass ' + seatID);
         $("#removeRsv").fadeIn(500);
-        addMask();
         return false;
     }
 
@@ -456,7 +399,6 @@ $(document).ready(function(){
                 // Reserver
                 $("#reserveSeat").fadeIn(500);
                 $("#reserveSeatForm").find("h4").html('Plass ' + seatID);
-                addMask();
             }
             else
             {
@@ -469,7 +411,6 @@ $(document).ready(function(){
                 {
                     $("#cRegSID").val(''+ seatID);
                     $("#completereg").fadeIn(500);
-                    addMask();
                 }
             }
         });
@@ -492,43 +433,6 @@ $(document).ready(function(){
             $(".loader").hide();
         }
     });
-
-    function checkCookie()
-    {
-        var fT = getCookie("firstTime");
-        if (fT != null && fT != "")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    function setCookie(c_name,value,exdays)
-    {
-        var exdate=new Date();
-        exdate.setDate(exdate.getDate() + exdays);
-        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-        document.cookie=c_name + "=" + c_value;
-    }
-
-    function getCookie(c_name)
-    {
-        var i,x,y,ARRcookies=document.cookie.split(";");
-        for (i=0;i<ARRcookies.length;i++)
-        {
-            x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-            y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-            x=x.replace(/^\s+|\s+$/g,"");
-            if (x==c_name)
-            {
-                return unescape(y);
-            }
-        }
-    }
-
 
     $("#terms").scroll(function(){
 

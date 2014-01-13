@@ -25,7 +25,6 @@
     N.popup = function(selector, callback){
         callback();
         $(selector).fadeIn(500);
-        addMask();
     }
 
 
@@ -102,7 +101,6 @@
             default:
                 s.fadeOut(500);
                 $(".adminPopup").fadeOut(500);
-                removeMask();
                 break;
         }
 
@@ -120,11 +118,7 @@
     }
 
 
-function addMask()
-{
-    $("body").append('<div id="overlay"></div>');
-    $("#overlay").fadeIn(300);
-}
+
 /**
  *
  * @param response
@@ -156,19 +150,7 @@ function formResponse(response, selector, type){
 
 }
 
-function removeMask(fade)
-{
-    var time = 0;
-    if (arguments.length == 1)
-    {
-        time = fade;
-    }
-    else
-    {
-        time = 300;
-    }
-    $("#overlay").fadeOut(time).remove();
-}
+
 
 function resetForms(){
     $("form").each(function(){

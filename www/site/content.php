@@ -8,67 +8,55 @@
  */
 ?>
 
-        <div id="content">
-
-            <div class="spacer"></div>
-
-            <aside id="sidebar">
-
-                <?php
-                $settings = $data['settings'];
-
-                if(count($submenu) > 0)
-                {
-                    echo $menu[$_GET['pID']]->getLabel();
-                }
-
-                else
-                {
-                	echo "<br>Info i farta";
-                    echo "<div id='siteinfo'><br><b>Når?</b><br>";
-                    echo "9.-13. oktober 2013<br><br><br>";
-                    echo "<b>Hvor?</b><br>Kyrksæterøra, <br>Sør-Trøndelag<br><br>";
-                    echo "<b>Pris?</b><br>";
-                    echo /*"<br><p>PGA: &nbsp &nbsp <b>500,00</b></p><p>Kombi: &nbsp<b>650,00</b></p>*/"<p>Delta:&nbsp;  <b>&nbsp;".$settings['deltaker_pris']->getValue()."</b></p> <p>Besøk:&nbsp <b>".$settings['besokende_pris']->getValue()."</b></p>";
-                    //echo "<br><br><a style='cursor: pointer' id='registerBtn'>Registrer deg her</a>";
-                }
-
-                ?>
-
-                <br><br>
-                <?php foreach ($submenu as $item) : ?>
-                <li><a href="<?php echo $item->getLink(); ?>&pID=<?php echo $_GET['pID']; ?>"><?php echo $item->getLabel(); ?></a></li>
-                <?php endforeach; ?><br>
 
                 <?php ($data['left'] != null) ? $data['left']->leftContent() : ''; ?>
+                <a class="X" href="#">X</a>
+                <div class="formBox"></div>
 
-                <br /><br /><br />
+                <section class="image-slider">
+                           <?php
+          //      if ($data['content'] != null)
+            //    {
+              //      $data['content']->display();
+               // }
+               // ?>
+                </section>
+       <!--         <section class="socialfeed">
+                    <div class="box-title">
+                        <h3>Siste oppdateringer</h3>
+                    </div>
+                    <-- Box-content ->
+                </section>
+                <section class="burgerfeed">
+                    <div class="box-title">
+                        <h3>Nemean-Burger</h3>
+                    </div>
+                    <!-- Box-content ->
+                    <h1 class="box-content" id="burger-status" style="margin-top: 55px;">Stengt</h1><!-- php variable ->
+                    <h5 class="box-content-text" id="burger-time">Åpner om <span id="hours">1 timer og </span><span id="minutes">14</span> minutter.</h5><!-- php variable, modifications may be necessary! ->
+                </section>
+                -->
+                <section class="sponsors">
+                    <div class="box-title">
+                        <h3>Våre samarbeidspartnere</h3>
+                    </div>
+                    <!-- Box-content -->
 
-            </aside>
-
-
-
-            <section>
-                <?php
-                if ($data['content'] != null)
-                {
-                    $data['content']->display();
-                }
-                ?>
-                <br /><br /><br /><br />
+                        </section>
+                <a href="" class="gallery">
+                <div class="box-title">
+                    <h3>Galleri</h3>
+                </div> <img src=""><!-- To-be dynamic --> </a>
+                <a href="" class="questions">
+                <div class="box-title">
+                    <h3>Spørsmål?</h3>
+                </div> <!-- Box-content --> <h1 class="box-content" style="margin-top:55px;">Kontakt oss!</h1> </a>
+                <a href="" class="applytocrew">
+                <div class="box-title">
+                    <h3>Lyst til å bli en av oss?</h3>
+                </div> <!-- Box-content --> <h1 class="box-content" style="line-height:260px;">Søk nå!</h1> </a>
             </section>
 
-
-
         </div>
-            <div id="sponsorer">
 
-                <div id="sponsor"><a href="http://www.sparebankenhemne.no"  target="_blank"><img border="none"  style="padding-left:7px;"src="resources/site/img/sponsorer/sbh.gif" width="160"/></a></div>
-                <div id="sponsor"><a href="http://www.hemnenett.no"         target="_blank"><img style="padding-left:7px;" border="none" src="resources/site/img/sponsorer/hemnenett.gif" width="160" /></a></div>
-                <div id="sponsor"><a href="http://www.mot.no"               target="_blank"><img border="none" style="padding-left:7px;" src="resources/site/img/sponsorer/mot.png" width="160" /></a></div>
-                <div id="sponsor"><a href="http://steelseries.com"            target="_blank"><img border="none" style="margin-bottom: 7px;padding-left:7px;" src="resources/site//img/sponsorer/steelseries.png" width="160" /></a></div>
-                <div id="sponsor"><a href="http://www.tronderenerginett.no"            target="_blank"><img border="none" style="margin-bottom: 7px;padding-left:7px;" src="resources/site//img/sponsorer/tronderenergi.jpg" width="160" /></a></div>
-               <!-- <div id="sponsor"><a href="http://www.lundbakeri.no/"       target="_blank"><img border="none" style="padding-left:7px;" src="resources/site/img/sponsorer/lund.png" width="160" /></a></div>
-                -->
-
-            </div>
+            
