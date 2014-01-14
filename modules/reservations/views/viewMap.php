@@ -39,7 +39,7 @@
 
 
     <div class="mapDiv">
-        <img src="resources/site/img/design/scene.png" style="margin-left: 100px;"/>
+        <h4>Scene</h4>
         <div class="evenDivider">
             <?php $data['map']->printSection(1, 224); ?>
 </div>

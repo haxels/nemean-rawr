@@ -86,7 +86,7 @@ $submenu = $data['menu'] -> getSubMenu();
                         <div class="triangle-1"></div>
                         <a class="headerpart-2" href="" id="registerBtn"> <!-- Part 2, Lightgreen. Link to registration-page. Hover event not created yet. --> <h3>Registrering</h3> </a>
                         <div class="triangle-2"></div>
-                        <a class="headerpart-3" href=""> <!-- Part 3, Darkgreen. Link to spacemap. Hover event not created yet. --> <h3 id="spacemap">Plasskart</h3> </a>
+                        <a class="headerpart-3" href="?pID=24&m=reservations"> <!-- Part 3, Darkgreen. Link to spacemap. Hover event not created yet. --> <h3 id="spacemap">Plasskart</h3> </a>
                     </header>
 
                     <?php foreach ($submenu as $item) : ?>
