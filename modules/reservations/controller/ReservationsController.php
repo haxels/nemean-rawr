@@ -101,7 +101,7 @@ class ReservationsController extends NController implements ILeftContent
 
         $data['map'] = new Map($this->settings['seats'], $this->settings['width'], $this->settings['aisle'], $this->settings['inverse'], $this->settings['locked'], $r, $this->session->getUser());
         //$data['map']->printMap($this);
-        $this->loadView('viewMap2', $data);
+        $this->loadView('viewMap', $data);
 
     }
 
