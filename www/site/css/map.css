@@ -25,7 +25,7 @@
 {
     width: 25px;
     height: 25px;
-    margin: 1px;
+    margin: 2px;
     position: relative;
     display: inline-block;
 }
@@ -50,7 +50,7 @@ span.info
     width: 100px;
     top: 17px;
     font-size: 10px;
-    color: black;
+    color: white;
     padding: 5px 10px 10px;
     background-color: #364D1A;
 
