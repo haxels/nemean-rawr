@@ -43,6 +43,9 @@
         <div class="evenDivider">
             <?php $data['map']->printSection(1, 224); ?>
 </div>
+<div class="evenDivider">
+            <?php $data['map']->printSection(225, 448); ?>
+</div>
             <!-- <img src="resources/site/img/design/exit.png" style="position: absolute; top: 320px; left: -110px;" /> -->
     </div>
 
