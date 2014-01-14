@@ -337,7 +337,7 @@ footer h4 {
 {
     list-style-type: none;
     padding: 5px 0;
-    height: 20px;
+    height: 30px;
     width: 30%;
 }
 
@@ -345,6 +345,7 @@ footer h4 {
 {
     width: 200px;
     font-size: 13px;
+    font-family: 'Maven Pro', sans-serif;
     color: #4b4b4b;
 }
 
@@ -352,6 +353,7 @@ footer h4 {
 {
     margin-left: 15px;
     float: right;
+    font-size: 14px;
     width: 40%;
 }
 

@@ -113,9 +113,6 @@ span.info
     margin: 1px;
     position: relative;
     display: inline-block;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
 }
 
 .mapAvailableInfo, .mapReservedInfo, .mapCurrentUserInfo, .mapLockedInfo
@@ -125,47 +122,24 @@ span.info
 
 .mapAvailable, .mapAvailableInfo
 {
-    background: #c3df8a;
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,startColorstr='#eef8d5', endColorstr='#c3df8a');
-    background: -moz-linear-gradient(top, #eef8d5, #c3df8a);
-    background: -webkit-gradient(linear, left top, left bottom, from(#eef8d5), to(#c3df8a));
-    background: -ms-linear-gradient(top, #eef8d5 0%, #c3df8a 100%);
-    background: -o-linear-gradient( #eef8d5,#c3df8a);
-    border: 1px solid #b6d474;
+    background: grey;
 }
 
 .mapReserved, .mapReservedInfo
 {
-    background: #8ac80c;
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,startColorstr='#c0ec4e', endColorstr='#8ac80c');
-    background: -moz-linear-gradient(top, #c0ec4e, #8ac80c);
-    background: -webkit-gradient(linear, left top, left bottom, from(#c0ec4e), to(#8ac80c));
-    background: -ms-linear-gradient(top, #c0ec4e 0%, #8ac80c 100%);
-    background: -o-linear-gradient( #c0ec4e,#8ac80c);
-    border: 1px solid #94bf35;
+    background: #73cd07;
 }
 
 
 .mapCurrentUser, .mapCurrentUserInfo
 {
-    background: #57bce6;
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,startColorstr='#b5f3ee', endColorstr='#57bce6');
-    background: -moz-linear-gradient(top, #b5f3ee, #57bce6);
-    background: -webkit-gradient(linear, left top, left bottom, from(#b5f3ee), to(#57bce6));
-    background: -ms-linear-gradient(top, #b5f3ee 0%, #57bce6 100%);
-    background: -o-linear-gradient( #b5f3ee,#57bce6);
-    border: 1px solid #5bbbe1;
+    background: #0785ce;
 }
 
 .mapLocked, .mapLockedInfo
 {
-    background: #FF0000;
-    background: -moz-linear-gradient(top, #FFBABA, #FF0000);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,startColorstr='#FFBABA', endColorstr='#FF0000');
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFBABA), to(#FF0000));
-    background: -ms-linear-gradient(top, #FFBABA 0%, #FF0000 100%);
-    background: -o-linear-gradient( #FFBABA,#FF0000);
-    border: 1px solid #5bbbe1;
+    background: #ce0707;
+    
 }
 
 .mapAvailable:hover

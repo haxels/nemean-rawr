@@ -24,55 +24,55 @@
         <form id="quickRegForm" action="?m=users&act=qReg" method="POST">
             <h4>Registrering</h4>
             <hr />
-            <li>
-                <label for="firstname">Fornavn:</label>
-                <input name="firstname" type="text" />
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="lastname">Etternavn:</label>
-                <input name="lastname" type="text" />
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="email">E-post:</label>
-                <input id="regEmail" type="email" name="email" required="required"/>
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="password">Passord:</label>
-                <input type="password" name="password" required="required"/>
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="confpassword">Bekreft passord:</label>
-                <input type="password" name="confpassword" required="required"/>
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="birthdate">Fødselsdato:</label>
-                <input type="text" name="birthdate" required="required" placeholder="DD/MM/YYYY" />
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="telephone">Telefon:</label>
-                <input type="text" name="telephone" required="required"/>
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="zipcode">Postnr:</label>
-                <input type="text" name="zipcode" required="required" />
-                <span class="hidden"></span>
-            </li>
-            <li>
-                <label for="streetadress">Gateadresse:</label>
-                <input type="text" name="streetadress" required="required"/>
-                <span class="hidden"></span>
-            </li>
-            <label for="zipcode">Betingelser:</label>
-
-
-            <div id="terms">
+            <div class="form-left">
+                <li>
+                    <label for="firstname">Fornavn:</label>
+                    <input name="firstname" type="text" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="lastname">Etternavn:</label>
+                    <input name="lastname" type="text" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="email">E-post:</label>
+                    <input id="regEmail" type="email" name="email" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="password">Passord:</label>
+                    <input type="password" name="password" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="confpassword">Bekreft passord:</label>
+                    <input type="password" name="confpassword" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="birthdate">Fødselsdato:</label>
+                    <input type="text" name="birthdate" required="required" placeholder="DD/MM/YYYY" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="telephone">Telefon:</label>
+                    <input type="text" name="telephone" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="zipcode">Postnr:</label>
+                    <input type="text" name="zipcode" required="required" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="streetadress">Gateadresse:</label>
+                    <input type="text" name="streetadress" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <label for="zipcode">Betingelser:</label>
+            </div>
+            <div id="terms" class="form-right">
                 <p>
                 For å opprette bruker i vårt system avhenger det av at du setter deg inn i, og godtar, de nedenforstående betingelser. Ved å hake av "Godta betingelser" samtykker du til følgende:
                 </p>

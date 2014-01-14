@@ -10,8 +10,8 @@
     require_once MODULEPATH . 'users/classes/UserMapper.php';
 
     require_once SYSPATH . 'NController.php';
-    require_once SYSPATH . 'class.phpmailer.php';
-    require_once SYSPATH . 'class.pop3.php';
+    require_once SYSPATH . 'helpers/mail/class.phpmailer.php';
+    require_once SYSPATH . 'helpers/mail/class.pop3.php';
 
     require_once MODULEPATH . 'users/controller/UserController.php';
 

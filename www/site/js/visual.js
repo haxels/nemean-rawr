@@ -278,7 +278,7 @@ $(document).ready(function(){
 
         return false;
     });
-
+    
     $("#completereg").submit(function(){
         var urlen = "?m=users&aAct=JSONcompleteReg";
         $.post(urlen, $("#cRegForm").serialize(), function(response){
@@ -296,8 +296,8 @@ $(document).ready(function(){
 
         return false;
     });
-
-    $("#reserveSeatForm").submit(function(){
+    $("#reserveSeatForm").submit( function(event){
+        console.log("seatID");
         var psw = this.elements[0].value;
         var data = {'psw' : psw, 'seatID' : seatID};
         var urlen = '?m=reservations&aAct=JSONreserveSeat';
@@ -322,6 +322,7 @@ $(document).ready(function(){
                 notify(obj.error);
             }
         });
+        event.preventDefault();
         return false;
     });
 
@@ -379,6 +380,7 @@ $(document).ready(function(){
 
     function notify(msg)
     {
+        alert(msg);
         $("#notifyMsg").html(msg);
         $("#notify").fadeIn(500);
     }
@@ -404,7 +406,8 @@ $(document).ready(function(){
             if (obj.success)
             {
                 // Reserver
-                $("#reserveSeat").fadeIn(500);
+                //$("#reserveSeat").fadeIn(500);
+                formBoxReplace("#reserveSeat");
                 $("#reserveSeatForm").find("h4").html('Plass ' + seatID);
             }
             else
@@ -416,8 +419,10 @@ $(document).ready(function(){
                 }
                 else
                 {
+                    // For minors to register parent
                     $("#cRegSID").val(''+ seatID);
-                    $("#completereg").fadeIn(500);
+                    formBoxReplace("#completereg");
+                    //$("#completereg").fadeIn(500);
                 }
             }
         });

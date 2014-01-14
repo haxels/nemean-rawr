@@ -110,6 +110,7 @@
                     $this->user = $this->userMapper->findById($authy->getUser_id());
                     $this->userMapper->updateLastLoggedIn($authy->getUser_id());
                     $arr['success'] = true;
+                    header("Location: index.php");
                 }
             }
             else
@@ -118,7 +119,6 @@
                 $arr['error'] = $this->error;
                 $arr['success'] = false;
             }
-            echo json_encode($arr);
         }
 
         public function checkPassword($username, $password)
