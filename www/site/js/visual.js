@@ -95,7 +95,8 @@ $(document).ready(function(){
             var obj = $.parseJSON(String(response));
             if (obj.success)
             {
-                $("#qRegister").fadeOut();
+                $("#qRegister").slideUp();
+                $(".X").slideUp();
                 notify("Du er nå registrert, aktiveringsmail er på tur til din innbox!");
             }
             else
@@ -382,7 +383,6 @@ $(document).ready(function(){
 
     function notify(msg)
     {
-        alert(msg);
         $("#notifyMsg").html(msg);
         $("#notify").fadeIn(500);
     }
