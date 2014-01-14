@@ -11,7 +11,9 @@
                  
                 <?php ($data['left'] != null) ? $data['left']->leftContent() : ''; ?>
                 <a class="X" href="#">X</a>
-                <div class="formBox"></div>
+                <div class="formBox">
+                    <?php require_once("forms.php")?>
+                </div>
 
                 <?php
                 if ($data['content'] != null)

@@ -11,24 +11,27 @@ var seatID;
 $(document).ready(function(){
 
     $("#registerBtn").click(function(){
-        formBoxReplace("#qRegister");
+        showForm("#qRegister");
         return false;
     });
     
+    function showForm(divID)
+    {
+        var visible = $(divID).is(":visible");
+        $(".formBox").children().slideUp();
+        $(".X").fadeOut(10);
+        
+        if(!visible) {
+            $(".X").fadeIn(10);
+            $(divID).slideDown();
+        }
+    }
+
+   
     function formBoxReplace(divID) {
-        if (divID != $(".formBox").attr("id")) {
-        $(".formBox").slideUp(function() {
-            $(".formBox").html("");
-            $(".formBox").attr("id", divID);
-            $(".formBox").html($(divID).html());
-            $(".formBox").slideDown();
-            $(".X").fadeIn();
-        });
-        }
-        else {
-            $(".formBox").slideUp();
-            $(".X").fadeOut();
-        }
+         var element = $(divID);
+         element.slideDown(300);
+       
     }
 
     $("#loginBoxForm").submit(function(){
@@ -158,14 +161,14 @@ $(document).ready(function(){
     });
 
     $(".X").click(function(){
-        $(".formBox, .X").slideUp(300, function(){
-            //resetAllForms();
-        });
+        $(this).fadeOut(10);
+        $(".formBox").children().slideUp();
+        
         return false;
     });
 
     $("#forgotPswBtn").click(function(){
-        formBoxReplace("#forgotPsw");
+        showForm("#forgotPsw");
        // $("#loginBox").fadeOut(function(){
         //    $("#forgotPsw").fadeIn();
         //});
@@ -174,7 +177,7 @@ $(document).ready(function(){
     });
 
     $(".lBtn").click(function(){
-        formBoxReplace("#loginBox");
+        showForm("#loginBox");
         //$(".formBox").html($("#loginBox").html());
     });
 

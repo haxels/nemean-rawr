@@ -1,0 +1,1086 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"
+xmlns:og="http://opengraphprotocol.org/schema" xmlns="http://www.w3.org/1999/html"/>
+<head>
+
+    <title>Nemean</title>
+
+    <!-- jQuery Javascript -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="site/js/jquery.reset.js"></script>
+    <script type="text/javascript" src="site/js/visual.js"></script>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"  />
+    <link href="site/css/map.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <!--[if lt IE 7]>
+    <div id="outdated" style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'>
+    Vi anbefaler deg å oppgradere til nyeste versjon av Internet Explorer. Selv Microsoft vil det, bare se her:
+    <a href="http://www.ie6countdown.com">IE6</a><br />
+    For å få tak i den nyeste versjonen klikk på bildet nedenfor:<br />
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+    <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0003_norwegian.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+    </a>
+    </div>
+    <![endif]-->
+
+    <div class="global-wrapper">
+
+        <div class="login">
+            <a class="lBtn" id="login-link">
+            <div>
+                Logg inn
+            </div></a>
+        </div>
+
+        <section class="sidebar-left">
+            <a href="index.html"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
+
+            <nav>
+                <a class="menuitem" href="?pID=14&index.php">Hjem</a>
+                <br>
+                <a class="menuitem" href="?pID=15&m=articles&act=view&artID=33">Informasjon</a>
+                <br>
+                <a class="menuitem" href="?pID=24&m=reservations">Plasskart</a>
+                <br>
+                <a class="menuitem" href="?pID=25&?m=articles&act=view&artID=35">Compo/Turneringer</a>
+                <br>
+                <a class="menuitem" href="?pID=55&m=kiosk">Burgerbestilling</a>
+                <br>
+
+            </nav>
+        </section>
+
+        <div class="content-right">
+            <header>
+                <a class="headerpart-1" href=""> <!-- Part 1, Darkgreen. Link to information-page. Hover event not created yet. --> <!-- Divided into two columns -->
+                <div id="left-column">
+                    <h3>Hvor?</h3>
+                    <h5>Kyrksæterøra,
+                    <br/>
+                    Sør-Trøndelag</h5>
+                    <h3>Når?</h3>
+                    <h5>19. - 23. Februar 2014</h5>
+                </div>
+                <div id="right-column">
+                    <!-- Using spans to make it easier in php, I think... -->
+                    <h3>Pris?</h3>
+                    <h5>Deltaker: <span class="pricetag">420,-</span></h5>
+                    <h5>PGA: <span class="pricetag">520,-</span></h5>
+                    <h5>Kombi: <span class="pricetag">620,-</span></h5>
+                    <h5>Besøke: <span class="pricetag">150,-</span></h5>
+                </div>
+                <br style="clear:both;"/>
+                <!-- Force headerpart-1 to surround the two columns (floating divs, may not be nessesary, but since I'm cool...) --> </a>
+                <div class="triangle-1"></div>
+                <a class="headerpart-2" href="" id="registerBtn"> <!-- Part 2, Lightgreen. Link to registration-page. Hover event not created yet. --> <h3>Registrering</h3> </a>
+                <div class="triangle-2"></div>
+                <a class="headerpart-3" href="?pID=24&m=reservations"> <!-- Part 3, Darkgreen. Link to spacemap. Hover event not created yet. --> <h3 id="spacemap">Plasskart</h3> </a>
+            </header>
+
+            <hr />
+            <ul>
+                <li>
+                    Plasser totalt: 192
+                </li>
+                <li>
+                    Ledige plasser: 104
+                </li>
+                <li>
+                    Reserverte plasser: 88
+                </li>
+            </ul>
+            <a class="X" href="#">X</a>
+            <div class="formBox"></div>
+
+            <section id="main" xmlns="http://www.w3.org/1999/html">
+                <h3>Plasskart</h3>
+
+                <div class="centerDiv">
+                    <div class="infoBarPanel">
+                        <div class="infoBar">
+                            <a class="mapAvailableInfo"></a>
+                            <p>
+                                Ledig
+                            </p>
+                        </div>
+
+                        <div class="infoBar">
+                            <a class="mapReservedInfo"></a>
+                            <p>
+                                Reservert
+                            </p>
+                        </div>
+
+                        <div class="infoBar">
+                            <a class="mapCurrentUserInfo"></a>
+                            <p>
+                                Min plass
+                            </p>
+                        </div>
+
+                        <div class="infoBar">
+                            <a class="mapLockedInfo"></a>
+                            <p>
+                                Låst
+                            </p>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="mapDiv">
+                        <h4>Scene</h4>
+                        <div class="evenDivider">
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 1</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 2</h2>
+                                <p>
+                                    Kristoffer Selbekk Hille
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 3</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 4</h2>
+                                <p>
+                                    Sigurd Korsvoll
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 5</h2>
+                                <p>
+                                    Jan Aleksander Nordvik
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 6</h2>
+                                <p>
+                                    Ole-magnus Stallvik
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 7</h2>
+                                <p>
+                                    Laurits Andersen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 8</h2>
+                                <p>
+                                    ørjan Aune
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 9</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 10</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 11</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 12</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 13</h2>
+                                <p>
+                                    Mathias Sørhaug
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 14</h2>
+                                <p>
+                                    David Aune
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 15</h2>
+                                <p>
+                                    Stian Asphaug
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 16</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>
+                            <br />
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 17</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 18</h2>
+                                <p>
+                                    Amund Alstad
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 19</h2>
+                                <p>
+                                    Hallvard Nygård
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 20</h2>
+                                <p>
+                                    Sander Singsdal
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 21</h2>
+                                <p>
+                                    Petter Søreng
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 22</h2>
+                                <p>
+                                    Aleksander Brandtzæg
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 23</h2>
+                                <p>
+                                    Malin Reknes
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 24</h2>
+                                <p>
+                                    Joakim Snippen
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 25</h2>
+                                <p>
+                                    Daniel Sølvik
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 26</h2>
+                                <p>
+                                    Stig Sandvik
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 27</h2>
+                                <p>
+                                    Halvard Melum
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 28</h2>
+                                <p>
+                                    Anders Edin Kvikne
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 29</h2>
+                                <p>
+                                    Asle Kvikne
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 30</h2>
+                                <p>
+                                    Andreas Zamora
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 31</h2>
+                                <p>
+                                    Erik Holden
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 32</h2>
+                                <p>
+                                    Arne Andersen
+                                </p></span></a>
+                        </div>
+                        <div class="evenDivider">
+                            <a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 33</h2>
+                                <p>
+                                    Håvard Kvernstad
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 34</h2>
+                                <p>
+                                    Sajana Skinstad
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 35</h2>
+                                <p>
+                                    Daniel Skog
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 36</h2>
+                                <p>
+                                    Petter Silset
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 37</h2>
+                                <p>
+                                    Ørjan Neshaug
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 38</h2>
+                                <p>
+                                    Sivert Lilleeng
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 39</h2>
+                                <p>
+                                    Håkon-magnus Helland
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 40</h2>
+                                <p>
+                                    Jan-runar Hjelen
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 41</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 42</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 43</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 44</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 45</h2>
+                                <p>
+                                    Njål Klungervik
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 46</h2>
+                                <p>
+                                    Gaute Heim
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 47</h2>
+                                <p>
+                                    Haakon Daaland
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 48</h2>
+                                <p>
+                                    Anders Bøysen
+                                </p></span></a>
+                            <br />
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 49</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 50</h2>
+                                <p>
+                                    Marvin Nguyen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 51</h2>
+                                <p>
+                                    Erlend Hugdal
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 52</h2>
+                                <p>
+                                    Sindre Skånøy
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 53</h2>
+                                <p>
+                                    Magnus Reitan
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 54</h2>
+                                <p>
+                                    Haakon Holt
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 55</h2>
+                                <p>
+                                    Tommy Tran
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 56</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 57</h2>
+                                <p>
+                                    Espen Taftø Vestad
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 58</h2>
+                                <p>
+                                    Sander Halseth
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 59</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 60</h2>
+                                <p>
+                                    Mina Kvernvik
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 61</h2>
+                                <p>
+                                    Sofie Larsen
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 62</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 63</h2>
+                                <p>
+                                    Espen Spjøtvoll
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 64</h2>
+                                <p>
+                                    Robin Stiberg
+                                </p></span></a>
+                        </div>
+                        <div class="evenDivider">
+                            <a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 65</h2>
+                                <p>
+                                    Kim Andre Røvik Auset
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 66</h2>
+                                <p>
+                                    Erlend Bugten
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 67</h2>
+                                <p>
+                                    Magnus Bakken
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 68</h2>
+                                <p>
+                                    Håvard Meland
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 69</h2>
+                                <p>
+                                    Even Støen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 70</h2>
+                                <p>
+                                    Odin Mellemsæther
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 71</h2>
+                                <p>
+                                    Espen Øyen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 72</h2>
+                                <p>
+                                    Ådne Jenssen
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 73</h2>
+                                <p>
+                                    Sina Memarpour
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 74</h2>
+                                <p>
+                                    Kristoffer Therjesen
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 75</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 76</h2>
+                                <p>
+                                    Anders Wang
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 77</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 78</h2>
+                                <p>
+                                    Ole-jakob Helland
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 79</h2>
+                                <p>
+                                    Martin Haugen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 80</h2>
+                                <p>
+                                    Jan Erik Kasseth
+                                </p></span></a>
+                            <br />
+                            <a class="mapLocked" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 81</h2>
+                                <p>
+                                    Locked
+                                </p></span></a><a class="mapLocked" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 82</h2>
+                                <p>
+                                    Locked
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 83</h2>
+                                <p>
+                                    Christoffer Kjøren
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 84</h2>
+                                <p>
+                                    Bård Jonas Høston
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 85</h2>
+                                <p>
+                                    Trond-gaute Bye
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 86</h2>
+                                <p>
+                                    Henrik Hoston Einan
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 87</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 88</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 89</h2>
+                                <p>
+                                    Johannes Kleiveland
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 90</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 91</h2>
+                                <p>
+                                    Nino Dokke
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 92</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 93</h2>
+                                <p>
+                                    Robert Onarheim
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 94</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 95</h2>
+                                <p>
+                                    Pål Rudshavn
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 96</h2>
+                                <p>
+                                    Stian Johnsen
+                                </p></span></a>
+                        </div>
+                        <div class="evenDivider">
+                            <a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 97</h2>
+                                <p>
+                                    Herman Simpson
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 98</h2>
+                                <p>
+                                    Ola Engebret Lofthus
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 99</h2>
+                                <p>
+                                    Eivind Kvaale
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 100</h2>
+                                <p>
+                                    Bjarne Bakke
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 101</h2>
+                                <p>
+                                    John Freddy Jakobsen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 102</h2>
+                                <p>
+                                    Bjørn Kåre Sinnes
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 103</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 104</h2>
+                                <p>
+                                    Are Hofset
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 105</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 106</h2>
+                                <p>
+                                    Per Jensen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 107</h2>
+                                <p>
+                                    Håvard Stavnesli
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 108</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 109</h2>
+                                <p>
+                                    Trond Gøran Nilsen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 110</h2>
+                                <p>
+                                    Martin Eidissen
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 111</h2>
+                                <p>
+                                    Johannes Gjerde
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 112</h2>
+                                <p>
+                                    Bendik Bråten
+                                </p></span></a>
+                            <br />
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 113</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 114</h2>
+                                <p>
+                                    Asbjørn Brodahl
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 115</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapReserved" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass 116</h2>
+                                <p>
+                                    Sander Kjønnøy
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 117</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 118</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 119</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 120</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 121</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 122</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 123</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 124</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 125</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 126</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 127</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 128</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>
+                        </div>
+                        <div class="evenDivider">
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 129</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 130</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 131</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 132</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 133</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 134</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 135</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 136</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 137</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 138</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 139</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 140</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 141</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 142</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 143</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 144</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>
+                            <br />
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 145</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 146</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 147</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 148</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 149</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 150</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 151</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 152</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 153</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 154</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 155</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 156</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 157</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 158</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 159</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 160</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>
+                        </div>
+                        <div class="evenDivider">
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 161</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 162</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 163</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 164</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 165</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 166</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 167</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 168</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 169</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 170</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 171</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 172</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 173</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 174</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 175</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 176</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>
+                            <br />
+                            <a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 177</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 178</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 179</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 180</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 181</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 182</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 183</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 184</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 185</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 186</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 187</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 188</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 189</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 190</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 191</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a><a class="mapAvailable" href="#">&nbsp;&nbsp;<span class="info"><h2>Plass 192</h2>
+                                <p>
+                                    Gjest
+                                </p></span></a>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    </div><div class="evenDivider"></div>
+                    
+                </div>
+
+            </section>
+        </div>
+
+        <div class="push"></div>
+
+    </div>
+
+    <footer>
+        <br>
+
+        <div id="navfooter">
+            <a href="?m=articles&act=view&artID=37"> Kontakt</a> - <a href="?m=articles&act=view&artID=36">Om oss</a> - <a href="https://www.facebook.com/nemeanlan"> Facebook </a> - <a href="https://twitter.com/NemeanLAN"> Twitter </a> - <a href=""> Sponsorer </a>
+        </div>
+        <br>
+        <div id="copyright">
+            &copy; 2012 Nemean
+        </div>
+    </footer>
+
+    <div id="qRegister">
+        <form id="quickRegForm" action="?m=users&act=qReg" method="POST">
+            <h4>Registrering</h4>
+            <hr />
+            <div class="form-left">
+                <li>
+                    <label for="firstname">Fornavn:</label>
+                    <input name="firstname" type="text" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="lastname">Etternavn:</label>
+                    <input name="lastname" type="text" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="email">E-post:</label>
+                    <input id="regEmail" type="email" name="email" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="password">Passord:</label>
+                    <input type="password" name="password" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="confpassword">Bekreft passord:</label>
+                    <input type="password" name="confpassword" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="birthdate">Fødselsdato:</label>
+                    <input type="text" name="birthdate" required="required" placeholder="DD/MM/YYYY" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="telephone">Telefon:</label>
+                    <input type="text" name="telephone" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="zipcode">Postnr:</label>
+                    <input type="text" name="zipcode" required="required" />
+                    <span class="hidden"></span>
+                </li>
+                <li>
+                    <label for="streetadress">Gateadresse:</label>
+                    <input type="text" name="streetadress" required="required"/>
+                    <span class="hidden"></span>
+                </li>
+                <label for="zipcode">Betingelser:</label>
+            </div>
+            <div id="terms" class="form-right">
+                <p>
+                    For å opprette bruker i vårt system avhenger det av at du setter deg inn i, og godtar, de nedenforstående betingelser. Ved å hake av "Godta betingelser" samtykker du til følgende:
+                </p>
+                <ul>
+                    <p>
+                        &bull; Bilder og video av deg kan brukes av Nemean i promoteringsøyemed
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Om dette ikke er ønskelig må det leveres skriftlig beskjed om dette.
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Om du er plassert i plasskartet idét det stenges, må du betale uansett om du ikke kommer på arrangementet
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Hvis du er under 18 år må registrere en foresatt dersom du ønsker å plassere deg i vårt plasskart. En epost vil da bli sendt til den aktuelle foresatte, der vedkommende må bekrefte at du får delta.
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Du er pliktig til å sette deg inn i Nemeans reglement.
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Nemean reserverer seg retten til å kunne endre på arrangementsreglene uten varsel - det er opp til den enkelte å holde seg oppdatert på dette (Ordensregler kan ikke ha tilbakevirkende kraft).
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Nemean tar vare på personlig informasjon (Adresse, telefonnummer osv.). Informasjonen vil brukes til å kontakte deltagere ved behov.
+                    </p>
+                    <br>
+
+                    <p>
+                        &bull; Ditt fulle navn vises på vår nettside
+                    </p>
+                    <br>
+
+                </ul>
+
+            </div>
+
+            <li>
+                <label for="acceptTerms">Godta betingelser:</label>
+                <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" DISABLED="disabled"/>
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label>&nbsp;</label>
+                <input type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+
+    </div>
+
+    <div id="forgotPsw">
+        <form id="forgotPswForm" action="" method="POST">
+            <h4>Glemt passord</h4>
+            <hr />
+            <p>
+                Skriv inn din e-postadresse og du vil motta en e-post med et midlertidig passord.
+            </p>
+
+            <li>
+                <label for="email">E-post:</label>
+                <input name="email" type="text" />
+            </li>
+            <li>
+                <label for="submitForgot1">&nbsp;</label>
+                <input name="submitForgot1" type="submit" value="Send" />
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+    </div>
+
+    <div id="loginBox">
+
+        <form id="loginBoxForm" action="" method="POST">
+            <h4>Login</h4>
+            <hr />
+            <li>
+                <label for="username">E-post:</label>
+                <input name="username" type="text" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="password">Passord:</label>
+                <input name="password" type="password" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input name="submit_login" type="hidden" value="Send" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input name="submit_login" type="submit" value="Send" />
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+        <div class="buttons">
+            <div>
+                <button id="registerBtn">
+                    Registrer
+                </button>
+                <button id="forgotPswBtn">
+                    Glemt passord
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notify">
+        <p id="notifyMsg"></p>
+        <button id="notifyClose">
+            Close
+        </button>
+    </div>
+
+    <div id="completereg">
+
+        <form id="cRegForm" action="" method="POST">
+            <h4>Fullfør registrering</h4>
+            <p>
+                På grunn av din alder må du registrere en foresatt som ansvarlig for deg.
+                Din foresatte vil motta en e-post med en bekrefelseslink. Du vil ikke kunne plassere deg før din
+                foresatte har mottatt og besøkt bekreftelseslinken.
+            </p>
+            <hr />
+            <li>
+                <label>First name:</label>
+                <input type="text" name="firstname" required="required"/>
+            </li>
+
+            <li>
+                <label>Last name:</label>
+                <input type="text" name="lastname" required="required"/>
+            </li>
+
+            <li>
+                <label>Foresattes e-mail:</label>
+                <input type="email" name="email" required="required"/>
+            </li>
+
+            <li>
+                <label>Foresattes telefonnummer:</label>
+                <input type="number" name="telephone" required="required"/>
+            </li>
+            <input id="cRegSID" name="seat_id" type="hidden" value="" />
+            <li>
+                <label for="submit_cReg">&nbsp;</label>
+                <input name="submit_cReg" type="submit" value="Send" />
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+    </div>
+
+    <div id="reserveSeat">
+
+        <form id="reserveSeatForm" action="" method="POST">
+            <h4></h4>
+            <p>
+                Skriv inn ditt passord for å reservere denne plassen.
+            </p>
+            <hr />
+            <li>
+                <label for="password">Passord:</label>
+                <input name="password" type="password" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="submit_reserve">&nbsp;</label>
+                <input name="submit_reserve" type="submit" value="Reserver" />
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+    </div>
+
+    <div id="removeRsv">
+
+        <form id="removeRsvForm" action="" method="POST">
+            <h4></h4>
+            <p>
+                Skriv inn ditt passord for å kansellere din reservasjon.
+            </p>
+            <hr />
+            <li>
+                <label for="password">Passord:</label>
+                <input name="password" type="password" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="submit_remove">&nbsp;</label>
+                <input name="submit_remove" type="submit" value="Slett" />
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+    </div>
+
+    <div id="applicationForm">
+        <form id="application" action="" method="POST">
+            <h4>Søknadskjema for crewopptak</h4>
+            <hr />
+            <li>
+                <label for="firstname">Fornavn:</label>
+                <input name="firstname" type="text" />
+                <span class="hidden"></span>
+            </li>
+            <li>
+                <label for="lastname">Etternavn:</label>
+                <input name="lastname" type="text" />
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="email">Epost:</label>
+                <input name="email" type="text" />
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="byear">Fødselsår:</label>
+                <input name="byear" type="text" />
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="why">Hvorfor?:</label>
+                <br />
+                <br />
+                <textarea name="why"  cols="25" rows="7" placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label for="what">Hva?:</label>
+                <br />
+                <br />
+                <textarea name="what" cols="25" rows="7" placeholder="Hvis du blir med i Nemean Crew, hva ønsker du å gjøre? Gaming, kiosk, underholdning, web, foto, etc?  Hvis du ønsker Gaming, er det noen spill du behersker?" ></textarea>
+                <span class="hidden"></span>
+            </li>
+
+            <li>
+                <label>&nbsp;</label>
+                <input type="submit" id="submitCA" name="submitCA" value="Send"/>
+            </li>
+            <div class="loader"><img src="resources/site/img/design/loader.gif" />
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
