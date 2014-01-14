@@ -27,29 +27,28 @@ $(document).ready(function(){
         }
     }
 
-   
-    function formBoxReplace(divID) {
-         var element = $(divID);
-         element.slideDown(300);
-       
-    }
-
     $("#loginBoxForm").submit(function(){
+        console.log("Submitted!");
         var urlen = "";
         $.post(urlen, $("#loginBoxForm").serialize(), function(response){
+            console.log("før obj!");
             var obj = $.parseJSON(response);
+            console.log("Etter OBJ!");
             if (!obj.success)
             {
+                console.log("Success, NNAAAT!");
                 $("#loginBox").fadeOut(500);
                 notify(obj.error)
             }
             else
             {
-                $("#loginBox").fadeOut(500);
-                $("#loginBtn").html('<div>Logg ut</div>');
-                $("#loginBtn").attr('href', '?mAct=logout');
-                $("#loginBtn").attr('id', 'logoutBtn');
-                location.href='index.php';
+                console.log("Success!");
+                $("#loginBox").slideUp(500);
+                $(".X").slideUp(500);
+                $(".lBtn").html('<div>' + obj.name + '</div>');
+                $(".lBtn").attr('href', '?mAct=logout');
+                $(".lBtn").attr('id', 'logout-link');
+                //location.href='index.php';
             }
         });
         $(".loader").show();
@@ -176,9 +175,9 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".lBtn").click(function(){
+    $("#login-link").click(function(){
         showForm("#loginBox");
-        //$(".formBox").html($("#loginBox").html());
+        return false;
     });
 
     $(".crewApply").click(function()

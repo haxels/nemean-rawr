@@ -127,7 +127,7 @@ header .pricetag {
 	height: 19px;
 	margin-bottom: 2px;
 }
-#login-link {
+#login-link, #logout-link {
 	float:right;
 	color: #000000;
 }

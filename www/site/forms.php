@@ -150,11 +150,11 @@
         </li>
         <li>
             <label for="submit_login">&nbsp;</label>
-            <input name="submit_login" type="hidden" value="Send" />
+            <input name="submit_login" type="hidden" value="Logg inn" />
         </li>
         <li>
             <label for="submit_login">&nbsp;</label>
-            <input name="submit_login" type="submit" value="Send" />
+            <input name="submit_login" type="submit" value="Logg inn" />
         </li>
         <div class="loader"><img src="resources/site/img/design/loader.gif" />
         </div>

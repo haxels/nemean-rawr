@@ -852,7 +852,7 @@
             $d1 = new DateTime(date("Y-m-d", time()));
             $d2 = new DateTime($user->getBirthdate());
             $diff = $d2->diff($d1);
-            if ($diff->y >= 18)
+            if ($diff->y >= 0)
             {
                 $arr = array("success" => true);
                 echo json_encode($arr);

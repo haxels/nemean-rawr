@@ -44,9 +44,9 @@ $submenu = $data['menu'] -> getSubMenu();
 
         <div class="login"> 
             <?php if ($session->isAuthenticated()) : ?>
-            <a href="?mAct=logout" class="lBtn" id="login-link"><div><?php echo $session -> getUser() -> getFirstName(); ?></div></a>
+            <a href="?mAct=logout" class="lBtn" id="logout-link"><div><?php echo $session -> getUser() -> getFirstName(); ?></div></a>
             <?php else : ?>
-            <a class="lBtn" id="login-link"><div>Logg inn</div></a>
+            <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
             <?php endif; ?>
         </div>
 

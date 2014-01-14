@@ -61,22 +61,24 @@ try
     {
         $roles = array('User', 'Developer', 'Writer', 'Publisher', 'Moderator', 'Crew');
     }
-
+    
+    
     if (isset($_POST['submit_login']))
     {
+        
         $session->login($_POST['username'], $_POST['password'], $roles);
         //header("Location: index.php");
 
-        if ($settings['site_closed'] == '0')
-            {
-            $lc =  ($module instanceof ILeftContent) ? $lc = $module : null;
+    //    if ($settings['site_closed'] == '0')
+      //      {
+        //    $lc =  ($module instanceof ILeftContent) ? $lc = $module : null;
 
-            $page = new Page($session, $module, $lc, null, [], $settings, $menu);
-            $page->addHeader('header');
-            $page->addFooter('footer');
-            $page->addContent('content');
-            $page->buildPage();
-        }
+            //$page = new Page($session, $module, $lc, null, [], $settings, $menu);
+            //$page->addHeader('header');
+            //$page->addFooter('footer');
+            //$page->addContent('content');
+            //$page->buildPage();
+        //}
 
     }
 
@@ -101,7 +103,6 @@ try
         $page->addContent('content');
         $page->buildPage();
     }
-
 }
 catch (Exception $e)
 {
