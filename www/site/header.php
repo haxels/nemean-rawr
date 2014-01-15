@@ -51,7 +51,7 @@ $submenu = $data['menu'] -> getSubMenu();
         </div>
 
         <section class="sidebar-left">
-            <a href="index.html"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
+            <a href="index.php"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
 
             <nav>
                 <?php foreach ($menu as $item) : ?>
