@@ -61,9 +61,9 @@ $submenu = $data['menu'] -> getSubMenu();
                     if (isset($_GET['pID']) && $_GET['pID'] ==
                         $item->getMenuId()) {
                         foreach ($submenu as $subitem) { ?>
-                            <a class="submenuitem" href="?pID=<?php echo
-                            $_GET['pID']; ?><?php echo
-                            $subitem->getLink(); ?>"><?php echo $subitem ->
+                            <a class="submenuitem" href="<?php echo
+                            $subitem->getLink(); ?>&pID=<?php echo
+                            $_GET['pID']; ?>"><?php echo $subitem ->
                                     getLabel(); ?></a><br>
                 <?php
                         }
