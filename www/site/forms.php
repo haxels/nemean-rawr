@@ -250,6 +250,8 @@
 </div>
 
 <div id="applicationForm">
+
+
     <form id="application" action="" method="POST">
         <h4>Søknadskjema for crewopptak</h4>
         <hr />
@@ -300,4 +302,23 @@
         </div>
     </form>
 
+</div>
+
+
+<div id="gMap">
+    <iframe 
+        width="700"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;output=embed">
+    </iframe>
+    <br />
+    <small>
+        <a
+        href="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;source=embed"
+        style="color:#0000FF;text-align:left">Vis større kart</a>
+    </small>
 </div>

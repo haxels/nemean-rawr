@@ -239,7 +239,7 @@ footer h4 {
     color: gray;
 }
 
-#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv {
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap {
     display: none;
 }
 
@@ -408,4 +408,10 @@ footer h4 {
     font-size: 0.8em;
     margin-left: 10px;
     font-weight: bold;
+}
+
+
+#gMap {
+    text-align: center;
+    margin-top: 50px;
 }

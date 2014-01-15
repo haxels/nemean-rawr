@@ -15,6 +15,11 @@ $(document).ready(function(){
         return false;
     });
     
+    $(".headerpart-1").click(function(){
+        showForm("#gMap");
+        return false;
+    });
+    
     function showForm(divID)
     {
         var visible = $(divID).is(":visible");
