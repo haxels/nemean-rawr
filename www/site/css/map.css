@@ -1,17 +1,16 @@
 
 .infoBarPanel
 {
-    display: block;
-    margin: 10px auto;
-    width: 300px;
+    width: 30%;
+    float: right;
+    margin-top: 40px;
 }
 
 .mapDiv
 {
     display: block;
-    margin-left: 250px;
-    width: 100%;
-    position: relative;
+    width: 70%;
+    text-align: center;
 }
 
 .evenDivider
@@ -31,16 +30,11 @@
 
 #centerDiv
 {
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    text-align: center;
 }
 
-#infobarpanel
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-}
+
 
 span.info
 {
@@ -92,11 +86,12 @@ span.info
     z-index: 99;
     cursor: default;
 }
-.minisal a, .infoBar a
+.minisal a
 {
     width: 25px;
     height: 25px;
     margin: 2px;
+    padding: 2px;
     position: relative;
     display: inline-block;
 }
@@ -142,19 +137,13 @@ p button
 
 .infoBar
 {
-    width: 70px;
+    margin-bottom: 20px;
+    height: 30px;
     font-size: 10px;
-    display: inline-block;
 }
 
-.infoBar a
+.infoBar label
 {
-    display: block;
-    margin: 0 auto;
-}
-
-.infoBar p
-{
-    margin: 0 auto;
-    text-align: center;
+    height: 30px;
+    line-height: 30px;
 }

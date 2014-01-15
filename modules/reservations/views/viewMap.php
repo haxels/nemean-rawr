@@ -7,47 +7,39 @@
  * To change this template use File | Settings | File Templates.
  */
 ?>
-<section id="main" xmlns="http://www.w3.org/1999/html">
-<h3>Plasskart</h3>
+<section id="registrationMap">
+    <h3>Plasskart</h3>
 
+    <div class="centerDiv">
+        <div class="infoBarPanel">
 
-<div class="centerDiv">
-    <div class="infoBarPanel">
-    <div class="infoBar">
-        <a class="mapAvailableInfo"></a>
-        <p>Ledig</p>
-    </div>
+            <div class="infoBar">
+                <a class="mapAvailableInfo"></a>
+                <span>Ledig</span>
+            </div>
 
-    <div class="infoBar">
-        <a class="mapReservedInfo"></a>
-        <p>Reservert</p>
-    </div>
+            <div class="infoBar">
+                <a class="mapReservedInfo"></a>
+                <span>Reservert</span>
+            </div>
 
-    <div class="infoBar">
-        <a class="mapCurrentUserInfo"></a>
-        <p>Min plass</p>
-    </div>
+            <div class="infoBar">
+                <a class="mapCurrentUserInfo"></a>
+                <span>Min plass</span>
+            </div>
 
-    <div class="infoBar">
-        <a class="mapLockedInfo"></a>
-        <p>Låst</p>
-    </div>
-    </div>
+            <div class="infoBar">
+                <a class="mapLockedInfo"></a>
+                <label>Låst</label>
+            </div>
+        </div>
 
-    <br />
-
-
-
-    <div class="mapDiv">
-        <h4>Scene</h4>
-        <div class="evenDivider">
-            <?php $data['map']->printSection(1, 224); ?>
-</div>
-<div class="evenDivider">
-            <?php $data['map']->printSection(225, 448); ?>
-</div>
+        <div class="mapDiv">
+            <h4>Scene</h4>
+            <div class="evenDivider">
+                <?php $data['map'] -> printSection(1, 160); ?>
+            </div>
             <!-- <img src="resources/site/img/design/exit.png" style="position: absolute; top: 320px; left: -110px;" /> -->
+        </div>
     </div>
-
-
 </section>
