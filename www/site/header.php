@@ -54,9 +54,24 @@ $submenu = $data['menu'] -> getSubMenu();
             <a href="index.php"><img src="site/img/logo.jpg"></a><!-- LOGO, 182px * 218px -->
 
             <nav>
-                <?php foreach ($menu as $item) : ?>
+                <?php
+                    foreach ($menu as $item) { ?>
                 <a class="menuitem" href="<?php echo ($item->isParent()) ? '?pID='.$item->getMenuId().'&'.$item->getLink() : $item->getLink(); ?>"><?php echo $item -> getLabel(); ?></a><br>
-                <?php endforeach; ?>
+                <?php
+                    if (isset($_GET['pID']) && $_GET['pID'] ==
+                        $item->getMenuId()) {
+                        foreach ($submenu as $subitem) { ?>
+                            <a class="submenuitem" href="<?php echo
+                            $subitem->getLink(); ?>&pID=<?php echo
+                            $_GET['pID']; ?>"><?php echo $subitem ->
+                                    getLabel(); ?></a><br>
+                <?php
+                        }
+                    }
+
+
+                    }
+                ?>
                 
             </nav>
             </section>
