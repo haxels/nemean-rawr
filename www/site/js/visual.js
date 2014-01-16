@@ -404,19 +404,4 @@ $(document).ready(function(){
         $("#reserveSeatForm").reset();
     }
 
-
-    $("#terms").scroll(function(){
-
-        var myDiv = $('#terms'),
-            checkBox = $('#okTerms')
-        if (myDiv.scrollTop() + myDiv.outerHeight() == (myDiv.get(0).scrollHeight))
-        {
-            checkBox.removeAttr('disabled');
-        }
-        else
-        {
-            
-        }
-        });
-
 });

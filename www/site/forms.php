@@ -50,12 +50,12 @@
             </li>
             <li>
             <label for="acceptTerms">Jeg har lest og godtar betingelsene:</label>
-            <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" DISABLED="disabled"/>
+            <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" />
             <span class="hidden"></span>
         </li>
         <li>
             <label>&nbsp;</label>
-            <input type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
+            <input class="register-btn" type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
         </li>
         </div>
         <div id="terms" class="form-right">
