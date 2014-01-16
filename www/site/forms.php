@@ -48,16 +48,25 @@
                 <input type="text" name="streetadress" required="required"/>
                 <span class="hidden"></span>
             </li>
-            <label for="zipcode">Betingelser:</label>
+            <li>
+            <label for="acceptTerms">Jeg har lest og godtar betingelsene:</label>
+            <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" DISABLED="disabled"/>
+            <span class="hidden"></span>
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
+        </li>
         </div>
         <div id="terms" class="form-right">
+            <h3> Betingelser </h3>
             <p>
                 For å opprette bruker i vårt system avhenger det av at du setter deg inn i, og godtar, de nedenforstående betingelser. Ved å hake av "Godta betingelser" samtykker du til følgende:
             </p>
             <ul>
-                <p>
+                <li>
                     &bull; Bilder og video av deg kan brukes av Nemean i promoteringsøyemed
-                </p>
+                </li>
                 <br>
 
                 <p>
@@ -98,16 +107,7 @@
             </ul>
 
         </div>
-
-        <li>
-            <label for="acceptTerms">Godta betingelser:</label>
-            <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" DISABLED="disabled"/>
-            <span class="hidden"></span>
-        </li>
-        <li>
-            <label>&nbsp;</label>
-            <input type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
-        </li>
+        
     </form>
 
 </div>

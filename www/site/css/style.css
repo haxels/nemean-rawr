@@ -301,13 +301,9 @@ footer h4 {
 }
 
 #terms {
-    padding: 10px;
-    margin-top: 10px;
     overflow: auto;
-    height: 100px;
-    background: white;
-    width: 60%;
     list-style: disc;
+    font-size: 0.8em;
 }
 
 #terms ul {
@@ -319,11 +315,12 @@ footer h4 {
     padding: 10px;
 }
 
+
 .formBox form li {
     list-style-type: none;
     padding: 5px 0;
     height: 30px;
-    width: 30%;
+    width: 70%;
 }
 
 .formBox form label {
@@ -414,4 +411,20 @@ footer h4 {
 #gMap {
     text-align: center;
     margin-top: 50px;
+}
+
+.form-left {
+    width: 50%;
+    float: left;
+    height: 400px;
+}
+
+.form-right {
+    width: 50%;
+    float: right;
+    max-height: 400px;
+}
+
+#quickRegForm {
+    height: 550px;
 }
