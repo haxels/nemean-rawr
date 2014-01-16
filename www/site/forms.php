@@ -49,7 +49,7 @@
                 <span class="hidden"></span>
             </li>
             <li>
-            <label for="acceptTerms">Jeg har lest og godtar betingelsene:</label>
+            <label for="acceptTerms">Jeg har lest, og godtar betingelsene:</label>
             <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" />
             <span class="hidden"></span>
         </li>
@@ -301,7 +301,7 @@
 
 
 <div id="gMap">
-    <iframe 
+    <!--<iframe 
         width="1100"
         height="400"
         frameborder="0"
@@ -315,5 +315,6 @@
         <a
         href="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;source=embed"
         style="color:#0000FF;text-align:left">Vis større kart</a>
-    </small>
-</div>
+    </small>-->
+    Map!
+</div> 
