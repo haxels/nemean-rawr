@@ -28,7 +28,7 @@ $submenu = $data['menu'] -> getSubMenu();
 
 </head>
 <body>
-<!--[if lt IE 7]>
+<!--[if lt IE 8]>
 <div id="outdated" style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'>
     Vi anbefaler deg å oppgradere til nyeste versjon av Internet Explorer. Selv Microsoft vil det, bare se her:
     <a href="http://www.ie6countdown.com">IE6</a><br />
