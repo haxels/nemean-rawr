@@ -211,7 +211,7 @@ class ReservationsController extends NController implements ILeftContent
         }
         else
         {
-            $arr = array("success" => false, 'error' => 'Feil med autentisering.');
+            $arr = array("success" => false, 'error' => 'Feil med autentisering.'. $username . $psw . $seatID);
             echo json_encode($arr);
             return;
         }

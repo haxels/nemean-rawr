@@ -221,7 +221,6 @@ class Map
         switch ($this->checkSeat($seat_id))
         {
             case Map::AVAILABLE:
-                //echo '<a class="mapAvailable" href="'.$link.'">&nbsp;&nbsp;<span class="info"><h2>Plass '.$seat_id.'</h2></span></a>';
                 $this->printAvailable($seat_id);
                 break;
 
@@ -230,8 +229,7 @@ class Map
                 break;
 
             case Map::CURRENT_USER:
-                echo '<a id="a'.$seat_id.'" class="mapCurrentUser" href="#" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass '.$seat_id.'</h2><p><button class="removeRsvBtn" id="'.$seat_id.'">Slett reservasjon</button></p></span></a>';
-                //echo '<a id="a'.$seat_id.'" class="mapCurrentUser" href="'.$link.'" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass '.$seat_id.'</h2><p><button class="removeRsvBtn" id="'.$seat_id.'">Slett reservasjon</button></p></span></a>';
+                include "removeRsvForm.php";
                 break;
 
             case Map::LOCKED:
@@ -372,7 +370,7 @@ class Map
         {
             if (!$this->isSeated())
             {
-                echo '<a id="a'.$seat_id.'" class="mapAvailable" href="">&nbsp;&nbsp;<span class="info"><h2>Plass '.$seat_id.'</h2><p><button id="'.$seat_id.'" class="cRegBtn">Reserver</button></p></span></a>';
+                include "reserveForm.php";
             }
             else
             {

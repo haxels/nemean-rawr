@@ -108,8 +108,6 @@
             <label>&nbsp;</label>
             <input type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 
 </div>
@@ -130,8 +128,6 @@
             <label for="submitForgot1">&nbsp;</label>
             <input name="submitForgot1" type="submit" value="Send" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
@@ -156,8 +152,6 @@
             <label for="submit_login">&nbsp;</label>
             <input name="submit_login" type="submit" value="Logg inn" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
@@ -202,50 +196,50 @@
             <label for="submit_cReg">&nbsp;</label>
             <input name="submit_cReg" type="submit" value="Send" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
 <div id="reserveSeat">
-
-    <form id="reserveSeatForm" action="" method="POST">
-        <h4></h4>
-        <p>
-            Skriv inn ditt passord for å reservere denne plassen.
-        </p>
-        <hr />
-        <li>
-            <label for="password">Passord:</label>
-            <input name="password" type="password" autofocus="autofocus" />
-        </li>
-        <li>
-            <label for="submit_reserve">&nbsp;</label>
-            <input name="submit_reserve" type="submit" value="Reserver" />
-        </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
-    </form>
+        <form id="" class="reserveSeatForm" action="" method="POST">
+            <h2></h2>
+            <p>
+                Skriv inn ditt passord for å reservere denne plassen.
+            </p>
+            <hr />
+            <li>
+                <label for="psw">Passord:</label>
+                <input name="psw" type="password" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="seatID">&nbsp;</label>
+                <input name="seatID" type="hidden" value="" /> 
+            </li>
+            <li>
+                <label for="submit_reserve">&nbsp;</label>
+                <input title="" class="reserveFormBtn" name="submit_reserve" type="submit" value="Reserver" />
+            </li>
+        </form>
 </div>
 
 <div id="removeRsv">
-
-    <form id="removeRsvForm" action="" method="POST">
-        <h4></h4>
+    <form class="removeRsvForm" action="" method="POST">
+        <h2></h2>
         <p>
             Skriv inn ditt passord for å kansellere din reservasjon.
         </p>
         <hr />
         <li>
-            <label for="password">Passord:</label>
-            <input name="password" type="password" autofocus="autofocus" />
-        </li>
+            <label for="psw">Passord:</label>
+            <input name="psw" type="password" autofocus="autofocus" />
+        </li
+        <li>
+            <label for="seatID">&nbsp;</label>
+            <input name="seatID" type="hidden" value="" />
+        </li>>
         <li>
             <label for="submit_remove">&nbsp;</label>
-            <input name="submit_remove" type="submit" value="Slett" />
+            <input id="" class="removeRsvBtn" name="submit_remove" type="submit" value="Slett" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
@@ -298,8 +292,6 @@
             <label>&nbsp;</label>
             <input type="submit" id="submitCA" name="submitCA" value="Send"/>
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 
 </div>

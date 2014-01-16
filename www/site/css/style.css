@@ -140,6 +140,7 @@ header .pricetag {
 }
 .content-right {
     float: right;
+    position: relative;
     width: 1100px; /* Propotional with total width */
     min-height: 1300px; /* Total height */
 }
@@ -351,13 +352,12 @@ footer h4 {
 }
 
 .X {
-    position: relative;
+    position: absolute;
     right: 10px;
-    top: 10px;
+    top: 228px;
     font-size: 20px;
     color: #868686;
     font-weight: bold;
-    float: right;
     display: none;
 }
 

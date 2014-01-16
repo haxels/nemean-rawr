@@ -27,8 +27,9 @@ $(document).ready(function(){
         $(".X").fadeOut(10);
         
         if(!visible) {
-            $(".X").fadeIn(10);
+            
             $(divID).slideDown();
+            $(".X").fadeIn(10);
         }
     }
 
@@ -56,7 +57,6 @@ $(document).ready(function(){
                 //location.href='index.php';
             }
         });
-        $(".loader").show();
         return false;
     })
 
@@ -304,24 +304,30 @@ $(document).ready(function(){
 
         return false;
     });
-    $("#reserveSeatForm").submit( function(event){
-        console.log("seatID");
-        var psw = this.elements[0].value;
-        var data = {'psw' : psw, 'seatID' : seatID};
+        
+    $(".reserveFormBtn").click(function(event){
+        console.log("Seatpå");
+        //var psw = this.elements[0].value;
+        //var seatID
+        //var data = {'psw' : psw, 'seatID' : seatID};
         var urlen = '?m=reservations&aAct=JSONreserveSeat';
-        $.post(urlen, data, function(response){
+        seatID = this.title;
+        $.post(urlen, $("#f" + seatID).serialize(), function(response){
             var obj = $.parseJSON(response);
 
             if (obj.success)
             {
                 $("#a"+seatID).attr('class', 'mapCurrentUser');
-                $("#a"+seatID).find('p').html('<button class="removeRsvBtn" id="'+seatID+'">Slett reservasjon</button>');
-                $("#"+seatID).on('click', function(){
-                    eventRemoveRsvClick(seatID);
-                    return false;
-                });
-                $("#reserveSeat").fadeOut(500);
-                $("#reserveSeatForm")[0].reset();
+                var elm = $("#removeRsv");
+                elm.find('h2').html('Plass '+seatID);
+                elm.find('form').attr("id", "f"+seatID);
+                elm.find('input[name="seatID"]').attr("value", seatID);
+                elm.find('input[name="submit_remove"]').attr("id", seatID);
+                $("#a"+seatID).find('span').html(elm.html());
+                location.href = "?pID=24&m=reservations";
+                //.html('<form id="f'+seatID+'" class="removeRsvForm" action="" method="POST"><button class="removeRsvBtn" id="'+seatID+'">Slett reservasjon</button>');
+                //$("#reserveSeat").fadeOut(500);
+                //$("#reserveSeatForm")[0].reset();
                 notify('Du er nå plassert.');
             }
             else
@@ -330,7 +336,6 @@ $(document).ready(function(){
                 notify(obj.error);
             }
         });
-        event.preventDefault();
         return false;
     });
 
@@ -352,37 +357,34 @@ $(document).ready(function(){
     });
 
     $(".removeRsvBtn").click(function(){
-        eventRemoveRsvClick(this.id);
-
-        return false;
-    });
-
-    $("#removeRsvForm").submit(function(){
-        var psw = this.elements[0].value;
-        var data = {'psw' : psw, 'seatID' : seatID};
+        console.log('haptidu');
+        //var psw = this.elements[0].value;
+        //var data = {'psw' : psw, 'seatID' : seatID};
         var urlen = '?m=reservations&aAct=JSONremoveReservation';
-
-        $.post(urlen, data, function(response){
+        seatID = this.title;
+        $.post(urlen, $("#f"+seatID).serialize(), function(response){
             var obj = $.parseJSON(response);
             if (obj.success)
             {
                 $("#a"+seatID).attr('class', 'mapAvailable');
-                $("#a"+seatID).find('p').html('<button id="'+seatID+'" class="cRegBtn">Reserver</button>');
-                $("#"+seatID).on('click', function(){
-                    eventReserveSeatClick(seatID);
-                    return false;
-                });
-                $("#removeRsv").fadeOut(500);
-                $("#removeRsvForm")[0].reset();
+                var elm = $("#reserveSeat");
+                elm.find('h2').html('Plass '+seatID);
+                elm.find('form').attr("id", "f"+seatID);
+                elm.find('input[name="seatID"]').attr("value", seatID);
+                elm.find('input[name="submit_reserve"]').attr("id", seatID);
+                $("#a"+seatID).find('span').html(elm.html());
+                location.href = "?pID=24&m=reservations";
+                
+                //$("#removeRsv").fadeOut(500);
+               // $("#removeRsvForm")[0].reset();
                 notify('Reservasjon fjernet');
             }
             else
             {
-                $("#removeRsv").fadeOut(500);
+               //$("#removeRsv").fadeOut(500);
                 notify(obj.error);
             }
         });
-
         return false;
     });
 
@@ -392,66 +394,16 @@ $(document).ready(function(){
         $("#notify").fadeIn(500);
     }
 
-    $(".mapAvailable").click(function(){
+    $(".mapAvailable, .mapCurrentUser").click(function(){
         return false;
     });
-
-    function eventRemoveRsvClick(btnid)
-    {
-        seatID = btnid;
-        $("#removeRsvForm").find("h4").html('Plass ' + seatID);
-        $("#removeRsv").fadeIn(500);
-        return false;
-    }
-
-    function eventReserveSeatClick(btnid)
-    {
-        var urlen = "?m=users&aAct=JSONverifyAge";
-        seatID = btnid;
-        $.get(urlen, function(response){
-            var obj = $.parseJSON(response);
-            if (obj.success)
-            {
-                // Reserver
-                //$("#reserveSeat").fadeIn(500);
-                formBoxReplace("#reserveSeat");
-                $("#reserveSeatForm").find("h4").html('Plass ' + seatID);
-            }
-            else
-            {
-                // Not OK
-                if (obj.msg)
-                {
-                    notify(obj.msg);
-                }
-                else
-                {
-                    // For minors to register parent
-                    $("#cRegSID").val(''+ seatID);
-                    formBoxReplace("#completereg");
-                    //$("#completereg").fadeIn(500);
-                }
-            }
-        });
-        return false;
-    }
-
-    function resetAllForms()
+    
+     function resetAllForms()
     {
         $("#removeRsvForm").reset();
         $("#reserveSeatForm").reset();
     }
 
-    $.ajaxSetup({
-        beforeSend:function(){
-            // show gif here, eg:
-            $(".loader").show();
-        },
-        complete:function(){
-            // hide gif here, eg:
-            $(".loader").hide();
-        }
-    });
 
     $("#terms").scroll(function(){
 
