@@ -55,7 +55,7 @@
         </li>
         <li>
             <label>&nbsp;</label>
-            <input class="register-btn" type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
+            <input class="btn" type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
         </li>
         </div>
         <div id="terms" class="form-right">
@@ -132,27 +132,30 @@
 </div>
 
 <div id="loginBox">
-
-    <form id="loginBoxForm" action="" method="POST">
-        <h4>Login</h4>
-        <hr />
-        <li>
-            <label for="username">E-post:</label>
-            <input name="username" type="text" autofocus="autofocus" />
-        </li>
-        <li>
-            <label for="password">Passord:</label>
-            <input name="password" type="password" />
-        </li>
-        <li>
-            <label for="submit_login">&nbsp;</label>
-            <input name="submit_login" type="hidden" value="Logg inn" />
-        </li>
-        <li>
-            <label for="submit_login">&nbsp;</label>
-            <input name="submit_login" type="submit" value="Logg inn" />
-        </li>
-    </form>
+    <h4>Login</h4>
+            <hr />
+    <div class="form-left">
+        <form id="loginBoxForm" action="" method="POST">
+            
+            <li>
+                <label for="username">E-post:</label>
+                <input name="username" type="text" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="password">Passord:</label>
+                <input name="password" type="password" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input class="btn" name="submit_login" type="hidden" value="Logg inn" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input class="btn" name="submit_login" type="submit" value="Logg inn" />
+            </li>
+        </form>
+    </div>
+    <div class="form-right"></div>
 </div>
 
 <div id="notify">

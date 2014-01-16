@@ -172,7 +172,7 @@ header .pricetag {
     -o-transition: background 0.2s linear;
     transition: background 0.2s linear;
 }
-.questions:hover, .applytocrew:hover, .headerpart-2:hover, .headerpart-2:hover + .triangle-2::after, .headerpart-3:hover, .social:hover, .register-btn:hover {
+.questions:hover, .applytocrew:hover, .headerpart-2:hover, .headerpart-2:hover + .triangle-2::after, .headerpart-3:hover, .social:hover, .btn:hover {
     background-color: gray; /* Color transition */
 }
 
@@ -315,7 +315,6 @@ footer h4 {
     padding: 10px;
 }
 
-
 .formBox form li {
     list-style-type: none;
     padding: 5px 0;
@@ -421,14 +420,14 @@ footer h4 {
 .form-right {
     width: 50%;
     float: right;
-    max-height: 400px;
+    height: 400px;
 }
 
 #quickRegForm {
     height: 550px;
 }
 
-.register-btn {
+.btn {
     float: left !important;
     margin-left: 0 !important;
     background-color: #364d1a;
