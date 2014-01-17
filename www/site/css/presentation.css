@@ -1,6 +1,8 @@
 .nSlide {
 
     width: 100%;
+    background: gray;
+    color: white;
 }
 
 .nSlide .title {
@@ -18,8 +20,8 @@
     margin-right: auto;
 }
 
-.nSlide .header img{
-
+.header img{
+    padding-top: 30px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -33,7 +35,8 @@ footer
 
 }
 
-#sponsorer {width: 100%;
+#sponsorer {
+    width: 100%;
     position: fixed;
     bottom: 0px;
     text-align:center;
