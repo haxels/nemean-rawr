@@ -1,4 +1,4 @@
-<a id="a<?php echo $seat_id; ?>" class="mapAvailable" href="">
+<a id="a<?php echo $seat_id; ?>" class="mapAvailable" href="">&nbsp;&nbsp;
     <span class="info">
         <form id="f<?php echo $seat_id; ?>" class="reserveSeatForm" action="" method="POST">
             <h2>Plass <?php echo $seat_id; ?></h2>
