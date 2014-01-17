@@ -12,7 +12,7 @@
 <body>
 
     <div class="reveal centered">
-        <div class="header"><img src="site/img/logo.jpg" width="12%"/></div>
+        <div class="header"><img src="site/img/logo_presentation.jpg"/></div>
 
 <hr>
         <div class="slides" id="presentationHolder">
