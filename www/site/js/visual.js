@@ -34,7 +34,6 @@ $(document).ready(function(){
     }
 
     $("#loginBoxForm").submit(function(){
-        console.log("Submitted!");
         var urlen = "";
         $.post(urlen, $("#loginBoxForm").serialize(), function(response){
             console.log("før obj!");
@@ -54,6 +53,7 @@ $(document).ready(function(){
                 $(".lBtn").html('<div>' + obj.name + '</div>');
                 $(".lBtn").attr('href', '?mAct=logout');
                 $(".lBtn").attr('id', 'logout-link');
+                updateGUI();
                 //location.href='index.php';
             }
         });
@@ -305,39 +305,7 @@ $(document).ready(function(){
         return false;
     });
         
-    $(".reserveFormBtn").click(function(event){
-        console.log("Seatpå");
-        //var psw = this.elements[0].value;
-        //var seatID
-        //var data = {'psw' : psw, 'seatID' : seatID};
-        var urlen = '?m=reservations&aAct=JSONreserveSeat';
-        seatID = this.title;
-        $.post(urlen, $("#f" + seatID).serialize(), function(response){
-            var obj = $.parseJSON(response);
 
-            if (obj.success)
-            {
-                $("#a"+seatID).attr('class', 'mapCurrentUser');
-                var elm = $("#removeRsv");
-                elm.find('h2').html('Plass '+seatID);
-                elm.find('form').attr("id", "f"+seatID);
-                elm.find('input[name="seatID"]').attr("value", seatID);
-                elm.find('input[name="submit_remove"]').attr("id", seatID);
-                $("#a"+seatID).find('span').html(elm.html());
-                //location.href = "?pID=24&m=reservations";
-                //.html('<form id="f'+seatID+'" class="removeRsvForm" action="" method="POST"><button class="removeRsvBtn" id="'+seatID+'">Slett reservasjon</button>');
-                //$("#reserveSeat").fadeOut(500);
-                //$("#reserveSeatForm")[0].reset();
-                notify('Du er nå plassert.');
-            }
-            else
-            {
-                $("#reserveSeat").fadeOut(500);
-                notify(obj.error);
-            }
-        });
-        return false;
-    });
 
     $(".cRegBtn").click(function(){
         eventReserveSeatClick(this.id);
@@ -356,36 +324,43 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".removeRsvBtn").click(function(){
-        console.log('haptidu');
-        //var psw = this.elements[0].value;
-        //var data = {'psw' : psw, 'seatID' : seatID};
-        var urlen = '?m=reservations&aAct=JSONremoveReservation';
+    $("body").on("click", ".reserveFormBtn", function(event){
         seatID = this.title;
+        var urlen = '?m=reservations&aAct=JSONreserveSeat';
+        $.post(urlen, $("#f"+seatID).serialize(), function(response){
+            var obj = $.parseJSON(response);
+            if (obj.success)
+            {
+                $("#a"+seatID).attr('class', 'mapCurrentUser');
+                updateGUI();
+                notify('Du er nå plassert.');
+            }
+            else
+            {
+                $("#reserveSeat").fadeOut(500);
+                notify(obj.error);
+            }
+        });
+        event.preventDefault();
+    });
+
+    $("body").on("click", ".removeRsvBtn", function(event){
+        seatID = this.title;
+        var urlen = '?m=reservations&aAct=JSONremoveReservation';
         $.post(urlen, $("#f"+seatID).serialize(), function(response){
             var obj = $.parseJSON(response);
             if (obj.success)
             {
                 $("#a"+seatID).attr('class', 'mapAvailable');
-                var elm = $("#reserveSeat");
-                elm.find('h2').html('Plass '+seatID);
-                elm.find('form').attr("id", "f"+seatID);
-                elm.find('input[name="seatID"]').attr("value", seatID);
-                elm.find('input[name="submit_reserve"]').attr("id", seatID);
-                $("#a"+seatID).find('span').html(elm.html());
-                //location.href = "?pID=24&m=reservations";
-                
-                //$("#removeRsv").fadeOut(500);
-               // $("#removeRsvForm")[0].reset();
+                updateGUI();
                 notify('Reservasjon fjernet');
             }
             else
             {
-               //$("#removeRsv").fadeOut(500);
                 notify(obj.error);
             }
         });
-        return false;
+        event.preventDefault();
     });
 
     function notify(msg)
@@ -394,9 +369,9 @@ $(document).ready(function(){
         $("#notify").fadeIn(500);
     }
 
-    $(".mapAvailable, .mapCurrentUser").click(function(){
-        return false;
-    });
+   // $(".mapAvailable, .mapCurrentUser").click(function(){
+   //     return false;
+   // });
     
      function resetAllForms()
     {
@@ -418,10 +393,16 @@ $(document).ready(function(){
         }
         });
 
-    $('[data-update]').each(function() {
-        var self = $(this);
-        var target = self.data('update');
-        var refreshId =  setInterval(function() { self.load(target); }, self.data('refresh-interval'));
-    });
+    function updateGUI() {
+        $('[data-update]').each(function() {
+            var self = $(this);
+            var target = self.data('update');
+            self.load(target);
+        });
+    }
+
+    $("body").on("click", ".mapAvailable, .mapCurrentUser", function() {
+        event.preventDefault();
+    })
 
 });
