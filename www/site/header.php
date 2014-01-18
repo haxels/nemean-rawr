@@ -20,7 +20,6 @@ $submenu = $data['menu'] -> getSubMenu();
     <!-- jQuery Javascript -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="site/js/jquery.reset.js"></script>
     <script type="text/javascript" src="site/js/visual.js"></script>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"  />
@@ -29,7 +28,7 @@ $submenu = $data['menu'] -> getSubMenu();
 
 </head>
 <body>
-<!--[if lt IE 7]>
+<!--[if lt IE 8]>
 <div id="outdated" style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'>
     Vi anbefaler deg å oppgradere til nyeste versjon av Internet Explorer. Selv Microsoft vil det, bare se her:
     <a href="http://www.ie6countdown.com">IE6</a><br />
@@ -91,9 +90,8 @@ $submenu = $data['menu'] -> getSubMenu();
                         <div id="right-column">
                             <!-- Using spans to make it easier in php, I think... -->
                             <h3>Pris?</h3>
-                            <h5>Deltaker: <span class="pricetag">420,-</span></h5>
-                            <h5>PGA: <span class="pricetag">520,-</span></h5>
-                            <h5>Kombi: <span class="pricetag">620,-</span></h5>
+                            <h5>Deltaker: <span class="pricetag">400,-</span></h5>
+                            <h5>PGA: <span class="pricetag">500,-</span></h5>
                             <h5>Besøke: <span class="pricetag">150,-</span></h5>
                         </div>
                         <br style="clear:both;"/>

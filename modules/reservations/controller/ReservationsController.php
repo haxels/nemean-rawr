@@ -41,7 +41,7 @@ class ReservationsController extends NController implements ILeftContent
         }
 
         $data['map'] = new Map($this->settings['seats'], $this->settings['width'], $this->settings['aisle'], $this->settings['inverse'], $this->settings['locked'], $r, $this->session->getUser());
-        $this->loadView('leftContent', $data);
+        //$this->loadView('leftContent', $data);
     }
 
     public function display()
@@ -211,7 +211,7 @@ class ReservationsController extends NController implements ILeftContent
         }
         else
         {
-            $arr = array("success" => false, 'error' => 'Feil med autentisering.');
+            $arr = array("success" => false, 'error' => 'Feil med autentisering.'. $username . $psw . $seatID);
             echo json_encode($arr);
             return;
         }

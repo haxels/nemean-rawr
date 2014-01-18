@@ -48,16 +48,25 @@
                 <input type="text" name="streetadress" required="required"/>
                 <span class="hidden"></span>
             </li>
-            <label for="zipcode">Betingelser:</label>
+            <li>
+            <label for="acceptTerms">Jeg har lest, og godtar betingelsene:</label>
+            <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" />
+            <span class="hidden"></span>
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input class="btn" type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
+        </li>
         </div>
         <div id="terms" class="form-right">
+            <h3> Betingelser </h3>
             <p>
                 For å opprette bruker i vårt system avhenger det av at du setter deg inn i, og godtar, de nedenforstående betingelser. Ved å hake av "Godta betingelser" samtykker du til følgende:
             </p>
             <ul>
-                <p>
+                <li>
                     &bull; Bilder og video av deg kan brukes av Nemean i promoteringsøyemed
-                </p>
+                </li>
                 <br>
 
                 <p>
@@ -98,18 +107,7 @@
             </ul>
 
         </div>
-
-        <li>
-            <label for="acceptTerms">Godta betingelser:</label>
-            <input  type="checkbox" id="okTerms" name="acceptTerms" value="1" required="required" DISABLED="disabled"/>
-            <span class="hidden"></span>
-        </li>
-        <li>
-            <label>&nbsp;</label>
-            <input type="submit" id="submitQReg" name="submitQReg" value="Registrer"/>
-        </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
+        
     </form>
 
 </div>
@@ -130,35 +128,34 @@
             <label for="submitForgot1">&nbsp;</label>
             <input name="submitForgot1" type="submit" value="Send" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
 <div id="loginBox">
-
-    <form id="loginBoxForm" action="" method="POST">
-        <h4>Login</h4>
-        <hr />
-        <li>
-            <label for="username">E-post:</label>
-            <input name="username" type="text" autofocus="autofocus" />
-        </li>
-        <li>
-            <label for="password">Passord:</label>
-            <input name="password" type="password" />
-        </li>
-        <li>
-            <label for="submit_login">&nbsp;</label>
-            <input name="submit_login" type="hidden" value="Logg inn" />
-        </li>
-        <li>
-            <label for="submit_login">&nbsp;</label>
-            <input name="submit_login" type="submit" value="Logg inn" />
-        </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
-    </form>
+    <h4>Login</h4>
+            <hr />
+    <div class="form-left">
+        <form id="loginBoxForm" action="" method="POST">
+            
+            <li>
+                <label for="username">E-post:</label>
+                <input name="username" type="text" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="password">Passord:</label>
+                <input name="password" type="password" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input class="btn" name="submit_login" type="hidden" value="Logg inn" />
+            </li>
+            <li>
+                <label for="submit_login">&nbsp;</label>
+                <input class="btn" name="submit_login" type="submit" value="Logg inn" />
+            </li>
+        </form>
+    </div>
+    <div class="form-right"></div>
 </div>
 
 <div id="notify">
@@ -202,54 +199,56 @@
             <label for="submit_cReg">&nbsp;</label>
             <input name="submit_cReg" type="submit" value="Send" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
 <div id="reserveSeat">
-
-    <form id="reserveSeatForm" action="" method="POST">
-        <h4></h4>
-        <p>
-            Skriv inn ditt passord for å reservere denne plassen.
-        </p>
-        <hr />
-        <li>
-            <label for="password">Passord:</label>
-            <input name="password" type="password" autofocus="autofocus" />
-        </li>
-        <li>
-            <label for="submit_reserve">&nbsp;</label>
-            <input name="submit_reserve" type="submit" value="Reserver" />
-        </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
-    </form>
+        <form id="" class="reserveSeatForm" action="" method="POST">
+            <h2></h2>
+            <p>
+                Skriv inn ditt passord for å reservere denne plassen.
+            </p>
+            <hr />
+            <li>
+                <label for="psw">Passord:</label>
+                <input name="psw" type="password" autofocus="autofocus" />
+            </li>
+            <li>
+                <label for="seatID">&nbsp;</label>
+                <input name="seatID" type="hidden" value="" /> 
+            </li>
+            <li>
+                <label for="submit_reserve">&nbsp;</label>
+                <input title="" class="reserveFormBtn" name="submit_reserve" type="submit" value="Reserver" />
+            </li>
+        </form>
 </div>
 
 <div id="removeRsv">
-
-    <form id="removeRsvForm" action="" method="POST">
-        <h4></h4>
+    <form class="removeRsvForm" action="" method="POST">
+        <h2></h2>
         <p>
             Skriv inn ditt passord for å kansellere din reservasjon.
         </p>
         <hr />
         <li>
-            <label for="password">Passord:</label>
-            <input name="password" type="password" autofocus="autofocus" />
-        </li>
+            <label for="psw">Passord:</label>
+            <input name="psw" type="password" autofocus="autofocus" />
+        </li
+        <li>
+            <label for="seatID">&nbsp;</label>
+            <input name="seatID" type="hidden" value="" />
+        </li>>
         <li>
             <label for="submit_remove">&nbsp;</label>
-            <input name="submit_remove" type="submit" value="Slett" />
+            <input id="" class="removeRsvBtn" name="submit_remove" type="submit" value="Slett" />
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 </div>
 
 <div id="applicationForm">
+
+
     <form id="application" action="" method="POST">
         <h4>Søknadskjema for crewopptak</h4>
         <hr />
@@ -296,8 +295,26 @@
             <label>&nbsp;</label>
             <input type="submit" id="submitCA" name="submitCA" value="Send"/>
         </li>
-        <div class="loader"><img src="resources/site/img/design/loader.gif" />
-        </div>
     </form>
 
 </div>
+
+
+<div id="gMap">
+    <!--<iframe 
+        width="1100"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;output=embed">
+    </iframe>
+    <br />
+    <small>
+        <a
+        href="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;source=embed"
+        style="color:#0000FF;text-align:left">Vis større kart</a>
+    </small>-->
+    Map!
+</div> 

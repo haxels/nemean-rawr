@@ -27,7 +27,7 @@ nav {
     color: #364d1a;
     line-height: calc(1.2em + 4px);
 }
-.menuitem:hover {
+.menuitem:hover, .submenuitem:hover {
     color: #73cd07;
 }
 header {
@@ -40,7 +40,7 @@ header div::before, header div::after {
     pointer-events: none;
 }
 header h3, header h5 {
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 header h3 {
     font-size: 24px;
@@ -48,7 +48,7 @@ header h3 {
     line-height: 24px;
 }
 header h5 {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
     margin-top: 0;
 }
@@ -140,6 +140,7 @@ header .pricetag {
 }
 .content-right {
     float: right;
+    position: relative;
     width: 1100px; /* Propotional with total width */
     min-height: 1300px; /* Total height */
 }
@@ -171,11 +172,11 @@ header .pricetag {
     -o-transition: background 0.2s linear;
     transition: background 0.2s linear;
 }
-.questions:hover, .applytocrew:hover, .headerpart-2:hover, .headerpart-2:hover + .triangle-2::after, .headerpart-3:hover, .social:hover {
+.questions:hover, .applytocrew:hover, .headerpart-2:hover, .headerpart-2:hover + .triangle-2::after, .headerpart-3:hover, .social:hover, .btn:hover {
     background-color: gray; /* Color transition */
 }
 
-.headerpart-2, .headerpart-3, .headerpart-2 + .triangle-2::after, .social {
+.headerpart-2, .headerpart-3, .headerpart-2 + .triangle-2::after, .social, .register-btn {
     -webkit-transition: background 0.2s linear;
     -moz-transition: background 0.2s linear;
     -ms-transition: background 0.2s linear;
@@ -239,7 +240,7 @@ footer h4 {
     color: gray;
 }
 
-#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv {
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap {
     display: none;
 }
 
@@ -300,13 +301,9 @@ footer h4 {
 }
 
 #terms {
-    padding: 10px;
-    margin-top: 10px;
     overflow: auto;
-    height: 100px;
-    background: white;
-    width: 60%;
     list-style: disc;
+    font-size: 0.8em;
 }
 
 #terms ul {
@@ -322,7 +319,7 @@ footer h4 {
     list-style-type: none;
     padding: 5px 0;
     height: 30px;
-    width: 30%;
+    width: 90%;
 }
 
 .formBox form label {
@@ -333,10 +330,10 @@ footer h4 {
 }
 
 .formBox form input {
-    margin-left: 15px;
     float: right;
-    font-size: 14px;
-    width: 40%;
+    width: 45%;
+    padding: 5px;
+    border: 1px solid #cccccc;
 }
 
 #forgotPsw form input, #reserveSeat form input, #removeRsv form input {
@@ -351,13 +348,12 @@ footer h4 {
 }
 
 .X {
-    position: relative;
+    position: absolute;
     right: 10px;
-    top: 10px;
+    top: 228px;
     font-size: 20px;
     color: #868686;
     font-weight: bold;
-    float: right;
     display: none;
 }
 
@@ -400,4 +396,45 @@ footer h4 {
     font-weight: 500;
     text-align: center;
     font-size: 2em;
+}
+
+
+.submenuitem {
+    color: gray;
+    font-size: 0.8em;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+#gMap {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-left {
+    width: 50%;
+    float: left;
+    height: 400px;
+}
+
+.form-right {
+    width: 50%;
+    float: right;
+    height: 400px;
+}
+
+#quickRegForm {
+    height: 550px;
+}
+
+.btn {
+    float: left !important;
+    margin-left: 0 !important;
+    background-color: #364d1a;
+    margin-top: 15px;
+    color: white;
+    height: 40px;
+    width: 100px;
+    cursor: pointer; 
 }
