@@ -5,8 +5,9 @@
  * Date: 1/18/14
  * Time: 8:53 PM
  */
+session_start();
 require_once '../system/NConfig.php';
-require_once MODULEPATH . 'settings/classes/SettingsMapper.php';
+require_once MODULEPATH . 'settings/classes/SettingsMapper.php'; //
 $adapter = new PDOAdapter('mysql:host='.DBHOST.';dbname='.DBNAME, DBUSER, DBPASS);
 $session = new Session($adapter);
 $settingsMapper = new SettingsMapper($adapter);

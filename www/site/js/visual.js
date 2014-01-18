@@ -324,7 +324,7 @@ $(document).ready(function(){
                 elm.find('input[name="seatID"]').attr("value", seatID);
                 elm.find('input[name="submit_remove"]').attr("id", seatID);
                 $("#a"+seatID).find('span').html(elm.html());
-                location.href = "?pID=24&m=reservations";
+                //location.href = "?pID=24&m=reservations";
                 //.html('<form id="f'+seatID+'" class="removeRsvForm" action="" method="POST"><button class="removeRsvBtn" id="'+seatID+'">Slett reservasjon</button>');
                 //$("#reserveSeat").fadeOut(500);
                 //$("#reserveSeatForm")[0].reset();
@@ -373,7 +373,7 @@ $(document).ready(function(){
                 elm.find('input[name="seatID"]').attr("value", seatID);
                 elm.find('input[name="submit_reserve"]').attr("id", seatID);
                 $("#a"+seatID).find('span').html(elm.html());
-                location.href = "?pID=24&m=reservations";
+                //location.href = "?pID=24&m=reservations";
                 
                 //$("#removeRsv").fadeOut(500);
                // $("#removeRsvForm")[0].reset();
