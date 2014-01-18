@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 ?>
-<section id="main" xmlns="http://www.w3.org/1999/html">
+<section id="main" data-update="map.php" data-refresh-interval="500">
 <h3>Plasskart</h3>
 
 
