@@ -893,8 +893,6 @@
             $mail = new PHPMailer();
             $mail->IsHTML();
             //$mail->IsSMTP();
-            $mail->IsSendmail();
-            
             //$mail->SMTPDebug = 1;
             //$mail->SMTPAuth = false;
             //$mail->SMTPSecure = 'ssl';
@@ -902,7 +900,7 @@
             //$mail->Port = 25;
             //$mail->Username = GMUSER;
             //$mail->Password = GMPASS;
-            $mail->SetFrom('kontakt@nemean.no', 'Nemean');
+            $mail->SetFrom('noreply@nemean.no', 'Nemean');
             $mail->Subject = $subject;
             $mail->Body = $body;
             $mail->AddAddress($to);
