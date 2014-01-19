@@ -57,7 +57,7 @@ class Page
             && !$this->session->isAuthenticated() )
         {
             $error = $this->session->getError();
-            require_once '/site/closed.php';
+            require_once 'site/closed.php';
         }
         else
         {
