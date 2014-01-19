@@ -893,6 +893,7 @@
             $mail = new PHPMailer();
             $mail->IsHTML();
             $mail->IsSMTP();
+            $mail->SetFrom("Nemean <kontakt@nemean.no>");
             //$mail->IsSendmail();
             
             //$mail->SMTPDebug = 1;
