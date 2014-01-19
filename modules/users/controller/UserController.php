@@ -895,7 +895,6 @@
             $mail->IsHTML();
             $mail->IsSMTP();
             //$mail->SMTPDebug = 1;
-            $mail->SMTPAuth = true;
             //$mail->SMTPSecure = 'ssl';
             $mail->Host = 'smtp.domeneshop.no';
             $mail->Port = 25;
