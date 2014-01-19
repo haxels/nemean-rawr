@@ -41,12 +41,12 @@
     <a href="" class="questions">
     <div class="box-title">
         <h3>Spørsmål?</h3>
-    </div> <!-- Box-content --> <h1 class="box-content" style="margin-top:55px;">Kontakt oss!</h1> </a>
+    </div> <!-- Box-content --> <h1 class="box-content">Kontakt oss!</h1> </a>
 
     <a href="" class="applytocrew">
     <div class="box-title">
         <h3>Lyst til å bli en av oss?</h3>
-    </div> <!-- Box-content --> <h1 class="box-content" style="line-height:260px;">Søk nå!</h1> </a>
+    </div> <!-- Box-content --> <h1 class="box-content">Søk nå!</h1> </a>
 
 
 <a href="https://www.facebook.com/nemeanlan">

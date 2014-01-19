@@ -14,11 +14,6 @@
 
        <div id="copyright"> &copy; 2012 Nemean </div>
     </footer>
- 
-<?php if ($session->isAuthorized(array('Developer', 'Crew'))) : ?>
-        <a id="toAdminBtn" href="admin.php">Adminpanel</a>
-    <?php endif; ?>
-
 </body>
 
 
