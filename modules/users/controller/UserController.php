@@ -894,12 +894,13 @@
             $mail = new PHPMailer();
             $mail->IsHTML();
             $mail->IsSMTP();
+            $mail->SMTPAuth = true;
             //$mail->SMTPDebug = 1;
             //$mail->SMTPSecure = 'ssl';
             $mail->Host = 'smtp.domeneshop.no';
             $mail->Port = 25;
             $mail->Username = "nemean6";
-            //$mail->Password = "N0reply1";
+            $mail->Password = "N0reply1";
             $mail->SetFrom('noreply@nemean.no', 'Nemean');
             $mail->Subject = $subject;
             $mail->Body = $body;
