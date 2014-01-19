@@ -662,7 +662,6 @@
 
             if ($this->autyMapper->insert($authy) == 0)
             {
-                console.log($user);
                 $this->userMapper->getRoleMapper()->addRole($id, 3);
                 $body = $this->htmlActivateMail($firstname, $hash);
                 if ($this->sendMail($email, 'Aktiveringsmail', $body))
