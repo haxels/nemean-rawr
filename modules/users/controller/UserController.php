@@ -394,6 +394,7 @@
 
                 if ($this->autyMapper->insert($authy) == 0)
                 {
+                    echo "Kommer jeg hit?";
                     $this->userMapper->getRoleMapper()->addRole($id, 3);
                     $this->sendMail($email, 'Aktiveringsmail', '<a href="http://localhost/zebra/www/index.php?m=users&act=activate&h='.$hash.'>Aktiver</a>"');
                     echo "Bruker registrert! Du vil f&#229; en aktiveringsmail p&#229; din registrerte e-post. Her m&#229; du aktivere brukeren din for &#229; kunne logge inn.";
@@ -661,6 +662,7 @@
 
             if ($this->autyMapper->insert($authy) == 0)
             {
+                console.log($user);
                 $this->userMapper->getRoleMapper()->addRole($id, 3);
                 $body = $this->htmlActivateMail($firstname, $hash);
                 if ($this->sendMail($email, 'Aktiveringsmail', $body))
@@ -892,14 +894,14 @@
         {
             $mail = new PHPMailer();
             $mail->IsHTML();
-            //$mail->IsSMTP();
+            $mail->IsSMTP();
             //$mail->SMTPDebug = 1;
-            //$mail->SMTPAuth = false;
+            $mail->SMTPAuth = true;
             //$mail->SMTPSecure = 'ssl';
-            //$mail->Host = 'mail.nemean.no';
-            //$mail->Port = 25;
-            //$mail->Username = GMUSER;
-            //$mail->Password = GMPASS;
+            $mail->Host = 'smtp.domeneshop.no';
+            $mail->Port = 25;
+            $mail->Username = "nemean6";
+            //$mail->Password = "N0reply1";
             $mail->SetFrom('noreply@nemean.no', 'Nemean');
             $mail->Subject = $subject;
             $mail->Body = $body;
