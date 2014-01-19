@@ -19,6 +19,7 @@ $(document).ready(function() {
     });
 
     $(".headerpart-1").click(function() {
+        $("#gMap").load("gMap.php");
         showForm("#gMap");
         return false;
     });
@@ -354,5 +355,5 @@ $(document).ready(function() {
 
     $("body").on("click", ".mapAvailable, .mapCurrentUser", function() {
         event.preventDefault();
-    })
+    });
 }); 
