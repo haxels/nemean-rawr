@@ -31,7 +31,7 @@
 
             <div class="infoBar">
                 <a class="mapLockedInfo"></a>
-                <label>Låst</label>
+                <span>Låst</span>
             </div>
         </div>
 

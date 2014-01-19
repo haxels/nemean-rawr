@@ -56,7 +56,6 @@ $(document).ready(function(){
                 $(".lBtn").attr('href', '?mAct=logout');
                 $(".lBtn").attr('id', 'logout-link');
                 updateGUI();
-                //location.href='index.php';
             }
         });
         return false;
@@ -158,7 +157,6 @@ $(document).ready(function(){
                 }
             }
         });
-
         return false;
     });
 
@@ -239,7 +237,6 @@ $(document).ready(function(){
             }
             notify(obj.msg);
         });
-
         return false;
     });
 
@@ -262,71 +259,44 @@ $(document).ready(function(){
         {
             notify('Du må skrive inn en e-postadresse');
         }
-
         return false;
     });
 
-    $("#forgotPswForm").submit(function()
-    {
-        var email = this.elements[0].value;
-        if (email != '')
-        {
-            var urlen = "?m=users&aAct=JSONforgot";
-            $.post(urlen, $("#forgotPswForm").serialize(), function(response){
-                var obj = $.parseJSON(response);
-                if (obj.success)
-                {
-                    $("#forgotPsw").fadeOut();
-                }
-                notify(obj.msg);
-            });
-        }
-        else
-        {
-            notify('Du må skrive inn en e-postadresse');
-        }
+    // For registrering av foresatt fjern kommentering under
+    //$("#completereg").submit(function(){
+      //  var urlen = "?m=users&aAct=JSONcompleteReg";
+      //  $.post(urlen, $("#cRegForm").serialize(), function(response){
+        //    var obj = $.parseJSON(response);
+        //    if (obj.success)
+        //    {
+        //        $("#completereg").fadeOut(500);
+        //        notify('Foresatt lag til, e-post på tur.');
+        //    }
+       //     else
+      //      {
+     //           notify('Noe gikk galt.');
+    //        }
+    //    });
+    //    return false;
+    //});
 
-        return false;
-    });
-    
-    $("#completereg").submit(function(){
-        var urlen = "?m=users&aAct=JSONcompleteReg";
-        $.post(urlen, $("#cRegForm").serialize(), function(response){
-            var obj = $.parseJSON(response);
-            if (obj.success)
-            {
-                $("#completereg").fadeOut(500);
-                notify('Foresatt lag til, e-post på tur.');
-            }
-            else
-            {
-                notify('Noe gikk galt.');
-            }
-        });
+    //$(".cRegBtn").click(function(){
+    //    eventReserveSeatClick(this.id);
+    //});
 
-        return false;
-    });
-        
+    //$("#cRegForm").submit(function(){
+    //    var urlen = "?m=users&aAct=JSONcompleteReg";
+    //    $.post(urlen, $("#cRegForm").serialize(), function(response){
+    //        var obj = $.parseJSON(response);
+    //        if (obj.success)
+    //        {
+    //            $("#completereg").fadeOut();
+    //        }
+    //        notify(obj.msg);
+    //    });
+    //    return false;
+    //});
 
-
-    $(".cRegBtn").click(function(){
-        eventReserveSeatClick(this.id);
-    });
-
-    $("#cRegForm").submit(function(){
-        var urlen = "?m=users&aAct=JSONcompleteReg";
-        $.post(urlen, $("#cRegForm").serialize(), function(response){
-            var obj = $.parseJSON(response);
-            if (obj.success)
-            {
-                $("#completereg").fadeOut();
-            }
-            notify(obj.msg);
-        });
-        return false;
-    });
-
-    //$("body").on("click", ".reserveFormBtn", function(event){
     $("body").on("submit", ".reserveSeatForm", function(event){
         seatID = this.title;
         $("#f"+seatID).find("input[type='password']").addClass("loading");
@@ -348,7 +318,6 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
-    //$("body").on("click", ".removeRsvBtn", function(event){
     $("body").on("submit", ".removeRsvForm", function(event){
         seatID = this.title;
         $("#f"+seatID).find("input[type='password']").addClass("loading");
@@ -373,16 +342,6 @@ $(document).ready(function(){
     {
         $("#notifyMsg").html(msg);
         $("#notify").fadeIn(500);
-    }
-
-   // $(".mapAvailable, .mapCurrentUser").click(function(){
-   //     return false;
-   // });
-    
-     function resetAllForms()
-    {
-        $("#removeRsvForm").reset();
-        $("#reserveSeatForm").reset();
     }
 
     $("#terms").scroll(function(){

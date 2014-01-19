@@ -141,12 +141,16 @@ p button
     margin-bottom: 20px;
     height: 30px;
     font-size: 10px;
+    display: block;
 }
 
-.infoBar label
-{
-    height: 30px;
-    line-height: 30px;
+.infoBar span {
+    padding-left: 10px;
+}
+
+.infoBar span, .infoBar a {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 span.info form li {
