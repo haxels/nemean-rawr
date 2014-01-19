@@ -254,7 +254,7 @@
 </div>
 
 
-<div id="gMap">
+<div id="gMap" data-update="gMap.php">
     <!--<iframe 
         width="1100"
         height="400"
@@ -270,5 +270,5 @@
         href="https://maps.google.com/?ie=UTF8&amp;ll=63.289217,9.088697&amp;spn=0.01794,0.066047&amp;t=m&amp;z=15&amp;source=embed"
         style="color:#0000FF;text-align:left">Vis større kart</a>
     </small>-->
-    Map!
+
 </div> 
