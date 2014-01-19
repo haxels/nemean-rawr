@@ -19,11 +19,15 @@ $submenu = $data['menu'] -> getSubMenu();
     <!-- jQuery Javascript -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
     <script type="text/javascript" src="site/js/visual.js"></script>
+    <script type="text/javascript" src="site/js/slides.js"></script>
 
     <meta charset="utf-8">
     <link href="site/css/map.css" rel="stylesheet" type="text/css" />
     <link href="site/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="site/css/slides.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>

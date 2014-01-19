@@ -247,7 +247,7 @@ footer div {
     color: gray;
     margin: 0 auto;
     width: 100%;
-    padding: 10px;
+    padding-top: 10px;
     }
 
 #qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap {

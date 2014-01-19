@@ -10,55 +10,55 @@ var seatID;
 var liveMode = false;
 var liveModeId = 0;
 
-$(document).ready(function(){
+$(document).ready(function() {
+    $(".rslides").responsiveSlides();
 
-    $("#registerBtn").click(function(){
+    $("#registerBtn").click(function() {
         showForm("#qRegister");
         return false;
     });
-    
-    $(".headerpart-1").click(function(){
+
+    $(".headerpart-1").click(function() {
         showForm("#gMap");
         return false;
     });
-    
-    function showForm(divID)
-    {
+
+    function showForm(divID) {
         var visible = $(divID).is(":visible");
         $(".formBox").children().slideUp();
         $(".X").fadeOut(10);
-        
-        if(!visible) {
-            
+
+        if (!visible) {
+
             $(divID).slideDown();
             $(".X").fadeIn(10);
         }
     }
 
-    $("#loginBoxForm").submit(function(){
+
+    $("#loginBoxForm").submit(function() {
         var urlen = "";
-        $.post(urlen, $("#loginBoxForm").serialize(), function(response){
+        $.post(urlen, $("#loginBoxForm").serialize(), function(response) {
             console.log("før obj!");
             var obj = $.parseJSON(response);
             console.log("Etter OBJ!");
-            if (!obj.success)
-            {
+            if (!obj.success) {
                 console.log("Success, NNAAAT!");
                 $("#loginBox").fadeOut(500);
                 notify(obj.error)
-            }
-            else
-            {
+            } else {
                 console.log("Success!");
                 $("#loginBox").slideUp(500);
                 $(".X").slideUp(500);
                 $(".lBtn").html('<div>Logg ut</div>');
                 $(".lBtn").attr('href', '?mAct=logout');
                 $(".lBtn").attr('id', 'logout-link');
-                $(".headerpart-2").find('h3').html(""+obj.name);
+                $(".headerpart-2").find('h3').html("" + obj.name);
                 $(".headerpart-2").addClass("disabled");
                 $(".headerpart-2, .lBtn").off('click');
-                $(".headerpart-2").click(function() {return false;});
+                $(".headerpart-2").click(function() {
+                    return false;
+                });
                 updateGUI();
             }
         });
@@ -69,19 +69,17 @@ $(document).ready(function(){
 
         var email = this.value;
 
-        if (email.length > 5)
-        {
+        if (email.length > 5) {
             var urlen = "?m=users&aAct=JSONcheckEmail";
-            var data = { "email" : email };
-            $.post(urlen, data, function(response){
+            var data = {
+                "email" : email
+            };
+            $.post(urlen, data, function(response) {
                 var obj = $.parseJSON(response);
-                if (obj.legal)
-                {
+                if (obj.legal) {
                     $("#regEmail").css('border-color', 'green');
                     $("#regEmail").css('border-width', '2px');
-                }
-                else
-                {
+                } else {
                     $("#regEmail").css('border-color', 'red');
                     $("#regEmail").css('border-width', '2px');
                 }
@@ -89,74 +87,60 @@ $(document).ready(function(){
 
         }
 
-        if (email.length == 0)
-        {
+        if (email.length == 0) {
             $("#regEmail").css('border-color', 'red');
             $("#regEmail").css('border-width', '2px');
         }
     });
 
-    $("#quickRegForm").submit(function(){
-		
+    $("#quickRegForm").submit(function() {
+
         $("input").closest('li').find('span').hide();
-		
+
         var urlen = "?m=users&aAct=JSONquickReg";
-        $.post(urlen, $("#quickRegForm").serialize(), function(response){
+        $.post(urlen, $("#quickRegForm").serialize(), function(response) {
             var obj = $.parseJSON(String(response));
-            if (obj.success)
-            {
+            if (obj.success) {
                 $("#qRegister").slideUp();
                 $(".X").slideUp();
                 notify("Du er nå registrert, aktiveringsmail er på tur til din innbox!");
-            }
-            else
-            {
-                if (obj.ex)
-                {
+            } else {
+                if (obj.ex) {
                     notify(obj.ex);
                 }
 
-                if (obj.errors.firstname)
-                {
+                if (obj.errors.firstname) {
                     $("input[name=firstname]").closest('li').find('span').attr('title', obj.errors.firstname).show();
                 }
 
-                if (obj.errors.lastname)
-                {
+                if (obj.errors.lastname) {
                     $("input[name=lastname]").closest('li').find('span').attr('title', obj.errors.lastname).show();
                 }
 
-                if (obj.errors.email)
-                {
+                if (obj.errors.email) {
                     $("input[name=email]").closest('li').find('span').attr('title', obj.errors.email).show();
                 }
-                if (obj.errors.password)
-                {
+                if (obj.errors.password) {
                     $("input[name=password]").closest('li').find('span').attr('title', obj.errors.password).show();
                 }
 
-                if (obj.errors.birthdate)
-                {
+                if (obj.errors.birthdate) {
                     $("input[name=birthdate]").closest('li').find('span').attr('title', obj.errors.birthdate).show();
                 }
 
-                if (obj.errors.telephone)
-                {
+                if (obj.errors.telephone) {
                     $("input[name=telephone]").closest('li').find('span').attr('title', obj.errors.telephone).show();
                 }
 
-                if (obj.errors.zipcode)
-                {
+                if (obj.errors.zipcode) {
                     $("input[name=zipcode]").closest('li').find('span').attr('title', obj.errors.zipcode).show();
                 }
 
-                if (obj.errors.streetadress)
-                {
+                if (obj.errors.streetadress) {
                     $("input[name=streetadress]").closest('li').find('span').attr('title', obj.errors.streetadress).show();
                 }
 
-                if (obj.errors.acceptTerms)
-                {
+                if (obj.errors.acceptTerms) {
                     $("input[name=acceptTerms]").closest('li').find('span').attr('title', obj.errors.acceptTerms).show();
                 }
             }
@@ -164,78 +148,67 @@ $(document).ready(function(){
         return false;
     });
 
-    $("#notifyClose").click(function(){
+    $("#notifyClose").click(function() {
         $("#notify").fadeOut();
         return false;
     });
 
-    $(".X").click(function(){
+    $(".X").click(function() {
         $(this).fadeOut(10);
         $(".formBox").children().slideUp();
-        
+
         return false;
     });
 
-    $("#forgotPswBtn").click(function(){
+    $("#forgotPswBtn").click(function() {
         showForm("#forgotPsw");
-       // $("#loginBox").fadeOut(function(){
+        // $("#loginBox").fadeOut(function(){
         //    $("#forgotPsw").fadeIn();
         //});
 
         return false;
     });
 
-    $("#login-link").click(function(){
+    $("#login-link").click(function() {
         showForm("#loginBox");
         return false;
     });
 
-    $(".crewApply").click(function()
-    {
-      $("#applicationForm").fadeIn();
+    $(".crewApply").click(function() {
+        $("#applicationForm").fadeIn();
         return false;
     });
 
-    $("#application").submit(function()
-    {
+    $("#application").submit(function() {
         $("input").closest('li').find('span').hide();
         var urlen = "?m=users&aAct=JSONcrewApplication";
-        $.post(urlen, $("#application").serialize(), function(response){
+        $.post(urlen, $("#application").serialize(), function(response) {
 
             var obj = $.parseJSON(response);
-            if (obj.success)
-            {
+            if (obj.success) {
                 $("#applicationForm").fadeOut();
                 removeMask();
-            }
-            else
-            {
-                if (obj.errors.firstname)
-                {
+            } else {
+                if (obj.errors.firstname) {
                     $("input[name=firstname]").closest('li').find('span').attr('title', obj.errors.firstname).show();
                 }
 
-                if (obj.errors.lastname)
-                {
+                if (obj.errors.lastname) {
                     $("input[name=lastname]").closest('li').find('span').attr('title', obj.errors.lastname).show();
                 }
 
-                if (obj.errors.email)
-                {
+                if (obj.errors.email) {
                     $("input[name=email]").closest('li').find('span').attr('title', obj.errors.email).show();
                 }
-                if (obj.errors.byear)
-                {
+                if (obj.errors.byear) {
                     $("input[name=byear]").closest('li').find('span').attr('title', obj.errors.byear).show();
                 }
 
-                if (obj.errors.what)
-                {
+                if (obj.errors.what) {
                     $("input[name=what]").closest('li').find('span').attr('title', obj.errors.what).show();
                 }
 
-                if (obj.errors.why)
-                {
+                if (obj.errors.why) {
                     $("input[name=why]").closest('li').find('span').attr('title', obj.errors.why).show();
                 }
             }
@@ -244,23 +217,18 @@ $(document).ready(function(){
         return false;
     });
 
-    $("#forgotPswForm").submit(function()
-    {
+    $("#forgotPswForm").submit(function() {
         var email = this.elements[0].value;
-        if (email != '')
-        {
+        if (email != '') {
             var urlen = "?m=users&aAct=JSONforgot";
-            $.post(urlen, $("#forgotPswForm").serialize(), function(response){
+            $.post(urlen, $("#forgotPswForm").serialize(), function(response) {
                 var obj = $.parseJSON(response);
-                if (obj.success)
-                {
+                if (obj.success) {
                     $("#forgotPsw").fadeOut();
                 }
                 notify(obj.msg);
             });
-        }
-        else
-        {
+        } else {
             notify('Du må skrive inn en e-postadresse');
         }
         return false;
@@ -268,17 +236,17 @@ $(document).ready(function(){
 
     // For registrering av foresatt fjern kommentering under
     //$("#completereg").submit(function(){
-      //  var urlen = "?m=users&aAct=JSONcompleteReg";
-      //  $.post(urlen, $("#cRegForm").serialize(), function(response){
-        //    var obj = $.parseJSON(response);
-        //    if (obj.success)
-        //    {
-        //        $("#completereg").fadeOut(500);
-        //        notify('Foresatt lag til, e-post på tur.');
-        //    }
-       //     else
-      //      {
-     //           notify('Noe gikk galt.');
+    //  var urlen = "?m=users&aAct=JSONcompleteReg";
+    //  $.post(urlen, $("#cRegForm").serialize(), function(response){
+    //    var obj = $.parseJSON(response);
+    //    if (obj.success)
+    //    {
+    //        $("#completereg").fadeOut(500);
+    //        notify('Foresatt lag til, e-post på tur.');
+    //    }
+    //     else
+    //      {
+    //           notify('Noe gikk galt.');
     //        }
     //    });
     //    return false;
@@ -301,20 +269,17 @@ $(document).ready(function(){
     //    return false;
     //});
 
-    $("body").on("submit", ".reserveSeatForm", function(event){
+    $("body").on("submit", ".reserveSeatForm", function(event) {
         seatID = this.title;
-        $("#f"+seatID).find("input[type='password']").addClass("loading");
+        $("#f" + seatID).find("input[type='password']").addClass("loading");
         var urlen = '?m=reservations&aAct=JSONreserveSeat';
-        $.post(urlen, $("#f"+seatID).serialize(), function(response){
+        $.post(urlen, $("#f" + seatID).serialize(), function(response) {
             var obj = $.parseJSON(response);
-            if (obj.success)
-            {
-                $("#a"+seatID).attr('class', 'mapCurrentUser');
+            if (obj.success) {
+                $("#a" + seatID).attr('class', 'mapCurrentUser');
                 updateGUI();
                 notify('Du er nå plassert.');
-            }
-            else
-            {
+            } else {
                 $("#reserveSeat").fadeOut(500);
                 notify(obj.error);
             }
@@ -322,46 +287,39 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
-    $("body").on("submit", ".removeRsvForm", function(event){
+    $("body").on("submit", ".removeRsvForm", function(event) {
         seatID = this.title;
-        $("#f"+seatID).find("input[type='password']").addClass("loading");
+        $("#f" + seatID).find("input[type='password']").addClass("loading");
         var urlen = '?m=reservations&aAct=JSONremoveReservation';
-        $.post(urlen, $("#f"+seatID).serialize(), function(response){
+        $.post(urlen, $("#f" + seatID).serialize(), function(response) {
             var obj = $.parseJSON(response);
-            if (obj.success)
-            {
-                $("#a"+seatID).attr('class', 'mapAvailable');
+            if (obj.success) {
+                $("#a" + seatID).attr('class', 'mapAvailable');
                 updateGUI();
                 notify('Reservasjon fjernet');
-            }
-            else
-            {
+            } else {
                 notify(obj.error);
             }
         });
         event.preventDefault();
     });
 
-    function notify(msg)
-    {
+    function notify(msg) {
         $("#notify").find('h3').html('Hei!');
         $("#notify").find('p').html(msg);
         $("#notify").fadeIn(500);
     }
 
-    $("#terms").scroll(function(){
 
-        var myDiv = $('#terms'),
-            checkBox = $('#okTerms')
-        if (myDiv.scrollTop() + myDiv.outerHeight() == (myDiv.get(0).scrollHeight))
-        {
+    $("#terms").scroll(function() {
+
+        var myDiv = $('#terms'), checkBox = $('#okTerms')
+        if (myDiv.scrollTop() + myDiv.outerHeight() == (myDiv.get(0).scrollHeight)) {
             checkBox.removeAttr('disabled');
+        } else {
+
         }
-        else
-        {
-            
-        }
-        });
+    });
 
     $("body").on("click", "#liveModeOnBtn", function() {
         $('[data-update]').each(function() {
@@ -373,7 +331,7 @@ $(document).ready(function(){
             }, self.data('refresh-interval'));
             liveMode = true;
         });
-     });
+    });
 
     $("body").on("click", "#liveModeOffBtn", function() {
         alert('Live mode off');
@@ -393,8 +351,8 @@ $(document).ready(function(){
         });
     }
 
+
     $("body").on("click", ".mapAvailable, .mapCurrentUser", function() {
         event.preventDefault();
     })
-
-});
+}); 
