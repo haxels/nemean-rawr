@@ -428,11 +428,11 @@
                         $user = $this->userMapper->findById($authy->getUser_id());
                         $body = $this->htmlWelcomeMail($user->getName(), $hash);
                         $this->sendMail($user->getContactInfo()->getEmail(), 'Velkommen til Nemean', $body);
-                        echo '<section id="main">Din brukerkonto er n&#229; aktivert!</section>';
+                        echo '<section><div id="" class="message success"><h3>Hei!</h3><p>Din brukerkonto er aktivert.</p></div></section>';
                     }
                     else
                     {
-                        echo '<section id="main">Du er allerede aktivert!</section>';
+                        echo '<section><div id="" class="message success"><h3>Hei!</h3><p>Du er allerede aktivert.</p></div></section>';
                     }
                 }
                 else
@@ -894,12 +894,13 @@
             $mail = new PHPMailer();
             $mail->IsHTML();
             $mail->IsSMTP();
+            $mail->SMTPAuth = true;
             //$mail->SMTPDebug = 1;
             //$mail->SMTPSecure = 'ssl';
             $mail->Host = 'smtp.domeneshop.no';
             $mail->Port = 25;
             $mail->Username = "nemean6";
-            //$mail->Password = "N0reply1";
+            $mail->Password = "N0reply1";
             $mail->SetFrom('noreply@nemean.no', 'Nemean');
             $mail->Subject = $subject;
             $mail->Body = $body;

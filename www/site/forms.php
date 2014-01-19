@@ -158,11 +158,10 @@
     <div class="form-right"></div>
 </div>
 
-<div id="notify">
-    <p id="notifyMsg"></p>
-    <button id="notifyClose">
-        Close
-    </button>
+<div id="notify" class="message success">
+    <a class="X" href="#">X</a>
+    <h3></h3>
+    <p></p>
 </div>
 
 <div id="completereg">

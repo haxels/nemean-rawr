@@ -320,11 +320,6 @@ footer div {
     padding: 5px;
 }
 
-#notify p {
-    margin: 0 auto;
-    padding: 10px;
-}
-
 .formBox form li {
     list-style-type: none;
     padding: 5px 0;
@@ -350,11 +345,6 @@ footer div {
     margin-left: 15px;
     float: right;
     width: 70%;
-}
-
-#notifyClose {
-    float: right;
-    margin: 5px;
 }
 
 .X {
@@ -447,4 +437,46 @@ footer div {
     height: 40px;
     width: 100px;
     cursor: pointer; 
+}
+
+
+.success{
+    background-color: #61b832;
+    border-color: #55a12c;
+}
+
+.message{
+    margin-top: 30px;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%,
+    transparent 75%, transparent);
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
+    width: 1080px;
+    border: 1px solid;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    //_position: absolute;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    animation: animate-bg 5s linear infinite;
+}
+
+.message h3{
+    margin: 0 0 5px 0;
+}
+
+.message p{
+    margin: 0;
+}
+
+#notify {
+    position: relative;
+}
+
+#notify a.X {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFFFFF;
 }

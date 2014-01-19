@@ -11,7 +11,6 @@ var liveMode = false;
 var liveModeId = 0;
 
 $(document).ready(function() {
-    console.log("I win?");
     $(".rslides").responsiveSlides();
 
     $("#registerBtn").click(function() {
@@ -306,8 +305,10 @@ $(document).ready(function() {
     });
 
     function notify(msg) {
-        $("#notifyMsg").html(msg);
+        $("#notify").find('h3').html('Hei');
+        $("#notify").find('p').html(msg);
         $("#notify").fadeIn(500);
+        $("#notify .X").fadeIn(500);
     }
 
 
