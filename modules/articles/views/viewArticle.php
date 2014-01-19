@@ -14,20 +14,8 @@ $article = $data['article'];
         <h1><?php echo $article->getTitle(); ?></h1>
         <br>
         <div class="ingress"><i><?php echo stripcslashes($article->getIngress()); ?></i></div>
-        <div class="text"><?php echo stripcslashes($article->getText()); ?></div>
+        <div class="text"><?php echo str_replace("&nbsp;", "",stripcslashes($article->getText())); ?></div>
         <br><br>
-
-        <?php
-        if($article->isPublished())
-        {?>
-            <span class="author"><?php echo $article->getUser()->getName(); ?> <br>
-
-            <div id="date"><?php echo $article->getPublish_date(); ?></div>
-            <?php
-        }
-        ?>
-
-
 
         </span>
     </article>

@@ -42,7 +42,7 @@ $submenu = $data['menu'] -> getSubMenu();
 
         <div class="login"> 
             <?php if ($session->isAuthenticated()) : ?>
-            <a href="?mAct=logout" class="lBtn" id="logout-link"><div><?php echo $session -> getUser() -> getFirstName(); ?></div></a>
+            <a href="?mAct=logout" class="lBtn" id="logout-link"><div>Logg ut</div></a>
             <?php else : ?>
             <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
             <?php endif; ?>
@@ -54,20 +54,18 @@ $submenu = $data['menu'] -> getSubMenu();
             <nav>
                 <?php
                     foreach ($menu as $item) { ?>
-                <a class="menuitem" href="<?php echo ($item->isParent()) ? '?pID='.$item->getMenuId().'&'.$item->getLink() : $item->getLink(); ?>"><?php echo $item -> getLabel(); ?></a><br>
+                <a class="menuitem" href="<?php echo ($item->isParent()) ? $item->getLink().'&pID='.$item->getMenuId() : $item->getLink(); ?>"><?php echo $item -> getLabel(); ?></a><br>
                 <?php
-                    if (isset($_GET['pID']) && $_GET['pID'] ==
-                        $item->getMenuId()) {
-                        foreach ($submenu as $subitem) { ?>
-                            <a class="submenuitem" href="<?php echo
-                            $subitem->getLink(); ?>&pID=<?php echo
-                            $_GET['pID']; ?>"><?php echo $subitem ->
-                                    getLabel(); ?></a><br>
+                        if (isset($_GET['pID']) && $_GET['pID'] ==
+                            $item->getMenuId()) {
+                            foreach ($submenu as $subitem) { ?>
+                                <a class="submenuitem" href="<?php echo
+                                $subitem->getLink(); ?>&pID=<?php echo
+                                $_GET['pID']; ?>"><?php echo $subitem ->
+                                        getLabel(); ?></a><br>
                 <?php
+                            }
                         }
-                    }
-
-
                     }
                 ?>
                 
@@ -95,7 +93,12 @@ $submenu = $data['menu'] -> getSubMenu();
                         <br style="clear:both;"/>
                         <!-- Force headerpart-1 to surround the two columns (floating divs, may not be nessesary, but since I'm cool...) --> </a>
                         <div class="triangle-1"></div>
-                        <a class="headerpart-2" href="" id="registerBtn"> <!-- Part 2, Lightgreen. Link to registration-page. Hover event not created yet. --> <h3>Registrering</h3> </a>
+                            <?php if ($session->isAuthenticated()) : ?>
+                            <a class="headerpart-2 disabled"><h3> <?php echo $session->getUser()->getFirstName();?></h3> </a>
+                            <?php else : ?>
+                            <a class="headerpart-2" href="" id="registerBtn"><h3> Registrering</h3> </a>
+                            <?php endif; ?>
+                            
                         <div class="triangle-2"></div>
                         <a class="headerpart-3" href="?pID=24&m=reservations"> <!-- Part 3, Darkgreen. Link to spacemap. Hover event not created yet. --> <h3 id="spacemap">Plasskart</h3> </a>
                     </header>

@@ -176,6 +176,10 @@ header .pricetag {
     background-color: gray; /* Color transition */
 }
 
+.disabled, .disabled + .triangle-2::after, .disabled:hover, .disabled:hover + .triangle-2::after {
+    background-color: #73ce07;
+}
+
 .headerpart-2, .headerpart-3, .headerpart-2 + .triangle-2::after, .social, .register-btn {
     -webkit-transition: background 0.2s linear;
     -moz-transition: background 0.2s linear;

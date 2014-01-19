@@ -52,9 +52,13 @@ $(document).ready(function(){
                 console.log("Success!");
                 $("#loginBox").slideUp(500);
                 $(".X").slideUp(500);
-                $(".lBtn").html('<div>' + obj.name + '</div>');
+                $(".lBtn").html('<div>Logg ut</div>');
                 $(".lBtn").attr('href', '?mAct=logout');
                 $(".lBtn").attr('id', 'logout-link');
+                $(".headerpart-2").find('h3').html(""+obj.name);
+                $(".headerpart-2").addClass("disabled");
+                $(".headerpart-2, .lBtn").off('click');
+                $(".headerpart-2").click(function() {return false;});
                 updateGUI();
             }
         });
