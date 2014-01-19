@@ -893,13 +893,13 @@
             $mail = new PHPMailer();
             $mail->IsHTML();
             $mail->IsSMTP();
-            /*$mail->SMTPDebug = 1;
-            $mail->SMTPAuth = true;
-            $mail->SMTPSecure = 'ssl';
-            $mail->Host = 'smtp.gmail.com';
-            $mail->Port = 465;
-            $mail->Username = GMUSER;
-            $mail->Password = GMPASS;*/
+            $mail->SMTPDebug = 1;
+            $mail->SMTPAuth = false;
+            //$mail->SMTPSecure = 'ssl';
+            $mail->Host = 'mail.nemean.no';
+            $mail->Port = 25;
+            //$mail->Username = GMUSER;
+            //$mail->Password = GMPASS;
             $mail->SetFrom('no-reply@nemean.no', 'Nemean');
             $mail->Subject = $subject;
             $mail->Body = $body;
