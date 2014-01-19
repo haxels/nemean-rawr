@@ -11,8 +11,7 @@ $menu = $data['menu'] -> getMenu();
 $submenu = $data['menu'] -> getSubMenu();
 ?>
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"
-      xmlns:og="http://opengraphprotocol.org/schema" xmlns="http://www.w3.org/1999/html"/>
+<html>
 <head>
 
     <title>Nemean</title>
@@ -22,13 +21,13 @@ $submenu = $data['menu'] -> getSubMenu();
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="site/js/visual.js"></script>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"  />
+    <meta charset="utf-8">
     <link href="site/css/map.css" rel="stylesheet" type="text/css" />
     <link href="site/css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
-<!--[if lt IE 8]>
+<!--[if lt IE 10]>
 <div id="outdated" style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'>
     Vi anbefaler deg å oppgradere til nyeste versjon av Internet Explorer. Selv Microsoft vil det, bare se her:
     <a href="http://www.ie6countdown.com">IE6</a><br />

@@ -11,11 +11,11 @@
     define('MODULEPATH', '../modules/');
     define('RESOURCEPATH', 'resources/');
 
-    if (ENVIRONMENT == 'development')
-    {
+    //if (ENVIRONMENT == 'development')
+    //{
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
-    }
+    //}
 
     /** Set default timezone to Norwegian time */
     date_default_timezone_set('Europe/Oslo');

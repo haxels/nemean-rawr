@@ -234,11 +234,17 @@ header .pricetag {
 }
 footer {
     text-align: center;
+    height: 50px;
+    float:right;
+    width: 100%;
 }
-footer h4 {
+footer div {
     font-weight: 400;
     color: gray;
-}
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+    }
 
 #qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap {
     display: none;
