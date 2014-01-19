@@ -233,7 +233,9 @@ class Map
                 break;
 
             case Map::LOCKED:
-                echo '<a class="mapLocked" href="'.$link.'" alt="">&nbsp;&nbsp;<span class="info"><h2>Plass '.$seat_id.'</h2><p>Locked</p></span></a>';
+                echo '<a class="mapLocked" href="'.$link.'" alt="">&nbsp;
+                &nbsp;<span class="info"><h2>Plass '.$seat_id
+                    .'</h2><p>Låst</p></span></a>';
                 break;
 
         }

@@ -1,14 +1,16 @@
 <a id="a<?php echo $seat_id; ?>" class="mapAvailable" href="">&nbsp;&nbsp;
     <span class="info">
-        <form id="f<?php echo $seat_id; ?>" class="reserveSeatForm" action="" method="POST">
+        <form id="f<?php echo $seat_id; ?>" class="reserveSeatForm" title="<?php echo $seat_id; ?>"
+              action="" method="POST">
             <h2>Plass <?php echo $seat_id; ?></h2>
             <p>
-                Skriv inn ditt passord for å reservere denne plassen.
+                Skriv inn ditt passord for å reservere plassen.
             </p>
             <hr />
             <li>
-                <label for="psw">Passord:</label>
-                <input name="psw" type="password" autofocus="autofocus" />
+                <label for="psw">&nbsp;</label>
+                <input name="psw" type="password" autofocus="autofocus"
+                       placeholder="Passord..." />
             </li>
             <li>
                 <label for="seatID">&nbsp;</label>

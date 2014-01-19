@@ -202,50 +202,6 @@
     </form>
 </div>
 
-<div id="reserveSeat">
-        <form id="" class="reserveSeatForm" action="" method="POST">
-            <h2></h2>
-            <p>
-                Skriv inn ditt passord for å reservere denne plassen.
-            </p>
-            <hr />
-            <li>
-                <label for="psw">Passord:</label>
-                <input name="psw" type="password" autofocus="autofocus" />
-            </li>
-            <li>
-                <label for="seatID">&nbsp;</label>
-                <input name="seatID" type="hidden" value="" /> 
-            </li>
-            <li>
-                <label for="submit_reserve">&nbsp;</label>
-                <input title="" class="reserveFormBtn" name="submit_reserve" type="submit" value="Reserver" />
-            </li>
-        </form>
-</div>
-
-<div id="removeRsv">
-    <form class="removeRsvForm" action="" method="POST">
-        <h2></h2>
-        <p>
-            Skriv inn ditt passord for å kansellere din reservasjon.
-        </p>
-        <hr />
-        <li>
-            <label for="psw">Passord:</label>
-            <input name="psw" type="password" autofocus="autofocus" />
-        </li
-        <li>
-            <label for="seatID">&nbsp;</label>
-            <input name="seatID" type="hidden" value="" />
-        </li>>
-        <li>
-            <label for="submit_remove">&nbsp;</label>
-            <input id="" class="removeRsvBtn" name="submit_remove" type="submit" value="Slett" />
-        </li>
-    </form>
-</div>
-
 <div id="applicationForm">
 
 

@@ -326,8 +326,10 @@ $(document).ready(function(){
         return false;
     });
 
-    $("body").on("click", ".reserveFormBtn", function(event){
+    //$("body").on("click", ".reserveFormBtn", function(event){
+    $("body").on("submit", ".reserveSeatForm", function(event){
         seatID = this.title;
+        $("#f"+seatID).find("input[type='password']").addClass("loading");
         var urlen = '?m=reservations&aAct=JSONreserveSeat';
         $.post(urlen, $("#f"+seatID).serialize(), function(response){
             var obj = $.parseJSON(response);
@@ -346,8 +348,10 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
-    $("body").on("click", ".removeRsvBtn", function(event){
+    //$("body").on("click", ".removeRsvBtn", function(event){
+    $("body").on("submit", ".removeRsvForm", function(event){
         seatID = this.title;
+        $("#f"+seatID).find("input[type='password']").addClass("loading");
         var urlen = '?m=reservations&aAct=JSONremoveReservation';
         $.post(urlen, $("#f"+seatID).serialize(), function(response){
             var obj = $.parseJSON(response);
