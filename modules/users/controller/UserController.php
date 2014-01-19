@@ -428,11 +428,11 @@
                         $user = $this->userMapper->findById($authy->getUser_id());
                         $body = $this->htmlWelcomeMail($user->getName(), $hash);
                         $this->sendMail($user->getContactInfo()->getEmail(), 'Velkommen til Nemean', $body);
-                        echo '<section id="main">Din brukerkonto er n&#229; aktivert!</section>';
+                        echo '<section>Din brukerkonto er n&#229; aktivert!</section>';
                     }
                     else
                     {
-                        echo '<section id="main">Du er allerede aktivert!</section>';
+                        echo '<section>Du er allerede aktivert!</section>';
                     }
                 }
                 else
