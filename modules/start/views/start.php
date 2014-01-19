@@ -27,6 +27,9 @@
             <h3>Våre samarbeidspartnere</h3>
         </div>
         <!-- Box-content -->
+        <img src="site/img/sponsorer/hemnenett.jpg"/>
+        <img src="site/img/sponsorer/sparebankenHemne.jpg"/>
+        <img width="420px" src="site/img/sponsorer/mot.jpg"/>
 
     </section>
 
