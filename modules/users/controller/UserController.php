@@ -892,12 +892,13 @@
         {
             $mail = new PHPMailer();
             $mail->IsHTML();
-            $mail->IsSMTP();
-            $mail->SMTPDebug = 1;
-            $mail->SMTPAuth = false;
+            //$mail->IsSMTP();
+            $mail->IsSendmail();
+            //$mail->SMTPDebug = 1;
+            //$mail->SMTPAuth = false;
             //$mail->SMTPSecure = 'ssl';
-            $mail->Host = 'mail.nemean.no';
-            $mail->Port = 25;
+            //$mail->Host = 'mail.nemean.no';
+            //$mail->Port = 25;
             //$mail->Username = GMUSER;
             //$mail->Password = GMPASS;
             $mail->SetFrom('no-reply@nemean.no', 'Nemean');
