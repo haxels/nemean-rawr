@@ -1,8 +1,9 @@
 <section class="image-slider">
  <ul class="rslides" id="slider1">
-      <li><img src="site/img/slides/Mal.png" alt=""></li>
+      <li><img src="site/img/slides/paameldning.png" alt=""></li>
       <li><img src="site/img/slides/compo.png" alt=""></li>
       <li><img src="site/img/slides/arrangement.png" alt=""></li>
+      <li><img src="site/img/slides/foreldre.png" alt=""></li>
     </ul>
 </section>
 <!--         <section class="socialfeed">
