@@ -460,6 +460,7 @@ footer div {
     //_position: absolute;
     text-shadow: 0 1px 0 rgba(0,0,0,.5);
     animation: animate-bg 5s linear infinite;
+    cursor: pointer;
 }
 
 .message h3{

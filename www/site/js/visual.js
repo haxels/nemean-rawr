@@ -344,10 +344,9 @@ $(document).ready(function(){
 
     function notify(msg)
     {
-        $("#notify").find('h3').html('Hei');
+        $("#notify").find('h3').html('Hei!');
         $("#notify").find('p').html(msg);
         $("#notify").fadeIn(500);
-        $("#notify .X").fadeIn(500);
     }
 
     $("#terms").scroll(function(){
@@ -380,6 +379,10 @@ $(document).ready(function(){
         alert('Live mode off');
         window.clearInterval(liveModeId);
         liveMode = false;
+    });
+
+    $(".message").click(function(){
+        $(".message").fadeOut(500);
     });
 
     function updateGUI() {

@@ -159,7 +159,6 @@
 </div>
 
 <div id="notify" class="message success">
-    <a class="X" href="#">X</a>
     <h3></h3>
     <p></p>
 </div>
