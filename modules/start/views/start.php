@@ -1,9 +1,9 @@
 <section class="image-slider">
  <ul class="rslides" id="slider1">
-      <li><img src="site/img/slides/paameldning.png" alt=""></li>
-      <li><img src="site/img/slides/compo.png" alt=""></li>
-      <li><img src="site/img/slides/arrangement.png" alt=""></li>
-      <li><img src="site/img/slides/foreldre.png" alt=""></li>
+      <li><img src="site/img/slides/paameldning.png" alt=""/> <h3>Meld deg på nå!</h3></li>
+      <li><img src="site/img/slides/compo.png" alt=""/> <h3>Alt om alle compoer</h3></li>
+      <li><img src="site/img/slides/arrangement.png" alt=""/> <h3>Nemean 2014</h3></li>
+      <li><img src="site/img/slides/foreldre.png" alt=""/><h3>Til foreldre</h3></li>
     </ul>
 </section>
 <!--         <section class="socialfeed">
@@ -36,7 +36,7 @@
     <a href="" class="gallery">
     <div class="box-title">
         <h3>Galleri</h3>
-    </div> <img src=""><!-- To-be dynamic --> </a>
+    </div> <!-- To-be dynamic --> </a>
 
     <a href="" class="questions">
     <div class="box-title">

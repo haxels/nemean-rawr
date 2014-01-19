@@ -198,10 +198,13 @@ header .pricetag {
 .gallery {
     height: 300px;
     background-color: #73cd07;
+    background: url('../img/galleriThumb.png') no-repeat left bottom;
+    color: gray;
+    
 }
 .sponsors {
     height: 620px;
-    background-color: #73cd07;
+    background-color: #fafafa;
 }
 .questions {
     background-color: #73cd07;
