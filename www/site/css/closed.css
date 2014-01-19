@@ -5,6 +5,7 @@ body
 {
     font-family: "Verdana, Arial, ans-serif";
     font-size: 12px;
+    background-color: #CCCCCC;
 }
 
 li
@@ -22,40 +23,31 @@ li label
     font-weight: bold;
     float: left;
     width: 55px;
-    display: block;
+    font-size: 12px;
 }
 
 li input
 {
-    margin-left: 30px;
-    width: 150px;
-    padding-left: 5px;
-    font-size: 0.8em;
-    background-image: -moz-linear-gradient(rgba(212,248,163, 0.9), rgba(255,255,255,0.9));
-    background-image: -webkit-gradient(linear, left top, left bottom,from(rgba(213,248,163,0.9)), to(rgba(255,255,255,0.9)));
-    background: -ms-linear-gradient(top, #d9f9ac 0%, #ffffff 100%);
-    background: -o-linear-gradient(rgba(212,248,163, 0.9),rgba(255,255,255,0.9));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9f9ac', endColorstr='#ffffff');
-
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    width: 235px;
+    padding: 10px;
+    font-size: 12px;
 }
 
 li input[type=submit]
 {
     float: right;
     margin-top: 10px;
-    margin-right: 20px;
     width: 60px;
+    padding: 5px;
     cursor: pointer;
 }
 
 #centerDiv
 {
-    height: 150px;
+    height: 550px;
     margin: 20% auto;
     width: 300px;
+    color: #505a54;
 }
 
 #centerDiv p
@@ -69,18 +61,11 @@ li input[type=submit]
 {
     border: 1px solid #94bf35;
     padding: 20px;
-    height: 100px;
+    height: 180px;
     position: relative;
+    color: #eeeeee;
 
-    background: -moz-linear-gradient(top, #c0ec4e, #8ac80c);
-    background: -webkit-gradient(linear, left top, left bottom, from(#c0ec4e), to(#8ac80c));
-    background: -ms-linear-gradient(top, #c0ec4e 0%, #8ac80c 100%);
-    background: -o-linear-gradient(rgb(192,236,78),rgb(138,200,12));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#c0ec4e', endColorstr='#8ac80c');
-
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    background-color: #364d1a;
 }
 
 #clContent a:hover
@@ -91,7 +76,7 @@ li input[type=submit]
 #clContent p
 {
     text-align: left;
-    font-size: 11px;
+    font-size: 13px;
     padding-bottom: 5px;
     padding-top: 0px;
 }
