@@ -74,8 +74,7 @@ $submenu = $data['menu'] -> getSubMenu();
                 
             </nav>
             </section>
-
-            <div class="content-right">
+                <div class="content-right">
                 <header>
                     <a class="headerpart-1" href=""> <!-- Part 1, Darkgreen. Link to information-page. Hover event not created yet. --> <!-- Divided into two columns -->
                         <div id="left-column">

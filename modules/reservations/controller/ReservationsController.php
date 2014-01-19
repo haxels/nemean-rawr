@@ -91,7 +91,6 @@ class ReservationsController extends NController implements ILeftContent
     public function viewMap()
     {
         $reservations = $this->reservationsMapper->findAll();
-
         $r = array();
         foreach ($reservations as $reservation)
         {

@@ -7,10 +7,11 @@
  * To change this template use File | Settings | File Templates.
  */
 ?>
-<section id="registrationMap" data-update="map.php" data-refresh-interval="500">
+<section id="registrationMap">
     <h3>Plasskart</h3>
 
     <div class="centerDiv">
+
         <div class="infoBarPanel">
 
             <div class="infoBar">

@@ -7,6 +7,8 @@
  */
 
 var seatID;
+var liveMode = false;
+var liveModeId = 0;
 
 $(document).ready(function(){
 
@@ -392,6 +394,24 @@ $(document).ready(function(){
             
         }
         });
+
+    $("body").on("click", "#liveModeOnBtn", function() {
+        $('[data-update]').each(function() {
+            alert('Live mode on');
+            var self = $(this);
+            var target = self.data('update');
+            liveModeId = setInterval(function() {
+                self.load(target);
+            }, self.data('refresh-interval'));
+            liveMode = true;
+        });
+     });
+
+    $("body").on("click", "#liveModeOffBtn", function() {
+        alert('Live mode off');
+        window.clearInterval(liveModeId);
+        liveMode = false;
+    });
 
     function updateGUI() {
         $('[data-update]').each(function() {
