@@ -206,6 +206,7 @@
     <form id="application" action="" method="POST">
         <h4>Søknadskjema for crewopptak</h4>
         <hr />
+        <div class="form-left">
         <li>
             <label for="firstname">Fornavn:</label>
             <input name="firstname" type="text" />
@@ -230,24 +231,39 @@
         </li>
 
         <li>
-            <label for="why">Hvorfor?:</label>
-            <br />
-            <br />
-            <textarea name="why"  cols="25" rows="7" placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
+            <label for="why"><b>Hvorfor?</b></label>
+            <br /><br />
+            <textarea name="why" cols="78" rows="12"  placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
+            <span class="hidden"></span>
+        </li>
+
+</div>
+<div class="form-right">
+    <li>
+            
+        </li>
+        <li>
+          
+        </li>
+
+        <li>
+        </li>
+
+        <li>
+        </li>
+
+       
+        <li>
+            <label for="what"><b>Hva?</b></label>
+            <br /><br />
+            <textarea name="what" cols="85" rows="12" placeholder="Hvis du blir med i Nemean Crew, hva ønsker du å gjøre? Gaming, kiosk, underholdning, web, foto, etc?  Hvis du ønsker Gaming, er det noen spill du behersker?" ></textarea>
             <span class="hidden"></span>
         </li>
 
         <li>
-            <label for="what">Hva?:</label>
-            <br />
-            <br />
-            <textarea name="what" cols="25" rows="7" placeholder="Hvis du blir med i Nemean Crew, hva ønsker du å gjøre? Gaming, kiosk, underholdning, web, foto, etc?  Hvis du ønsker Gaming, er det noen spill du behersker?" ></textarea>
-            <span class="hidden"></span>
-        </li>
-
-        <li>
+            </div>
             <label>&nbsp;</label>
-            <input type="submit" id="submitCA" name="submitCA" value="Send"/>
+            <input class="btn" type="submit" id="submitCA" name="submitCA" value="Send"/>
         </li>
     </form>
 

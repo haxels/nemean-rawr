@@ -200,8 +200,8 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".crewApply").click(function() {
-        $("#applicationForm").fadeIn();
+    $(".applytocrew").click(function() {
+        showForm("#applicationForm");
         return false;
     });
 

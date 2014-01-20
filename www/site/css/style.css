@@ -259,64 +259,8 @@ footer div {
     padding-top: 10px;
     }
 
-#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap, #pMap {
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap, #pMap, .applicationForm {
     display: none;
-}
-
-#applicationForm {
-    display: none;
-    position: absolute;
-    width: 600px;
-    height: 520px;
-    top: 20%;
-    left: 50%;
-    margin-left: -300px;
-    z-index: 1000;
-    font-size: 10px;
-    background: -webkit-gradient(linear, left top, left bottom,from(rgba(234,241,215, 0.9)), to(rgba(187,198,166,0.9)));
-    background: -moz-linear-gradient(rgba(234,241,215, 0.9), rgba(187,198,166,0.9));
-    background: -ms-linear-gradient(top, rgba(234,241,215, 0.9) 0%, rgba(187,198,166,0.9) 100%);
-    background: -o-linear-gradient( rgba(234,241,215, 0.9),rgba(187,198,166,0.9));
-    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,.2);
-    -webkit-box-shadow: 25px 3px 5px rgba(0,0,0,.2);
-    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
-    border: 2px solid #94BF35;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    overflow: auto;
-}
-
-#applicationForm form {
-    width: 560px;
-    height: 500px;
-    padding: 10px 0;
-    margin: 0 auto;
-    position: relative;
-}
-
-#applicationForm form li {
-    list-style-type: none;
-    padding: 5px 0;
-    padding-left: 20px;
-}
-#applicationForm form label {
-    width: 200px;
-    font-size: 11px;
-    font-weight: bold;
-    color: #4b4b4b;
-}
-
-#applicationForm  input {
-    margin-right: 20px;
-    float: right;
-    width: 50%;
-}
-
-#applicationForm textarea {
-    margin-right: 0px;
-    padding: 10px;
-    width: 92%;
 }
 
 #terms {
@@ -348,6 +292,11 @@ footer div {
     width: 45%;
     padding: 5px;
     border: 1px solid #cccccc;
+}
+
+.formBox textarea {
+    border: 1px solid #cccccc;
+    
 }
 
 #forgotPsw form input, #reserveSeat form input, #removeRsv form input {
