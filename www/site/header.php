@@ -50,6 +50,9 @@ $submenu = $data['menu'] -> getSubMenu();
             <?php else : ?>
             <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
             <?php endif; ?>
+            <?php if ($session->isAuthorized(array('Developer', 'Crew'))) : ?>
+        <a id="toAdminBtn" href="admin.php">Adminpanel</a>
+    <?php endif; ?>
         </div>
 
         <section class="sidebar-left">

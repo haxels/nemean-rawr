@@ -8,6 +8,7 @@
     padding: 0;
     height: 350px;
     margin: 0;
+    z-index: 1;
 }
 
 .rslides li {
@@ -18,6 +19,7 @@
     left: 0;
     top: 0;
     height: 350px;
+    z-index: 1;
 }
 
 .rslides li:first-child {
@@ -33,8 +35,10 @@
     width: 100%;
     border: 0;
     height: 350px;
+    z-index: 1;
 }
 
-.rslides ul, li {
-    list-style-type: none;
+.rslides li.h3 {
+    z-index: 10;
 }
+

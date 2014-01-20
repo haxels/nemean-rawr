@@ -1,9 +1,9 @@
 <section class="image-slider">
  <ul class="rslides" id="slider1">
-      <li><img src="site/img/slides/paameldning.png" alt=""></li>
-      <li><img src="site/img/slides/compo.png" alt=""></li>
-      <li><img src="site/img/slides/arrangement.png" alt=""></li>
-      <li><img src="site/img/slides/foreldre.png" alt=""></li>
+      <li><img src="site/img/slides/paameldning.png" alt=""/> <h3>Meld deg på nå!</h3></li>
+      <li><img src="site/img/slides/compo.png" alt=""/> <h3>Alt om alle compoer</h3></li>
+      <li><img src="site/img/slides/arrangement.png" alt=""/> <h3>Nemean 2014</h3></li>
+      <li><img src="site/img/slides/foreldre.png" alt=""/><h3>Til foreldre</h3></li>
     </ul>
 </section>
 <!--         <section class="socialfeed">
@@ -33,20 +33,20 @@
 
     </section>
 
-    <a href="" class="gallery">
+    <a href="https://www.facebook.com/nemeanlan/photos_stream" class="gallery">
     <div class="box-title">
         <h3>Galleri</h3>
-    </div> <img src=""><!-- To-be dynamic --> </a>
+    </div> <!-- To-be dynamic --><h1 class="box-content">Galleri</h1></a>
 
     <a href="" class="questions">
     <div class="box-title">
         <h3>Spørsmål?</h3>
-    </div> <!-- Box-content --> <h1 class="box-content" style="margin-top:55px;">Kontakt oss!</h1> </a>
+    </div> <!-- Box-content --> <h1 class="box-content">Kontakt oss!</h1> </a>
 
     <a href="" class="applytocrew">
     <div class="box-title">
         <h3>Lyst til å bli en av oss?</h3>
-    </div> <!-- Box-content --> <h1 class="box-content" style="line-height:260px;">Søk nå!</h1> </a>
+    </div> <!-- Box-content --> <h1 class="box-content">Søk nå!</h1> </a>
 
 
 <a href="https://www.facebook.com/nemeanlan">

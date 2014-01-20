@@ -126,9 +126,10 @@ header .pricetag {
     height: 19px;
     margin-bottom: 2px;
 }
-#login-link, #logout-link {
+#login-link, #logout-link, #toAdminBtn {
     float: right;
     color: #000000;
+    margin-right: 15px;
 }
 #login-link:hover {
     color: #73ce07;
@@ -165,7 +166,8 @@ header .pricetag {
 .questions, .applytocrew {
     float: left;
     width: calc(30% - 10px) !important;
-    height: 300px;
+    height: 200px;
+    line-height: 150px;
     -webkit-transition: background 0.2s linear;
     -moz-transition: background 0.2s linear;
     -ms-transition: background 0.2s linear;
@@ -198,10 +200,17 @@ header .pricetag {
 .gallery {
     height: 300px;
     background-color: #73cd07;
+    background: url('../img/galleriThumb.png') no-repeat 0 50%;
+    color: gray;
+    line-height: 200px;
+}
+
+.gallery:hover {
+    opacity: 40;
 }
 .sponsors {
-    height: 620px;
-    background-color: #73cd07;
+    height: 520px;
+    background-color: #fafafa;
 }
 .questions {
     background-color: #73cd07;
@@ -227,7 +236,7 @@ header .pricetag {
     margin: 0;
     font-weight: 500;
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
 }
 .box-content-text {
     color: #fafafa;
