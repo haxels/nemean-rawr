@@ -233,7 +233,7 @@
         <li>
             <label for="why"><b>Hvorfor?</b></label>
             <br /><br />
-            <textarea name="why" cols="78" rows="12"  placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
+            <textarea name="why" cols="78" rows="10"  placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
             <span class="hidden"></span>
         </li>
 
@@ -256,7 +256,7 @@
         <li>
             <label for="what"><b>Hva?</b></label>
             <br /><br />
-            <textarea name="what" cols="85" rows="12" placeholder="Hvis du blir med i Nemean Crew, hva ønsker du å gjøre? Gaming, kiosk, underholdning, web, foto, etc?  Hvis du ønsker Gaming, er det noen spill du behersker?" ></textarea>
+            <textarea name="what" cols="85" rows="10" placeholder="Hvis du blir med i Nemean Crew, hva ønsker du å gjøre? Gaming, kiosk, underholdning, web, foto, etc?  Hvis du ønsker Gaming, er det noen spill du behersker?" ></textarea>
             <span class="hidden"></span>
         </li>
 
