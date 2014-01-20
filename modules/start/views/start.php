@@ -36,9 +36,9 @@ $session = $data['session'];
             <h3>Våre samarbeidspartnere</h3>
         </div>
         <!-- Box-content -->
-        <a href="www.hemnenett.no"><img src="site/img/sponsorer/hemnenett.jpg"/></a>
-        <a href="www.sparebankenhemne.no"><img src="site/img/sponsorer/sparebankenHemne.jpg"/></a>
-        <a href="www.mot.no"><img width="420px" src="site/img/sponsorer/mot.jpg"/></a>
+        <a href="http://www.hemnenett.no"><img src="site/img/sponsorer/hemnenett.jpg"/></a>
+        <a href="http://www.sparebankenhemne.no"><img src="site/img/sponsorer/sparebankenHemne.jpg"/></a>
+        <a href="http://www.mot.no"><img width="420px" src="site/img/sponsorer/mot.jpg"/></a>
 
     </section>
 
