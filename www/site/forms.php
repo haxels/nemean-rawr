@@ -254,7 +254,7 @@
 </div>
 
 
-<div id="gMap" data-update="gMap.php">
+<div id="gMap">
     <!--<iframe 
         width="1100"
         height="400"
