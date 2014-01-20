@@ -958,7 +958,7 @@
             $body = '<div style="font-family: Arial, sans-serif;">';
             $body .= '<center style="background: #f1f1f1; background-color: #f1f1f1; line-height: 1.2;"><br />';
             $body .= '<span style="font-size: 11px; color: #777777;">F&#229;r du ikke vist eposten skikkelig? Klikk <a href="http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'].'?m=users&qAct=my_mail&type=0&h='.$hash.'" style="font-family: Arial, sans-serif; color: #777777; font-size: 11px; text-decoration: underline;">her</a></span>';
-            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/resources/site/img/design/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
+            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/site/img/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
             $body .= '<tr><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td>';
             $body .= '<td align="left" valign="top" width="640" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
             $body .= '<table><tbody><tr><td width="92" bgcolor="#FFFFFF"></td><td width="456" bgcolor="#FFFFFF" align="left" valign="top" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
@@ -973,7 +973,7 @@
             /** Avsluttende footer */
             $body .= 'Vennlig hilsen,<br />Nemean Crew';
             $body .= '</td><td width="92" bgcolor="#FFFFFF"></td></tr></tbody></table>';
-            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/resources/site/img/design/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
+            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/site/img/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
 
             return $body;
         }
@@ -983,7 +983,7 @@
             $body = '<div style="font-family: Arial, sans-serif;">';
             $body .= '<center style="background: #f1f1f1; background-color: #f1f1f1; line-height: 1.2;"><br />';
             $body .= '<span style="font-size: 11px; color: #777777;">F&#229;r du ikke vist eposten skikkelig? Klikk <a href="http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'].'?m=users&qAct=my_mail&type=2&h='.$hash.'" style="font-family: Arial, sans-serif; color: #777777; font-size: 11px; text-decoration: underline;">her</a></span>';
-            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/resources/site/img/design/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
+            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/site/img/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
             $body .= '<tr><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td>';
             $body .= '<td align="left" valign="top" width="640" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
             $body .= '<table><tbody><tr><td width="92" bgcolor="#FFFFFF"></td><td width="456" bgcolor="#FFFFFF" align="left" valign="top" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
@@ -1018,7 +1018,7 @@
             /** Avsluttende footer */
             $body .= 'Vennlig hilsen,<br />Nemean Crew';
             $body .= '</td><td width="92" bgcolor="#FFFFFF"></td></tr></tbody></table>';
-            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/resources/site/img/design/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
+            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/site/img/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
 
             return $body;
         }
@@ -1028,7 +1028,7 @@
             $body = '<div style="font-family: Arial, sans-serif;">';
             $body .= '<center style="background: #f1f1f1; background-color: #f1f1f1; line-height: 1.2;"><br />';
             $body .= '<span style="font-size: 11px; color: #777777;">F&#229;r du ikke vist eposten skikkelig? Klikk <a href="http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'].'?m=users&qAct=my_mail&type=1&h='.$hash.'" style="font-family: Arial, sans-serif; color: #777777; font-size: 11px; text-decoration: underline;">her</a></span>';
-            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/resources/site/img/design/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
+            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/site/img/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
             $body .= '<tr><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td>';
             $body .= '<td align="left" valign="top" width="640" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
             $body .= '<table><tbody><tr><td width="92" bgcolor="#FFFFFF"></td><td width="456" bgcolor="#FFFFFF" align="left" valign="top" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
@@ -1044,7 +1044,7 @@
             /** Avsluttende footer */
             $body .= 'Vennlig hilsen,<br />Nemean Crew';
             $body .= '</td><td width="92" bgcolor="#FFFFFF"></td></tr></tbody></table>';
-            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/resources/site/img/design/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
+            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/site/img/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
 
             return $body;
         }
@@ -1054,7 +1054,7 @@
             $body = '<div style="font-family: Arial, sans-serif;">';
             $body .= '<center style="background: #f1f1f1; background-color: #f1f1f1; line-height: 1.2;"><br />';
             $body .= '<span style="font-size: 11px; color: #777777;"></span>';
-            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/resources/site/img/design/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
+            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/site/img/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
             $body .= '<tr><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td>';
             $body .= '<td align="left" valign="top" width="640" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
             $body .= '<table><tbody><tr><td width="92" bgcolor="#FFFFFF"></td><td width="456" bgcolor="#FFFFFF" align="left" valign="top" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
@@ -1072,7 +1072,7 @@
             /** Avsluttende footer */
             $body .= 'Vennlig hilsen,<br />Nemean Crew';
             $body .= '</td><td width="92" bgcolor="#FFFFFF"></td></tr></tbody></table>';
-            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/resources/site/img/design/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
+            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/site/img/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
 
             return $body;
         }
@@ -1082,7 +1082,7 @@
             $body = '<div style="font-family: Arial, sans-serif;">';
             $body .= '<center style="background: #f1f1f1; background-color: #f1f1f1; line-height: 1.2;"><br />';
             $body .= '<span style="font-size: 11px; color: #777777;"></span>';
-            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/resources/site/img/design/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
+            $body .= '<table cellspacing="0" cellpadding="0" width="647" bgcolor="#FFFFFF"><tbody><tr><td colspan="5" width="647" height="175"><img src="http://nemean.no/site/img/mail_header.png" width="647" height="175" alt="" style="display: block;" /></td></tr>';
             $body .= '<tr><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td>';
             $body .= '<td align="left" valign="top" width="640" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
             $body .= '<table><tbody><tr><td width="92" bgcolor="#FFFFFF"></td><td width="456" bgcolor="#FFFFFF" align="left" valign="top" style="font-family: Arial, sans-serif; color: #444444; font-size: 16px; line-height: 1.2;">';
@@ -1098,7 +1098,7 @@
             /** Avsluttende footer */
             $body .= '<br><br>Vennlig hilsen,<br />'. ucwords(strtolower(htmlentities($firstname))). " ". ucwords(strtolower(htmlentities($lastname)));
             $body .= '</td><td width="92" bgcolor="#FFFFFF"></td></tr></tbody></table>';
-            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/resources/site/img/design/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
+            $body .= '</td><td width="1" bgcolor="#ececec"></td><td width="1" bgcolor="#e2e2e2"></td></tr><tr><td colspan="5" width="647" height="40"><img src="http://nemean.no/site/img/mail_footer.png" width="647" height="40" alt="" style="display: block;" /></td></tr></tbody></table><br /></center></div>';
 
 
             return $body;
