@@ -9,6 +9,7 @@
 var seatID;
 var liveMode = false;
 var liveModeId = 0;
+var gMapLoaded = false;
 
 $(document).ready(function() {
     $(".rslides").responsiveSlides({
@@ -36,8 +37,15 @@ $(document).ready(function() {
     });
 
     $(".headerpart-1").click(function() {
-        $("#gMap").load("gMap.php");
-        showForm("#gMap");
+        if (!gMapLoaded) {
+            $("#gMap").load("gMap.php", function(){
+                showForm("#gMap")
+            });
+            gMapLoaded = true;
+        }
+        else {
+            showForm("#gMap");
+        }
         return false;
     });
 
