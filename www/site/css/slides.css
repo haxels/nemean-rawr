@@ -55,33 +55,43 @@
 
 #naver {
     position: relative;
-    bottom: 100px;
+    bottom: 130px;
     width: 100%;
     z-index: 110;
 }
 
 #naver a {
-    color: #fafafa;
+    color: transparent;
     margin: 20px;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
 }
 
-#naver a:hover {
-    
-    color: #73cd07;
-}
 
 
 #naver .prev {
     position: absolute;
     left: 10px;
-    
-    margin-left: 10px;
+    width: 36px;
+    height: 78px;
+    background-image: url("../img/pil_venstre.png");
 }
 
 #naver .next {
     position: absolute;
     right: 10px;
-    margin-right: 10px;
+    width: 36px;
+    height: 78px;
+    background-image: url("../img/pil_hoyre.png");
 }
 
+#naver .prev:hover {
+    background-image: url("../img/pil_venstre_hover.png");
+}
 
+#naver .next:hover {
+    background-image: url("../img/pil_hoyre_hover.png");
+}
