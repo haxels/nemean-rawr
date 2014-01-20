@@ -47,7 +47,7 @@ $session = $data['session'];
         <h3>Galleri</h3>
     </div> <!-- To-be dynamic --></a>
 
-    <a href="" class="questions">
+    <a href="?m=articles&act=view&artID=37" class="questions">
     <div class="box-title">
         <h3>Spørsmål?</h3>
     </div> <!-- Box-content --> <h1 class="box-content">Kontakt oss!</h1> </a>
