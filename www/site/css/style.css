@@ -64,6 +64,11 @@ header .pricetag {
 .headerpart-1 {
     width: 40%;
     background-color: #364d1a;
+       -webkit-transition: background-image 2s ease-in-out;
+    -moz-transition: background-image 2s ease-in-out;
+    -ms-transition: background-image 2s ease-in-out;
+    -o-transition: background-image 2s ease-in-out;
+    transition: background-image 2s ease-in-out;
 }
 
 .headerpart-1:hover + .triangle-1::after {
@@ -188,13 +193,6 @@ header .pricetag {
 
 .disabled, .disabled + .triangle-2::after, .disabled:hover, .disabled:hover + .triangle-2::after {
     background-color: #73ce07;
-}
-.headerpart-1{
-        -webkit-transition: background-image 0.2s ease-in-out;
-    -moz-transition: background-image 0.2s ease-in-out;
-    -ms-transition: background-image 0.2s ease-in-out;
-    -o-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out;
 }
 .headerpart-2, .headerpart-3, .headerpart-2 + .triangle-2::after, .social, .register-btn{
     -webkit-transition: background 0.2s linear;
