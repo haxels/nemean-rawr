@@ -271,4 +271,6 @@
         style="color:#0000FF;text-align:left">Vis større kart</a>
     </small>-->
 
-</div> 
+</div>
+
+<div id="pMap"></div>
