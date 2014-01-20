@@ -20,7 +20,8 @@ class StartController extends NController
 
     public function display()
     {
-        $this->loadView('start');
+        $data['session'] = $this->session;
+        $this->loadView('start', $data);
     }
 
     public function quickActions()

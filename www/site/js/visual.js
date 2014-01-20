@@ -14,7 +14,7 @@ var gMapLoaded = false;
 $(document).ready(function() {
     $(".rslides").responsiveSlides();
 
-    $("#registerBtn").click(function() {
+    $("#registerBtn, #registerTile").click(function() {
         showForm("#qRegister");
         return false;
     });
