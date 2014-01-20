@@ -200,8 +200,9 @@ header .pricetag {
 .gallery {
     height: 300px;
     background-color: #73cd07;
-    background: url('../img/galleriThumb.png') no-repeat left bottom;
+    background: url('../img/galleriThumb.png') no-repeat 0 50%;
     color: gray;
+    line-height: 200px;
 }
 
 .gallery:hover {

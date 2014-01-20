@@ -33,10 +33,10 @@
 
     </section>
 
-    <a href="" class="gallery">
+    <a href="https://www.facebook.com/nemeanlan/photos_stream" class="gallery">
     <div class="box-title">
         <h3>Galleri</h3>
-    </div> <!-- To-be dynamic --> </a>
+    </div> <!-- To-be dynamic --><h1 class="box-content">Galleri</h1></a>
 
     <a href="" class="questions">
     <div class="box-title">
