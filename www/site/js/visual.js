@@ -213,32 +213,38 @@ $(document).ready(function() {
             var obj = $.parseJSON(response);
             if (obj.success) {
                 $("#applicationForm").fadeOut();
-                removeMask();
+                notify(obj.msg);
             } else {
                 if (obj.errors.firstname) {
                     $("input[name=firstname]").closest('li').find('span').attr('title', obj.errors.firstname).show();
+                    notify(obj.errors.firstname);
                 }
 
                 if (obj.errors.lastname) {
                     $("input[name=lastname]").closest('li').find('span').attr('title', obj.errors.lastname).show();
+                    notify(obj.errors.lastname);
                 }
 
                 if (obj.errors.email) {
                     $("input[name=email]").closest('li').find('span').attr('title', obj.errors.email).show();
+                    notify(obj.errors.email);
                 }
                 if (obj.errors.byear) {
                     $("input[name=byear]").closest('li').find('span').attr('title', obj.errors.byear).show();
+                    notify(obj.errors.byear);
                 }
 
                 if (obj.errors.what) {
                     $("input[name=what]").closest('li').find('span').attr('title', obj.errors.what).show();
+                    notify(obj.errors.what);
                 }
 
                 if (obj.errors.why) {
                     $("input[name=why]").closest('li').find('span').attr('title', obj.errors.why).show();
+                    notify(obj.errors.why);
                 }
             }
-            notify(obj.msg);
+            //notify(obj.msg);
         });
         return false;
     });
