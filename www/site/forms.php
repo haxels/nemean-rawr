@@ -236,6 +236,11 @@
             <textarea name="why" cols="78" rows="10"  placeholder="Hvorfor skal akkurat du være med i Nemean Crew? Ta med relevant utdanning eller andre erfaringer som du kan dra nytte av som Crew hos Nemean." ></textarea>
             <span class="hidden"></span>
         </li>
+        <li>
+            
+            <label>&nbsp;</label>
+            <input class="btn" type="submit" id="submitCA" name="submitCA" value="Send"/>
+        </li>
 
 </div>
 <div class="form-right">
@@ -260,11 +265,8 @@
             <span class="hidden"></span>
         </li>
 
-        <li>
-            </div>
-            <label>&nbsp;</label>
-            <input class="btn" type="submit" id="submitCA" name="submitCA" value="Send"/>
-        </li>
+        
+        </div>
     </form>
 
 </div>
