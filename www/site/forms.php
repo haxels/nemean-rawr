@@ -254,7 +254,7 @@
 </div>
 
 
-<div id="gMap" data-update="gMap.php">
+<div id="gMap">
     <!--<iframe 
         width="1100"
         height="400"
@@ -271,4 +271,6 @@
         style="color:#0000FF;text-align:left">Vis større kart</a>
     </small>-->
 
-</div> 
+</div>
+
+<div id="pMap"></div>
