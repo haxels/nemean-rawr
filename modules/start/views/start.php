@@ -2,18 +2,18 @@
 $session = $data['session'];
 ?>
 <section class="image-slider">
- <ul class="rslides" id="slider1">
-      <li></a>
+ <ul class="rslides rslides2">
+      <li id="rslides2_s1"></a>
       <?php if ($session->isAuthenticated()) : ?>
                 <a href="index.php?pID=24&m=reservations"><img src="site/img/slides/paameldning.png" alt=""/> <h3>Meld deg på nå!</h3> </a>
                 <?php else : ?>
                 <a href=""id="registerTile"><img src="site/img/slides/paameldning.png" alt=""/> <h3>Meld deg på nå!</h3>
                 <?php endif; ?></li>
-      <li><a href="index.php?m=articles&act=view&artID=35&pID=25"><img src="site/img/slides/compo.png" alt=""/> <h3>Alt om alle compoer</h3></a></li>
-      <li><a href="index.php?pID=24&m=reservations"><img src="site/img/slides/arrangement.png" alt=""/> <h3>Nemean 2014</h3></a></li>
-      <li><a href="index.php?m=articles&act=view&artID=34&pID=56"><img src="site/img/slides/foreldre.png" alt=""/><h3>Til foreldre</h3></a></li>
+      <li id="rslides2_s2"><a href="index.php?m=articles&act=view&artID=35&pID=25"><img src="site/img/slides/compo.png" alt=""/> <h3>Alt om alle compoer</h3></a></li>
+      <li id="rslides2_s3"><a href="index.php?pID=24&m=reservations"><img src="site/img/slides/arrangement.png" alt=""/> <h3>Nemean 2014</h3></a></li>
+      <li id="slide4"><a href="index.php?m=articles&act=view&artID=34&pID=56"><img src="site/img/slides/foreldre.png" alt=""/><h3>Til foreldre</h3></a></li>
     </ul>
-    <div class="naver"></div>
+    <div id="naver"></div>
 </section>
 <!--         <section class="socialfeed">
 <div class="box-title">

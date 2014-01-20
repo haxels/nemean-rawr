@@ -44,11 +44,44 @@
     left: 0px;
     bottom: 0px;
     color: white;
-    padding: 20px;
-    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
     background: black;
     opacity: 0.8;
     font-size: 2em;
+    text-align: center;
 }
+
+#naver {
+    position: relative;
+    bottom: 100px;
+    width: 100%;
+    z-index: 110;
+}
+
+#naver a {
+    color: #fafafa;
+    margin: 20px;
+}
+
+#naver a:hover {
+    
+    color: #73cd07;
+}
+
+
+#naver .prev {
+    position: absolute;
+    left: 10px;
+    
+    margin-left: 10px;
+}
+
+#naver .next {
+    position: absolute;
+    right: 10px;
+    margin-right: 10px;
+}
+
 
