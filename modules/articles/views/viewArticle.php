@@ -13,7 +13,6 @@ $article = $data['article'];
     <article>
         <h1><?php echo $article->getTitle(); ?></h1>
         <br>
-        <div class="ingress"><i><?php echo stripcslashes($article->getIngress()); ?></i></div>
         <div class="text"><?php echo str_replace("&nbsp;", "",stripcslashes($article->getText())); ?></div>
         <br><br>
 
