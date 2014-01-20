@@ -12,7 +12,7 @@
    </div>
     <footer>
 
-       <div id="copyright"> &copy; 2012 Nemean </div>
+       <div id="copyright"> &copy; 2014 Nemean </div>
     </footer>
 </body>
 
