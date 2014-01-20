@@ -60,7 +60,7 @@ foreach ($settingsMapper->findAll() as $setting)
     {
         /** User not logged in */
         $error = $session->getError();
-        require_once 'resources/site/html/new/closed.php';
+        require_once 'site/closed.php';
     }
     else
     {
