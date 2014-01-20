@@ -202,7 +202,6 @@
 
 <div id="applicationForm">
 
-
     <form id="application" action="" method="POST">
         <h4>Søknadskjema for crewopptak</h4>
         <hr />
@@ -237,27 +236,14 @@
             <span class="hidden"></span>
         </li>
         <li>
-            
-            <label>&nbsp;</label>
-            <input class="btn" type="submit" id="submitCA" name="submitCA" value="Send"/>
         </li>
 
 </div>
-<div class="form-right">
-    <li>
-            
-        </li>
-        <li>
-          
-        </li>
-
-        <li>
-        </li>
-
-        <li>
-        </li>
-
-       
+        <div class="form-right">
+            <li> </li>
+            <li></li>
+            <li></li>
+            <li></li>
         <li>
             <label for="what"><b>Hva?</b></label>
             <br /><br />
@@ -265,8 +251,9 @@
             <span class="hidden"></span>
         </li>
 
-        
         </div>
+         <label>&nbsp;</label>
+            <input class="btn" type="submit" id="submitCA" name="submitCA" value="Send"/>
     </form>
 
 </div>
