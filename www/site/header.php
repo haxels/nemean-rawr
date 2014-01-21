@@ -86,7 +86,7 @@ $submenu = $data['menu'] -> getSubMenu();
                             <br/>
                             Sør-Trøndelag</h5>
                             <h3>Når?</h3>
-                            <h5>19. - 23. Februar 2014</h5>
+                            <h5>18. - 22. Februar 2014</h5>
                         </div>
     
                         <div id="right-column">
