@@ -1,4 +1,4 @@
-<a id="a<?php echo $seat_id; ?>" class="mapCurrentUser" href="">&nbsp;&nbsp;
+<a id="a<?php echo $seat_id; ?>" class="mapCurrentUser">&nbsp;&nbsp;
     <span class="info">
         <form id="f<?php echo $seat_id; ?>" class="removeRsvForm" title="<?php echo $seat_id; ?>" action=""
               method="POST">
