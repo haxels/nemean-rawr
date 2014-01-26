@@ -63,9 +63,11 @@ $(document).ready(function() {
     $(".product").click(function() {
         var elm = $(this);
         if(elm.hasClass("selected")){
+            elm.find("input").attr("checked", false);
             elm.removeClass("selected");
         }
         else {
+            elm.find("input").attr("checked", true);
             elm.addClass("selected");
         }
     });
@@ -85,6 +87,7 @@ $(document).ready(function() {
             className = elm.attr("value");
         if(elm.hasClass("selected")){
             elm.siblings().removeClass("selected");
+            elm.siblings().find("input").attr("checked", false);
             showAccessories(className);
         }
         else {
