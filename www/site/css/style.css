@@ -272,7 +272,7 @@ footer div {
     padding-top: 10px;
     }
 
-#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap, #pMap, #applicationForm {
+#qRegister, #notify, #forgotPsw, #loginBox, #completereg, #reserveSeat, #removeRsv, #gMap, #pMap, #applicationForm, #orderForm {
     display: none;
 }
 
