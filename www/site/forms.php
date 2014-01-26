@@ -279,3 +279,32 @@
 </div>
 
 <div id="pMap"></div>
+
+<div id="orderForm">
+    <form id="order" action="" method="POST">
+        <h4>Bestilling</h4>
+        <hr />
+        <div id="mainProducts" class="form-left">
+            <h5>Hovedrett</h5>
+            <a class="product" value="petsa">Petsa</a>
+            <a class="product" value="burger">Burger</a>
+        </div>
+        <div class="form-right accessories">
+            <div  class="burger" style="display:none;">
+                <h5>Tilbehør</h5>
+                <a name="corn" class="product"><input hidden type="checkbox"/></a>
+                <a class="product"><input hidden type="checkbox"/></a>
+                <a class="product"><input hidden type="checkbox"/></a>
+                <a class="product"><input hidden type="checkbox"/></a>
+            </div>
+
+            <div class="petsa" style="display:none;">
+                <h5>Tilbehør</h5>
+                <a class="product">KETSJUP!</a>
+            </div>
+        </div>
+        <hr />
+        <input class="btn" type="submit" id="orderSubmit" name="orderSubmit" value="Bestill"/>
+    </form>
+
+</div>

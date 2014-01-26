@@ -32,7 +32,7 @@ $(document).ready(function() {
 });
 
     $("#registerBtn, #registerTile").click(function() {
-        showForm("#qRegister");
+        showForm("#orderForm");
         return false;
     });
 
@@ -60,7 +60,57 @@ $(document).ready(function() {
             $(".X").fadeIn(10);
         }
     }
+    $(".product").click(function() {
+        var elm = $(this);
+        if(elm.hasClass("selected")){
+            elm.removeClass("selected");
+        }
+        else {
+            elm.addClass("selected");
+        }
+    });
+    
+    function showAccessories(className) {
+        var elm = $(".accessories");
+        elm.children().hide();
+        $("."+className).fadeIn();
+    }
+    
+    function hideAccessories(className) {
+         $("."+className).fadeOut();
+    }
+    
+    $("#mainProducts .product").click(function() {
+        var elm = $(this),
+            className = elm.attr("value");
+        if(elm.hasClass("selected")){
+            elm.siblings().removeClass("selected");
+            showAccessories(className);
+        }
+        else {
+           hideAccessories(className);
+        }
+    });
 
+    $("#order").submit(function() {
+        var urlen = "index.php?m=kiosk&aAct=putOrder";
+        console.log($("#order").serialize());
+        $.post(urlen, $("#order").serialize(), function(response) {
+            var obj = $.parseJSON(response);
+            console.log(obj);
+            if(obj.success) {
+                $("#orderForm").load(url);
+                console.log("success!");
+                return false;
+            }
+            else {
+                console.log("ERROR!");
+                return false;
+            }
+            
+        });
+        return false;
+    });
 
     $("#loginBoxForm").submit(function() {
         var urlen = "";
@@ -71,7 +121,7 @@ $(document).ready(function() {
             if (!obj.success) {
                 console.log("Success, NNAAAT!");
                 $("#loginBox").fadeOut(500);
-                notify(obj.error)
+                notify(obj.error);
             } else {
                 console.log("Success!");
                 $("#loginBox").slideUp(500);

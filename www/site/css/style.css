@@ -452,3 +452,42 @@ footer div {
     right: 10px;
     color: #FFFFFF;
 }
+
+#orderForm {
+    height: 380px;
+}
+/* Order style */
+#order .form-left, #order .form-right{
+    height: 250px;
+}
+
+#order {
+    
+    margin-bottom: 20px;
+}
+
+.product {
+    display: inline-block;
+    background-color: gray;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+
+}
+#mainProducts .product {
+
+    width: 100px;
+    height:100px;
+    line-height: 100px;
+}
+
+.accessories .product {
+
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.selected {
+    background-color: #364d1a;
+}
