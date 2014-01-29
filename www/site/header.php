@@ -20,6 +20,8 @@ $submenu = $data['menu'] -> getSubMenu();
     <script type="text/javascript" src="site/js/jquery.min.js"></script>
     <script type="text/javascript" src="site/js/jquery-ui.min.js"></script>
 
+    
+    <script type="text/javascript" src="site/js/order.js"></script>
     <script type="text/javascript" src="site/js/visual.js"></script>
     <script type="text/javascript" src="site/js/slides.js"></script>
 

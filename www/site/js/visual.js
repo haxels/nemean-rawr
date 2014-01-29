@@ -6,12 +6,13 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var seatID;
-var liveMode = false;
-var liveModeId = 0;
-var gMapLoaded = false;
+var seatID,
+    liveMode = false,
+    liveModeId = 0,
+    gMapLoaded = false;
 
 $(document).ready(function() {
+    Nemean.order(jQuery);
     $(".rslides").responsiveSlides({
   auto: true,             // Boolean: Animate automatically, true or false
   speed: 500,            // Integer: Speed of the transition, in milliseconds
@@ -60,40 +61,8 @@ $(document).ready(function() {
             $(".X").fadeIn(10);
         }
     }
-    $(".product").click(function() {
-        var elm = $(this);
-        if(elm.hasClass("selected")){
-            elm.find("input").attr("checked", false);
-            elm.removeClass("selected");
-        }
-        else {
-            elm.find("input").attr("checked", true);
-            elm.addClass("selected");
-        }
-    });
-    
-    function showAccessories(className) {
-        var elm = $(".accessories");
-        elm.children().hide();
-        $("."+className).fadeIn();
-    }
-    
-    function hideAccessories(className) {
-         $("."+className).fadeOut();
-    }
-    
-    $("#mainProducts .product").click(function() {
-        var elm = $(this),
-            className = elm.attr("value");
-        if(elm.hasClass("selected")){
-            elm.siblings().removeClass("selected");
-            elm.siblings().find("input").attr("checked", false);
-            showAccessories(className);
-        }
-        else {
-           hideAccessories(className);
-        }
-    });
+
+
 
     $("#order").submit(function() {
         var urlen = "index.php?m=kiosk&aAct=putOrder";
@@ -395,16 +364,6 @@ $(document).ready(function() {
         $("#notify").fadeIn(500);
     }
 
-
-    $("#terms").scroll(function() {
-
-        var myDiv = $('#terms'), checkBox = $('#okTerms')
-        if (myDiv.scrollTop() + myDiv.outerHeight() == (myDiv.get(0).scrollHeight)) {
-            checkBox.removeAttr('disabled');
-        } else {
-
-        }
-    });
 
     $("body").on("click", "#liveModeOnBtn", function() {
         $('[data-update]').each(function() {
