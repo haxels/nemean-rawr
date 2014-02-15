@@ -108,7 +108,12 @@ $submenu = $data['menu'] -> getSubMenu();
                             <?php endif; ?>
                             
                         <div class="triangle-2"></div>
-                        <a class="headerpart-3" href="?pID=24&m=reservations"> <!-- Part 3, Darkgreen. Link to spacemap. Hover event not created yet. --> <h3 id="spacemap">Plasskart</h3> </a>
+                        <?php if ($session->isAuthenticated()) : ?>
+                        <a class="headerpart-3" href="" id="order-btn"><h3 id="spacemap">Bestill burger</h3> </a>
+                        <?php else : ?>
+                        <a class="headerpart-3" href="?pID=24&m=reservations"><h3 id="spacemap">Plasskart</h3> </a>
+                        <?php endif; ?>
+                        
                     </header>
 
                     <?php foreach ($submenu as $item) : ?>

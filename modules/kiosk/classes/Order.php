@@ -81,5 +81,15 @@ class Order
         return $this->seat_id;
     }
 
+    public function hasProduct($name) {
+        $products = $this->getProducts();
+        $hasProduct = false;
+        foreach ($products as $product) :
+            if($product->getName() == $name) {
+                return true;
+            }
+        endforeach;
+        return false;
+    }
 
 }

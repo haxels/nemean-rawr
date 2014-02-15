@@ -30,7 +30,7 @@ class OrderMapper extends DataMapper
 
     public function fetchRelate($orderBy, $levert)
     {
-        $sql = sprintf('SELECT `o`.*, `u`.`firstname`, `u`.`lastname`, `r`.`seat_id` FROM `kos_orders` `o` LEFT JOIN `usr_users` `u` ON (`u`.`user_id` = `o`.`brukerID`) LEFT JOIN `rsv_reservations` `r` ON (`r`.`user_id` = `u`.`user_id`) WHERE `o`.`levert` = %s ORDER BY `o`.`ordreID` %s', (int) $levert, $orderBy);
+        $sql = sprintf('SELECT `o`.*, `u`.`firstname`, `u`.`lastname`, `r`.`seat_id` FROM `kos_orders` `o` LEFT JOIN `usr_users` `u` ON (`u`.`user_id` = `o`.`brukerID`) LEFT JOIN `rsv_reservations` `r` ON (`r`.`user_id` = `u`.`user_id`) WHERE `o`.`levert` = %s ORDER BY `o`.`ordreID` %s LIMIT 5', (int) $levert, $orderBy);
         $this->adapter->prepare($sql)->execute();
         $rows = $this->adapter->fetchAll();
         $retVal = [];
