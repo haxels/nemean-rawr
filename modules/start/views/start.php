@@ -40,7 +40,8 @@ $session = $data['session'];
         <!-- Box-content -->
         <a href="http://www.hemnenett.no"><img src="site/img/sponsorer/hemnenett.jpg"/></a>
         <a href="http://www.sparebankenhemne.no"><img src="site/img/sponsorer/sparebankenHemne.jpg"/></a>
-        <a href="http://www.mot.no"><img width="420px" src="site/img/sponsorer/mot.jpg"/></a>
+        <a href="http://www.digitalimpuls.no"><img width="420px" src="site/img/sponsorer/DI.jpg"/></a>
+        <a href="http://www.sagoyvaretaxi.no"><img width="420px" src="site/img/sponsorer/sagoyvaretaxi.jpg"/></a>
 
     </section>
 
