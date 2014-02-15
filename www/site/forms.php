@@ -281,31 +281,59 @@
 <div id="pMap"></div>
 
 <div id="orderForm">
-    <form id="order" action="" method="POST">
+    <form id="order" action="" method="">
         <h4>Bestilling</h4>
         <hr />
         <div id="mainProducts" class="form-left">
             <h5>Hovedrett</h5>
-            <a class="product" value="burger"><img title="Burger" src="site/img/ordericons/burger.png"/><input value="burger" name="products" hidden type="checkbox"/></a>
-            <a class="product" value="pizza"><img title="Pizza" src="site/img/ordericons/pizza.png"/><input value="pizza" name="products" hidden type="checkbox"/></a>
+            <a class="product" value="burger"><img title="Burger"
+												   src="site/img/ordericons/burger.png"/><input
+					value="1" name="products[]" hidden type="checkbox"/></a>
+            <a class="product" value="pizza"><img title="Pizza"
+												  src="site/img/ordericons/pizza.png"/><input
+					value="18" name="products[]" hidden type="checkbox"/></a>
         </div>
         <div class="form-right accessories">
             <div  class="burger" style="display:none;">
                 <h5>Tilbehør</h5>
-                <a class="product"><img title="Ost" src="site/img/ordericons/ost.png"/><input name="products" hidden value="ost" type="checkbox"/></a>
-                <a class="product"><img title="Mais" src="site/img/ordericons/mais.png"/><input name="products" value="mais" hidden type="checkbox"/></a>
-                <a class="product"><img title="Tomat" src="site/img/ordericons/tomat.png"/><input name="products" value="tomat" hidden type="checkbox"/></a>
-                <a class="product"><img title="Salat" src="site/img/ordericons/salat.png"/><input name="products" value="salat" hidden type="checkbox"/></a>
-                <a class="product"><img title="Dressing" src="site/img/ordericons/dressing.png"/><input name="products" value="dressing" hidden type="checkbox"/></a>
-                <a class="product"><img title="Ketchup" src="site/img/ordericons/ketchup.png"/><input name="products" value="ketchup" hidden type="checkbox"/></a>
+                <a class="product"><img title="Ost"
+										src="site/img/ordericons/ost.png"/><input name="products[]"
+													  hidden value="2" type="checkbox"/></a>
+                <a class="product"><img title="Mais"
+										src="site/img/ordericons/mais.png"/><input name="products[]"
+													  value="3" hidden type="checkbox"/></a>
+                <a class="product"><img title="Tomat"
+										src="site/img/ordericons/tomat.png"/><input name="products[]"
+													  value="4" hidden type="checkbox"/></a>
+                <a class="product"><img title="Salat"
+										src="site/img/ordericons/salat.png"/><input name="products[]"
+													  value="17" hidden
+													  type="checkbox"/></a>
+                <a class="product"><img title="Dressing"
+										src="site/img/ordericons/dressing.png"/><input name="products[]"
+													  value="23" hidden
+													  type="checkbox"/></a>
+                <a class="product"><img title="Ketchup"
+										src="site/img/ordericons/ketchup.png"/><input name="products[]"
+													  value="24" hidden
+													  type="checkbox"/></a>
             </div>
 
             <div class="pizza" style="display:none;">
                 <h5>Tilbehør</h5>
-                <a class="product"><img src="site/img/ordericons/ketchup.png"/><input name="products" value="ketchup" hidden type="checkbox"/></a>
+                <a class="product"><img src="site/img/ordericons/ketchup
+                .png"/><input name="products[]" value="24" hidden
+							  type="checkbox"/></a>
             </div>
         </div>
         <hr />
+		<div id="cart">
+			<div id="mainCourse"></div>
+			<div id="accessories"></div>
+		</div>
+
+		<br /> <br />
+		<hr />
         <input class="btn" type="submit" id="orderSubmit" name="orderSubmit" value="Bestill"/>
     </form>
 
