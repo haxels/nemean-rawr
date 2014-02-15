@@ -79,7 +79,6 @@ $(document).ready(function() {
                 console.log("ERROR!");
                 return false;
             }
-            
         });
         return false;
     });
