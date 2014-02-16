@@ -110,14 +110,25 @@
 		private function getProducts()
 		{
 			$data['products'] = [];
+			$data['total'] = 0;
 			$products = (isset($_GET['IDs'])) ? $_GET['IDs'] : [];
-			$products = explode(",", $products);
-
-			foreach ($products as $productID)
+			if (!empty($products))
 			{
-				$product = $this->productMapper->findById($productID);
-				$data['products'][] = $product;
+				$products = explode(",", $products);
+
+
+				foreach ($products as $productID)
+				{
+					$product = $this->productMapper->findById($productID);
+					$data['products'][] = $product;
+					$data['total'] += $product->getPrice();
+				}
 			}
+			$productID = (isset($_GET['pID'])) ? $_GET['pID'] : 0;
+			$product = $this->productMapper->findById($productID);
+			$data['mainCourse'] = $product;
+			$data['total'] += $product->getPrice();
+
 			$this->loadView('cartItems', $data);
 		}
 

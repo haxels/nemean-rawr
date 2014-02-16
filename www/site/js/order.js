@@ -65,11 +65,12 @@ var Nemean = Nemean || {};
     }
 
     function updateCartMainCourse() {
-        $("#mainCourse").load("index.php?m=kiosk&aAct=getProduct&pID=" + mainCourse.id);
+       // $("#mainCourse").load("index.php?m=kiosk&aAct=getProduct&pID=" + mainCourse.id);
+        updateCartProducts();
     }
 
     function updateCartProducts() {
-        $("#accessories").load("index.php?m=kiosk&aAct=getProducts&IDs=" + products);
+        $("#accessories").load("index.php?m=kiosk&aAct=getProducts&IDs=" + products + "&pID=" + mainCourse.id);
     }
 
     $(".accessories .product").click(function() {
