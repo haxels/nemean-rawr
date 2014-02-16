@@ -462,11 +462,10 @@ footer div {
 }
 
 #order {
-    
     margin-bottom: 20px;
 }
 
-.product {
+.product{
     display: inline-block;
     background-color: gray;
     margin-left: 10px;

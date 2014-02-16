@@ -326,15 +326,9 @@
 							  type="checkbox"/></a>
             </div>
         </div>
-        <hr />
-		<div id="cart">
-			<div id="mainCourse"></div>
-			<div id="accessories"></div>
-		</div>
-
-		<br /> <br />
+        <div id="total"></div>
 		<hr />
-        <input class="btn" type="submit" id="orderSubmit" name="orderSubmit" value="Bestill"/>
+        <input class="btn" type="submit" id="orderSubmit" name="orderSubmit" hidden value="Bestill"/>
     </form>
 
 </div>

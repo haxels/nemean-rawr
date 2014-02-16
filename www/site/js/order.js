@@ -8,6 +8,14 @@ var Nemean = Nemean || {};
         mainCourse = {"tileName": "", "id" : 0},
         products = [];
 
+    Nemean.order.reset = function() {
+        deselect($(mainSelector));
+        deselectAccessories(mainCourse.tileName);
+        hideAccessories(mainCourse.tileName);
+        mainCourse = {"tileName": "", "id" : 0},
+        products = [];
+        $("#total").html("<b>Pris: 0,-</b>");
+    }
     function isSelected(tile) {
         return tile.hasClass(selected);
     }
@@ -64,13 +72,8 @@ var Nemean = Nemean || {};
         products.splice(index, 1);
     }
 
-    function updateCartMainCourse() {
-       // $("#mainCourse").load("index.php?m=kiosk&aAct=getProduct&pID=" + mainCourse.id);
-        updateCartProducts();
-    }
-
     function updateCartProducts() {
-        $("#accessories").load("index.php?m=kiosk&aAct=getProducts&IDs=" + products + "&pID=" + mainCourse.id);
+        $("#total").load("index.php?m=kiosk&aAct=getTotal&IDs=" + products + "&pID=" + mainCourse.id);
     }
 
     $(".accessories .product").click(function() {
@@ -82,14 +85,17 @@ var Nemean = Nemean || {};
         var mainTile = $(this),
             tileName = getTileClass(mainTile),
             siblings = mainTile.siblings("a");
+            
 
         if(isSelected(mainTile)){
+            $("#orderSubmit").hide();
             deselect(mainTile);
             hideAccessories(tileName);
             mainCourse = {"tileName": "", "id" : 0};
             $("#cart").fadeOut(500);
             products = [];
             updateCartProducts();
+            deselectAccessories(getTileClass(mainTile));
         }
         else if (isSelected(siblings)) {
             select(mainTile);
@@ -98,6 +104,7 @@ var Nemean = Nemean || {};
             mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             products = [];
             updateCartProducts();
+            $("#orderSubmit").show();
         }
         else
         {
@@ -105,8 +112,9 @@ var Nemean = Nemean || {};
             showAccessories(tileName);
             mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             $("#cart").fadeIn(500);
+            $("#orderSubmit").show();
         }
-        updateCartMainCourse();
+        updateCartProducts();
         deselectAccessories(getTileClass(siblings));
     });
 });

@@ -19,8 +19,8 @@
                 <?php
                     if ($session->isAuthorized(['Developer', 'Crew'])){
                 ?>
-                <button id="liveModeOnBtn">Live mode on</button>
-                <button id="liveModeOffBtn">Live mode off</button>
+                <!-- <button id="liveModeOnBtn">Live mode on</button>
+                <button id="liveModeOffBtn">Live mode off</button> -->
                  <?php } ?>
                 <div data-update="map.php" data-refresh-interval="500">
                 <? endif;  ?>

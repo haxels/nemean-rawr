@@ -32,7 +32,7 @@ $(document).ready(function() {
   after: function(){}     // Function: After callback
 });
 
-    $("#registerBtn, #registerTile").click(function() {
+    $("#order-btn").click(function() {
         showForm("#orderForm");
         return false;
     });
@@ -66,17 +66,19 @@ $(document).ready(function() {
 
     $("#order").submit(function() {
         var urlen = "index.php?m=kiosk&aAct=putOrder";
-        console.log($("#order").serialize());
         $.post(urlen, $("#order").serialize(), function(response) {
             var obj = $.parseJSON(response);
             console.log(obj);
             if(obj.success) {
-                $("#orderForm").load(url);
-                console.log("success!");
+               // $("#orderForm").load(url);
+                notify('Børger bestilt! Ordrenummer: ' + obj.order_id);
+                $("#orderForm").slideUp();
+                Nemean.order.reset();
                 return false;
             }
             else {
-                console.log("ERROR!");
+                notify("Bestillingen har dessverre forlatt vår verden. Vi føler med deg... RIP.");
+                $("#orderForm").slideUp();
                 return false;
             }
         });

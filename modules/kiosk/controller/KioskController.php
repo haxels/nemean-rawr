@@ -93,8 +93,8 @@
 					$this->getProduct();
 					break;
 
-				case 'getProducts':
-					$this->getProducts();
+				case 'getTotal':
+					$this->getTotal();
 					break;
 			}
 		}
@@ -104,10 +104,10 @@
 			$productID = (isset($_GET['pID'])) ? $_GET['pID'] : 0;
 			$product = $this->productMapper->findById($productID);
 			$data['product'] = $product;
-			$this->loadView('cartItem', $data);
+			$this->loadView('', $data);
 		}
 
-		private function getProducts()
+		private function getTotal()
 		{
 			$data['products'] = [];
 			$data['total'] = 0;
@@ -126,10 +126,11 @@
 			}
 			$productID = (isset($_GET['pID'])) ? $_GET['pID'] : 0;
 			$product = $this->productMapper->findById($productID);
-			$data['mainCourse'] = $product;
-			$data['total'] += $product->getPrice();
-
-			$this->loadView('cartItems', $data);
+            if($product instanceof Product) {
+                $data['mainCourse'] = $product;
+                $data['total'] += $product->getPrice();
+			}
+			$this->loadView('total', $data);
 		}
 
 		private function putOrder()
@@ -149,27 +150,29 @@
 			else
 			{
 				// Create order and fetch order id
-				$total = 0;
-				foreach ($products as $productID)
-				{
-					$product = $this->productMapper->findById($productID);
-					$total += $product->getPrice();
-				}
-				$order    =
-				 new Order(0, $userID, time(), 0, $total, $payType, '', []);
-				 $order_id = $this->orderMapper->insert($order);
 				if (!is_array($products))
-				{
-					$arr['error'] = 'no products';
-				}
-				else
-				{
+                {
+                    $arr['error'] = 'no products';
+                }
+                else
+                {
+    				$total = 0;
+    				foreach ($products as $productID)
+    				{
+    					$product = $this->productMapper->findById($productID);
+    					$total += $product->getPrice();
+    				}
+    				$order =
+    				 new Order(0, $userID, time(), 0, $total, $payType, '', []);
+    				 $order_id = $this->orderMapper->insert($order);
+                     $arr['order_id'] = $order_id;            
+    				
 					 foreach ($products as $productID)
 					 {
 						$this->orderMapper->insertRelation($order_id, $productID);
 					 }
-					$arr['success'] = true;
-				}
+					$arr['success'] = true;    				
+                }
 			}
 			echo json_encode($arr);
 		}
