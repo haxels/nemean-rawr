@@ -139,8 +139,8 @@
 
 			$userID   = $this->session->getID();
 			$payType  = (isset($_POST['payType'])) ? $_POST['payType'] : '';
-			$products = (isset($_POST['products'])) ? $_POST['products'] : '';
-
+			$products = (isset($_POST['products'])) ? $_POST['products'] : [];
+            
 			$arr['prods'] = $products;
 			// Validate products
 			if (!$this->validateProducts($products))

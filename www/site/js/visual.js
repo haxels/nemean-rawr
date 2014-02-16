@@ -62,22 +62,26 @@ $(document).ready(function() {
         }
     }
 
-
+    $("#orderSubmit").click(function() {
+        
+    });
 
     $("#order").submit(function() {
         var urlen = "index.php?m=kiosk&aAct=putOrder";
+        $("#orderSubmit").attr("disabled", true);
         $.post(urlen, $("#order").serialize(), function(response) {
             var obj = $.parseJSON(response);
-            console.log(obj);
             if(obj.success) {
                // $("#orderForm").load(url);
                 notify('Børger bestilt! Ordrenummer: ' + obj.order_id);
                 $("#orderForm").slideUp();
+                $("#orderSubmit").attr("disabled", false);
                 Nemean.order.reset();
                 return false;
             }
             else {
                 notify("Bestillingen har dessverre forlatt vår verden. Vi føler med deg... RIP.");
+                $("#orderSubmit").attr("disabled", false);
                 $("#orderForm").slideUp();
                 return false;
             }
