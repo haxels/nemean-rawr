@@ -9,12 +9,9 @@ var Nemean = Nemean || {};
         products = [];
 
     Nemean.order.reset = function() {
-        deselect($(mainSelector));
-        deselectAccessories(mainCourse.tileName);
+        $(".product").removeClass("selected");
+        $("input[type=checkbox]").attr("checked", false);
         hideAccessories(mainCourse.tileName);
-        mainCourse = {"tileName": "", "id" : 0},
-        products = [];
-        $("#total").html("<b>Pris: 0,-</b>");
     }
     function isSelected(tile) {
         return tile.hasClass(selected);
@@ -25,7 +22,6 @@ var Nemean = Nemean || {};
         updateCheckbox(tile.find("input"));
         if (tile.find("input").attr("value") != mainCourse.id && mainCourse.id != 0) {
             products.push(tile.find("input").attr("value"));
-            updateCartProducts();
         }
     }
 
@@ -34,7 +30,6 @@ var Nemean = Nemean || {};
         updateCheckbox(tile.find("input"));
         if (tile.find("input").attr("value") != mainCourse.id) {
             removeProduct(tile.find("input").attr("value"));
-            updateCartProducts();
         }
     }
 
@@ -79,6 +74,7 @@ var Nemean = Nemean || {};
     $(".accessories .product").click(function() {
         var product = $(this);
         updateProductTile(product);
+        updateCartProducts();
     });
 
     $(mainSelector).click(function() {
@@ -86,16 +82,13 @@ var Nemean = Nemean || {};
             tileName = getTileClass(mainTile),
             siblings = mainTile.siblings("a");
             
-
         if(isSelected(mainTile)){
-            $("#orderSubmit").hide();
             deselect(mainTile);
             hideAccessories(tileName);
             mainCourse = {"tileName": "", "id" : 0};
-            $("#cart").fadeOut(500);
             products = [];
-            updateCartProducts();
             deselectAccessories(getTileClass(mainTile));
+            $("#orderSubmit").hide();
         }
         else if (isSelected(siblings)) {
             select(mainTile);
@@ -103,7 +96,6 @@ var Nemean = Nemean || {};
             showAccessories(tileName);
             mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             products = [];
-            updateCartProducts();
             $("#orderSubmit").show();
         }
         else
@@ -111,7 +103,6 @@ var Nemean = Nemean || {};
             select(mainTile);
             showAccessories(tileName);
             mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
-            $("#cart").fadeIn(500);
             $("#orderSubmit").show();
         }
         updateCartProducts();

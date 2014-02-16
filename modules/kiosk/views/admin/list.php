@@ -13,10 +13,11 @@
 <a href="?m=kiosk&qAct=<?php echo ($data['open']) ? 'close' : 'open'; ?>"><?php echo ($data['open']) ? 'Stenge' : 'Åpne'; ?></a>
 
     <h3><?php echo $data['title']; ?></h3>
-<table>
+<table class="table table-hover table-bordered">
     <tr>
         <td>OID</td>
         <td>BID</td>
+        <td>Dato</td>
         <td>Navn</td>
         <td>Produkter</td>
         <td>Pris</td>
@@ -26,9 +27,10 @@
     <tr>
         <td width="5%"><?php echo $order->getOrderId(); ?></td>
         <td width="5%"><?php echo $order->getUserId(); ?></td>
+        <td width="5%"><?php echo $order->getDate(); ?></td>
         <td><?php echo '<span style="float: right;">( '.$order->getSeatId().' )</span> '.$order->getName(); ?></td>
         <td>
-            <table>
+            <table class="table">
                 <tr>
                     <td><img src="site/img/ordericons/burger.png" height="50" width="50" <?php echo ($order->hasProduct("Burger") == true) ? "" : "hidden" ?>/></td>
                     <td width="50"><img src="site/img/ordericons/pizza.png" height="50" width="50" <?php echo ($order->hasProduct("Pizza") == true) ? "" : "hidden" ?>/></td>

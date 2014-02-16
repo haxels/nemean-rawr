@@ -140,8 +140,6 @@
 			$userID   = $this->session->getID();
 			$payType  = (isset($_POST['payType'])) ? $_POST['payType'] : '';
 			$products = (isset($_POST['products'])) ? $_POST['products'] : [];
-            
-			$arr['prods'] = $products;
 			// Validate products
 			if (!$this->validateProducts($products))
 			{
@@ -171,7 +169,7 @@
 					 {
 						$this->orderMapper->insertRelation($order_id, $productID);
 					 }
-					$arr['success'] = true;    				
+					$arr['success'] = true;
                 }
 			}
 			echo json_encode($arr);

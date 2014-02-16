@@ -33,7 +33,7 @@ class Order
 
     public function getDate()
     {
-        return $this->date;
+        return date("d/m H:m", $this->date);
     }
 
     public function getDelivered()
