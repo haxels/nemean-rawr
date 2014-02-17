@@ -76,7 +76,7 @@ $(document).ready(function() {
                 $("#orderForm").slideUp();
                 setTimeout(function(){
                    window.location.reload();
-                }, 2000);
+                }, 5000);
                 return false;
             }
         }, "json");
