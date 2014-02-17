@@ -5,8 +5,7 @@ var Nemean = Nemean || {};
     var selected = "selected",
         checked = "checked",
         mainSelector = "#mainProducts .product",
-        mainCourse = {"tileName": "", "id" : 0},
-        products = [];
+        mainCourse = {"tileName": "", "id" : 0};
 
     Nemean.order.reset = function() {
         $(".product").removeClass("selected");
@@ -19,18 +18,12 @@ var Nemean = Nemean || {};
 
     function select(tile) {
         tile.addClass(selected);
-        updateCheckbox(tile.find("input"));
-        if (tile.find("input").attr("value") != mainCourse.id && mainCourse.id != 0) {
-            products.push(tile.find("input").attr("value"));
-        }
+        updateCheckbox(tile.find("input"), true);
     }
 
     function deselect(tile) {
         tile.removeClass(selected);
-        updateCheckbox(tile.find("input"));
-        if (tile.find("input").attr("value") != mainCourse.id) {
-            removeProduct(tile.find("input").attr("value"));
-        }
+        updateCheckbox(tile.find("input"), false);
     }
 
     function showAccessories(tileName) {
@@ -47,24 +40,18 @@ var Nemean = Nemean || {};
         return tile.attr("value");
     }
 
-    function updateCheckbox(box) {
-        box.attr(checked) ? box.attr(checked, false) : box.attr(checked, true);
+    function updateCheckbox(box, value) {
+        box.prop(checked, value);
     }
 
     function deselectAccessories(tileName) {
         $("." + tileName).find(".product").each(function() {
-            $(this).find("input").attr(checked, false);
+            updateCheckbox($(this).find("input"), false);
         }).removeClass("selected");
-        products = [];
     }
 
     function updateProductTile(product) {
         isSelected(product) ? deselect(product) : select(product);
-    }
-
-    function removeProduct(product) {
-        var index = products.indexOf(product);
-        products.splice(index, 1);
     }
 
     function updateCartProducts() {
@@ -72,9 +59,7 @@ var Nemean = Nemean || {};
     }
 
     $(".accessories .product").click(function() {
-        var product = $(this);
-        updateProductTile(product);
-        updateCartProducts();
+        updateProductTile($(this));
     });
 
     $(mainSelector).click(function() {
@@ -86,16 +71,15 @@ var Nemean = Nemean || {};
             deselect(mainTile);
             hideAccessories(tileName);
             mainCourse = {"tileName": "", "id" : 0};
-            products = [];
             deselectAccessories(getTileClass(mainTile));
             $("#orderSubmit").hide();
         }
         else if (isSelected(siblings)) {
             select(mainTile);
             deselect(siblings);
+            deselectAccessories(getTileClass(siblings));
             showAccessories(tileName);
             mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
-            products = [];
             $("#orderSubmit").show();
         }
         else
@@ -105,7 +89,9 @@ var Nemean = Nemean || {};
             mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             $("#orderSubmit").show();
         }
-        updateCartProducts();
-        deselectAccessories(getTileClass(siblings));
+    });
+
+    $(".product").click(function() {
+       updateCartProducts();
     });
 });

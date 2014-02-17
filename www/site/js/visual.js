@@ -32,11 +32,6 @@ $(document).ready(function() {
   after: function(){}     // Function: After callback
 });
 
-    $("#order-btn").click(function() {
-        showForm("#orderForm");
-        return false;
-    });
-
     $(".headerpart-1").click(function() {
         if (!gMapLoaded) {
             $("#gMap").load("gMap.php", function(){
@@ -62,15 +57,11 @@ $(document).ready(function() {
         }
     }
 
-    $("#orderSubmit").click(function() {
-        
-    });
-
-    $("#order").submit(function() {
+    $("body").on("submit", "#order", function() {
         var urlen = "index.php?m=kiosk&aAct=putOrder";
         $("#orderSubmit").attr("disabled", true);
-        $.post(urlen, $("#order").serialize(), function(response) {
-            var obj = $.parseJSON(response);
+        console.log($(this).serialize());
+        $.post(urlen, $(this).serialize(), function(obj) {
             if(obj.success) {
                // $("#orderForm").load(url);
                 notify('Børger bestilt! Ordrenummer: ' + obj.order_id);
@@ -85,7 +76,7 @@ $(document).ready(function() {
                 $("#orderForm").slideUp();
                 return false;
             }
-        });
+        }, "json");
         return false;
     });
 
@@ -103,6 +94,7 @@ $(document).ready(function() {
                 console.log("Success!");
                 $("#loginBox").slideUp(500);
                 $(".X").slideUp(500);
+                // På sikt bør dette byttes ut med en $("").load(url) sak..
                 $(".lBtn").html('<div>Logg ut</div>');
                 $(".lBtn").attr('href', '?mAct=logout');
                 $(".lBtn").attr('id', 'logout-link');
@@ -112,6 +104,8 @@ $(document).ready(function() {
                 $(".headerpart-2").click(function() {
                     return false;
                 });
+                $(".headerpart-3").find("h3").html("Bestill burger");
+                $(".headerpart-3").attr("id", "order-btn");
                 updateGUI();
             }
         });
@@ -368,6 +362,11 @@ $(document).ready(function() {
         $("#notify").find('p').html(msg);
         $("#notify").fadeIn(500);
     }
+
+    $("body").on("click", "#order-btn", function() {
+        showForm("#orderForm");
+        return false;
+    });
 
 
     $("body").on("click", "#liveModeOnBtn", function() {
