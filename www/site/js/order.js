@@ -5,12 +5,14 @@ var Nemean = Nemean || {};
     var selected = "selected",
         checked = "checked",
         mainSelector = "#mainProducts .product",
-        mainCourse = {"tileName": "", "id" : 0};
+        mainCourse = {"tileName": "", "id" : 0},
+        products = [];
 
     Nemean.order.reset = function() {
         $(".product").removeClass("selected");
         $("input[type=checkbox]").attr("checked", false);
         hideAccessories(mainCourse.tileName);
+        resetProducts();
     }
     function isSelected(tile) {
         return tile.hasClass(selected);
@@ -19,11 +21,13 @@ var Nemean = Nemean || {};
     function select(tile) {
         tile.addClass(selected);
         updateCheckbox(tile.find("input"), true);
+        addProduct(tile.find("input"));
     }
 
     function deselect(tile) {
         tile.removeClass(selected);
         updateCheckbox(tile.find("input"), false);
+        removeProduct(tile.find("input"));
     }
 
     function showAccessories(tileName) {
@@ -60,6 +64,7 @@ var Nemean = Nemean || {};
 
     $(".accessories .product").click(function() {
         updateProductTile($(this));
+        updateCartProducts();
     });
 
     $(mainSelector).click(function() {
@@ -69,29 +74,47 @@ var Nemean = Nemean || {};
             
         if(isSelected(mainTile)){
             deselect(mainTile);
-            hideAccessories(tileName);
             mainCourse = {"tileName": "", "id" : 0};
+            hideAccessories(tileName);
             deselectAccessories(getTileClass(mainTile));
             $("#orderSubmit").hide();
+            resetProducts();
         }
         else if (isSelected(siblings)) {
+            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             select(mainTile);
             deselect(siblings);
             deselectAccessories(getTileClass(siblings));
             showAccessories(tileName);
-            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             $("#orderSubmit").show();
+            resetProducts();
         }
         else
         {
+            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             select(mainTile);
             showAccessories(tileName);
-            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             $("#orderSubmit").show();
         }
+        updateCartProducts();
     });
 
-    $(".product").click(function() {
-       updateCartProducts();
-    });
+    function addProduct(product) {
+        var value = product.attr("value");
+        if (value != mainCourse.id) {
+            products.push(product.attr("value"));
+        }
+    }
+
+    function removeProduct(product) {
+        var value = product.attr("value");
+        if (value != mainCourse.id) {
+            var index = products.indexOf(product);
+            products.splice(index, 1);
+        }
+    }
+
+    function resetProducts() {
+        products = [];
+    }
 });
