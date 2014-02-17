@@ -136,7 +136,11 @@
 		private function putOrder()
 		{
 			$arr['success'] = false;
-
+			if (!$this->settings['kiosk_open']->getValue()) {
+				$arr['error'] = 'Sjappa er stengt!';
+			}
+			else
+			{
 			$userID   = $this->session->getID();
 			$payType  = (isset($_POST['payType'])) ? $_POST['payType'] : '';
 			$products = (isset($_POST['products'])) ? $_POST['products'] : [];
@@ -171,6 +175,7 @@
 					 }
 					$arr['success'] = true;
                 }
+			}
 			}
 			echo json_encode($arr);
 		}

@@ -71,9 +71,12 @@ $(document).ready(function() {
                 return false;
             }
             else {
-                notify("Bestillingen har dessverre forlatt vår verden. Vi føler med deg... RIP.");
+                notify(obj.error);
                 $("#orderSubmit").attr("disabled", false);
                 $("#orderForm").slideUp();
+                setTimeout(function(){
+                   window.location.reload();
+                }, 2000);
                 return false;
             }
         }, "json");

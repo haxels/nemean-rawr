@@ -7,6 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 $session = $data['session'];
+$settings = $data['settings'];
 $menu = $data['menu'] -> getMenu();
 $submenu = $data['menu'] -> getSubMenu();
 ?>
@@ -46,7 +47,8 @@ $submenu = $data['menu'] -> getSubMenu();
     <div class="global-wrapper">
 
         <div class="login"> 
-            <?php if ($session->isAuthenticated()) : ?>
+            <?php if ($session->isAuthenticated() && $settings['kiosk_open']) :
+				?>
             <a href="?mAct=logout" class="lBtn" id="logout-link"><div>Logg ut</div></a>
             <?php else : ?>
             <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
@@ -108,7 +110,10 @@ $submenu = $data['menu'] -> getSubMenu();
                             <?php endif; ?>
                             
                         <div class="triangle-2"></div>
-                        <?php if ($session->isAuthenticated()) : ?>
+                        <?php
+							if ($session->isAuthenticated() &&
+								$settings['kiosk_open']->getValue()) :
+						?>
                         <a class="headerpart-3" href="" id="order-btn"><h3 id="spacemap">Bestill burger</h3> </a>
                         <?php else : ?>
                         <a class="headerpart-3" href="?pID=24&m=reservations"><h3 id="spacemap">Plasskart</h3> </a>
