@@ -12,6 +12,7 @@ var Nemean = Nemean || {};
         $(".product").removeClass("selected");
         $("input[type=checkbox]").attr("checked", false);
         hideAccessories(mainCourse.tileName);
+        resetProducts();
     }
     function isSelected(tile) {
         return tile.hasClass(selected);
@@ -19,18 +20,14 @@ var Nemean = Nemean || {};
 
     function select(tile) {
         tile.addClass(selected);
-        updateCheckbox(tile.find("input"));
-        if (tile.find("input").attr("value") != mainCourse.id && mainCourse.id != 0) {
-            products.push(tile.find("input").attr("value"));
-        }
+        updateCheckbox(tile.find("input"), true);
+        addProduct(tile.find("input"));
     }
 
     function deselect(tile) {
         tile.removeClass(selected);
-        updateCheckbox(tile.find("input"));
-        if (tile.find("input").attr("value") != mainCourse.id) {
-            removeProduct(tile.find("input").attr("value"));
-        }
+        updateCheckbox(tile.find("input"), false);
+        removeProduct(tile.find("input"));
     }
 
     function showAccessories(tileName) {
@@ -47,24 +44,18 @@ var Nemean = Nemean || {};
         return tile.attr("value");
     }
 
-    function updateCheckbox(box) {
-        box.attr(checked) ? box.attr(checked, false) : box.attr(checked, true);
+    function updateCheckbox(box, value) {
+        box.prop(checked, value);
     }
 
     function deselectAccessories(tileName) {
         $("." + tileName).find(".product").each(function() {
-            $(this).find("input").attr(checked, false);
+            updateCheckbox($(this).find("input"), false);
         }).removeClass("selected");
-        products = [];
     }
 
     function updateProductTile(product) {
         isSelected(product) ? deselect(product) : select(product);
-    }
-
-    function removeProduct(product) {
-        var index = products.indexOf(product);
-        products.splice(index, 1);
     }
 
     function updateCartProducts() {
@@ -72,8 +63,7 @@ var Nemean = Nemean || {};
     }
 
     $(".accessories .product").click(function() {
-        var product = $(this);
-        updateProductTile(product);
+        updateProductTile($(this));
         updateCartProducts();
     });
 
@@ -84,28 +74,47 @@ var Nemean = Nemean || {};
             
         if(isSelected(mainTile)){
             deselect(mainTile);
-            hideAccessories(tileName);
             mainCourse = {"tileName": "", "id" : 0};
-            products = [];
+            hideAccessories(tileName);
             deselectAccessories(getTileClass(mainTile));
             $("#orderSubmit").hide();
+            resetProducts();
         }
         else if (isSelected(siblings)) {
+            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             select(mainTile);
             deselect(siblings);
+            deselectAccessories(getTileClass(siblings));
             showAccessories(tileName);
-            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
-            products = [];
             $("#orderSubmit").show();
+            resetProducts();
         }
         else
         {
+            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             select(mainTile);
             showAccessories(tileName);
-            mainCourse = {"tileName": tileName, "id" : mainTile.find("input").attr("value")};
             $("#orderSubmit").show();
         }
         updateCartProducts();
-        deselectAccessories(getTileClass(siblings));
     });
+
+    function addProduct(product) {
+        var value = product.attr("value");
+        if (value != mainCourse.id) {
+            products.push(product.attr("value"));
+        }
+    }
+
+    function removeProduct(product) {
+        var value = product.attr("value");
+        if (value != mainCourse.id) {
+            var index = products.indexOf(product);
+            products.splice(index, 1);
+        }
+    }
+
+    function resetProducts() {
+        products = [];
+    }
 });
