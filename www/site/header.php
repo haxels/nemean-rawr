@@ -64,7 +64,7 @@ $submenu = $data['menu'] -> getSubMenu();
             <nav>
                 <?php
                     foreach ($menu as $item) { ?>
-                <a class="menuitem" href="<?php echo ($item->isParent()) ? $item->getLink().'&pID='.$item->getMenuId() : $item->getLink(); ?>"><?php echo $item -> getLabel(); ?></a><br>
+                <a class="menuitem" href="<?php echo ($item->isParent()) ? $item->getLink().'&pID='.$item->getMenuId() : $item->getLink(); ?>"><?php echo $item -> getLabel(); ?></a>
                 <?php
                         if (isset($_GET['pID']) && $_GET['pID'] ==
                             $item->getMenuId()) {
@@ -72,7 +72,7 @@ $submenu = $data['menu'] -> getSubMenu();
                                 <a class="submenuitem" href="<?php echo
                                 $subitem->getLink(); ?>&pID=<?php echo
                                 $_GET['pID']; ?>"><?php echo $subitem ->
-                                        getLabel(); ?></a><br>
+                                        getLabel(); ?></a>
                 <?php
                             }
                         }
