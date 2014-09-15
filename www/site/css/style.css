@@ -26,6 +26,8 @@ nav {
     font-size: 1.2em;
     color: #364d1a;
     line-height: calc(1.4em + 4px);
+    display: inline-block;
+    padding: 5px;
 }
 .menuitem:hover, .submenuitem:hover {
     color: #73cd07;
@@ -174,11 +176,15 @@ header .pricetag {
 }
 .burgerfeed, .sponsors {/* Right subsection */
     float: right;
-    width: calc(40% - 20px);
+    width: calc(30% - 20px);
+}
+
+.sponsors img {
+	width: 310px;
 }
 .questions, .applytocrew {
     float: left;
-    width: calc(30% - 10px) !important;
+    width: calc(35% - 10px) !important;
     height: 200px;
     line-height: 150px;
     -webkit-transition: background 0.2s linear;
@@ -342,7 +348,7 @@ footer div {
 
 .facebook, .twitter {
     margin-top: 20px;
-    width: calc(30% - 10px) !important;
+    width: calc(35% - 10px) !important;
     float: left;
     margin-right: 20px; 
     height: 100px;
@@ -354,8 +360,8 @@ footer div {
     background-color: #019ad2;
 }
 .youtube {
-    float: right;
-    width: calc(40% - 20px);
+    float: left;
+    width: 70%;
     background-color: #cc181e;
     height: 100px;
     margin-top: 20px;
@@ -372,9 +378,10 @@ footer div {
 
 .submenuitem {
     color: gray;
-    font-size: 0.8em;
+    font-size: 1.0em;
     margin-left: 10px;
-    font-weight: bold;
+    padding: 5px;
+
 }
 
 
