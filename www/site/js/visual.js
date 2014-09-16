@@ -224,6 +224,11 @@ $(document).ready(function() {
         return false;
     });
 
+    $("#registerBtn").click(function() {
+        showForm("#qRegister");
+        return false;
+    });
+
     $(".applytocrew").click(function() {
         showForm("#applicationForm");
         return false;
