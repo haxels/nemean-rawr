@@ -52,9 +52,10 @@ $submenu = $data['menu'] -> getSubMenu();
             <a href="?mAct=logout" class="lBtn" id="logout-link"><div>Logg ut</div></a>
             <?php else : ?>
             <a href="" class="lBtn" id="login-link"><div>Logg inn</div></a>
+            <a id="forgotPswBtn" href="#"><div>Glemt passord</div></a>
             <?php endif; ?>
             <?php if ($session->isAuthorized(array('Developer', 'Crew'))) : ?>
-        <a id="toAdminBtn" href="admin.php">Adminpanel</a>
+            <a id="toAdminBtn" href="admin.php">Adminpanel</a>
     <?php endif; ?>
         </div>
 
