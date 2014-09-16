@@ -152,13 +152,13 @@ header .pricetag {
 .sidebar-left {
     float: left;
     width: 182px;
-    min-height: 1300px; /* Total height */
+    min-height: 800px; /* Total height */
 }
 .content-right {
     float: right;
     position: relative;
     width: 1100px; /* Propotional with total width */
-    min-height: 1300px; /* Total height */
+    min-height: 800px; /* Total height */
 }
 .image-slider {
     width: 100%;
