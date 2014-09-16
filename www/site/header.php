@@ -91,15 +91,15 @@ $submenu = $data['menu'] -> getSubMenu();
                             <br/>
                             Sør-Trøndelag</h5>
                             <h3>Når?</h3>
-                            <h5>6. - 8. juni 2022</h5>
+                            <h5>8. - 12. oktober 2014</h5>
                         </div>
     
                         <div id="right-column">
                             <!-- Using spans to make it easier in php, I think... -->
                             <h3>Pris?</h3>
-                            <h5>Deltaker: <span class="pricetag">200,-</span></h5>
+                            <h5>Deltaker: <span class="pricetag">300,-</span></h5>
                             <!--<h5>PGA: <span class="pricetag">500,-</span></h5> -->
-                            <h5>Besøke: <span class="pricetag">100,-</span></h5>
+                            <h5>Besøke: <span class="pricetag">150,-</span></h5>
                         </div>
                         <br style="clear:both;"/>
                         <!-- Force headerpart-1 to surround the two columns (floating divs, may not be nessesary, but since I'm cool...) --> </a>
