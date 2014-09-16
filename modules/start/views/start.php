@@ -29,9 +29,9 @@ $session = $data['session'];
     <h1 class="box-content" style="line-height:100px;">Youtube</h1>
 </section></a>
 
-    <a href="?m=articles&act=view&artID=37" class="questions"><h1 class="box-content">Kontakt oss!</h1></a>
+    <a href="?m=articles&act=view&artID=37" class="questions"><h1 class="box-content">Kontakt oss</h1></a>
 
-    <a href="" class="applytocrew"><h1 class="box-content">Søk nå!</h1></a>
+    <a href="" class="applytocrew"><h1 class="box-content">Søk nå</h1></a>
 
 
 </section>
