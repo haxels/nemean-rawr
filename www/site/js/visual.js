@@ -325,8 +325,25 @@ $(document).ready(function() {
     //    return false;
     //});
 
+    $("body").on("click", ".mapAvailable", function (event) {
+        $(".info").hide();
+        $(this).next().fadeIn();
+        $(this).next().addCss("display", "block");
+        event.preventDefault();
+    });
+
+    $("body").on("click", ".mapCurrentUser", function (event) {
+        $(".info").hide();
+        $(this).next().fadeIn();
+        $(this).next().addCss("display", "block");
+        event.preventDefault();
+    });
+
+
     $("body").on("submit", ".reserveSeatForm", function(event) {
+        console.log("Start");
         seatID = this.title;
+        console.log(seatID);
         $("#f" + seatID).find("input[type='password']").addClass("loading");
         var urlen = '?m=reservations&aAct=JSONreserveSeat';
         $.post(urlen, $("#f" + seatID).serialize(), function(response) {
@@ -340,6 +357,7 @@ $(document).ready(function() {
                 notify(obj.error);
             }
         });
+
         event.preventDefault();
     });
 
