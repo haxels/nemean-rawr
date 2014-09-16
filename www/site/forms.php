@@ -113,9 +113,11 @@
 </div>
 
 <div id="forgotPsw">
-    <form id="forgotPswForm" action="" method="POST">
-        <h4>Glemt passord</h4>
+	<h4>Glemt passord</h4>
         <hr />
+        <div class="form-left">
+    <form id="forgotPswForm" action="" method="POST"
+
         <p>
             Skriv inn din e-postadresse og du vil motta en e-post med et midlertidig passord.
         </p>
@@ -126,9 +128,12 @@
         </li>
         <li>
             <label for="submitForgot1">&nbsp;</label>
-            <input name="submitForgot1" type="submit" value="Send" />
+            <input class="btn" name="submitForgot1" type="submit" value="Send" />
         </li>
     </form>
+   </div>
+   
+    <div class="form-right"></div>
 </div>
 
 <div id="loginBox">

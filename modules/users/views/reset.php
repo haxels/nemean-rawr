@@ -9,9 +9,10 @@
 
 ?>
 <section id="main">
-
+<div class="formBox">
 <h3>Resetting av passord</h3>
-
+<hr>
+<div class="form-left">
 <form action="" method="POST">
     <li>
         <label for="tmpPw">Midlertidig passord:</label>
@@ -29,8 +30,10 @@
     </li>
     <li>
         <label for="tmpPw">&nbsp;</label>
-        <input name="submit_reset" type="submit" value="Reset" />
+        <input class="btn" name="submit_reset" type="submit" value="Reset" />
     </li>
 </form>
-
+</div>
+<div class="form-right"></div>
+</div>
 </section>
